@@ -4,7 +4,7 @@
 
 ---
 
-A collection of Python katas illustrating how to build and reason about effective LLM-based agents. Each kata (after the first initial “setup” kata) showcases a pattern from [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents) by Anthropic.
+A collection of Python katas illustrating how to build and reason about effective LLM-based agents. Each kata showcases a pattern from [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents) by Anthropic.
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ A collection of Python katas illustrating how to build and reason about effectiv
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
 - [Usage](#usage)
-- [Patterns Covered](#patterns-covered)
+- [Katas](#katas)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -21,43 +21,26 @@ A collection of Python katas illustrating how to build and reason about effectiv
 
 ## Introduction
 
-“Agentic systems” can range from orchestrated **workflows** to fully autonomous **agents** that dynamically choose their own steps and tool usage. The article [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents) lays out patterns for composing LLMs effectively without unnecessary complexity.
+"Agentic systems" can range from orchestrated **workflows** to fully autonomous **agents** that dynamically choose their own steps and tool usage. The article [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents) lays out patterns for composing LLMs effectively without unnecessary complexity.
 
 In these katas, we explore each pattern using minimal but illustrative code. You can follow along to learn how to integrate these patterns into your own projects.
 
 ## Repository Structure
 
 ```plaintext
-agentic-ai-kata/
-├── agentic_ai_kata/
-│   ├── __init__.py
-│   ├── kata_00_setup.py
-│   ├── kata_01_augmented_llm.py
-│   ├── kata_02_prompt_chaining.py
-│   ├── kata_03_routing.py
-│   ├── kata_04_parallelization.py
-│   ├── kata_05_orchestrator_workers.py
-│   ├── kata_06_evaluator_optimizer.py
-│   ├── kata_07_agent.py
-│   └── ...
-├── tests/
-│   ├── test_kata_00_setup.py
-│   ├── test_kata_01_augmented_llm.py
-│   ├── test_kata_02_prompt_chaining.py
-│   └── ...
-├── .env.example
-├── pyproject.toml  (or setup.py)
-├── README.md
-└── LICENSE
+agentic_ai_kata/
+├── __init__.py
+├── base.py           # Base classes and interfaces
+├── settings.py       # Configuration and environment settings
+├── kata_00_setup.py  # Basic setup and environment verification
+├── kata_01_augmented.py  # Augmented LLM with retrieval/tools
+├── kata_02_chaining.py   # Prompt chaining and decomposition
+├── kata_03_routing.py    # Input classification and routing
+├── kata_04_parallel.py   # Parallel processing and voting
+├── kata_05_orchestrator.py  # Orchestrator-workers pattern
+├── kata_06_evaluator.py    # Evaluator-optimizer pattern
+└── kata_07_agent.py        # Full agent pattern
 ```
-
-**Key Folders & Files**:
-
-- **`agentic_ai_kata/`**: Where all katas and related modules live.
-  - Each kata is a standalone Python file showcasing a particular agentic pattern.
-- **`tests/`**: Unit tests for each kata, typically one test file per kata.
-- **`.env.example`**: Template showing how to store secrets (e.g., OpenAI API key).
-- **`pyproject.toml`** _(or `setup.py`)_: Handles packaging and dependencies.
 
 ## Installation
 
@@ -83,113 +66,98 @@ agentic-ai-kata/
    pip install -r requirements.txt
    ```
 
-   > Alternatively, if using Poetry or a similar tool, run:
-   >
-   > ```bash
-   > poetry install
-   > ```
-
 ## Environment Variables
 
-We use [Pydantic Settings](https://docs.pydantic.dev/latest/usage/pydantic_settings/) to handle configuration, including your OpenAI (or other LLM) API keys. The `.env.example` file serves as a template:
+We use [Pydantic Settings](https://docs.pydantic.dev/latest/usage/pydantic_settings/) to handle configuration. Create a `.env` file with your API keys:
 
 ```plaintext
-OPENAI_API_KEY=your_openai_key_goes_here
+OPENAI_API_KEY=your_openai_key_here
+ANTHROPIC_API_KEY=your_anthropic_key_here  # Optional
 ```
-
-1. Duplicate `.env.example` and rename it to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-2. Update `.env` with your actual API key(s).
-
-When you run any kata (or the entire package), the code automatically picks up environment variables through Pydantic.
 
 ## Usage
 
-Each **kata** is self-contained, with documentation and minimal example usage. You can run them individually or explore them interactively:
+Each kata is self-contained and demonstrates a specific pattern. The tests use a Given-When-Then pattern and include koans that illustrate the concepts:
 
-```bash
-# Example: run kata_02_prompt_chaining
-python -m agentic_ai_kata.kata_02_prompt_chaining
+```python
+def test_kata_run():
+    # Given: A configured kata instance
+    kata = SomeKata()
+
+    # When: We run the kata
+    result = kata.run()
+
+    # Then: We should get the expected result
+    assert result.is_valid()
 ```
 
-You can also run **all tests** to see the katas in action:
+Run the tests to see the katas in action:
 
 ```bash
-pytest
+pytest -v
 ```
 
-Or, if you have [pytest-watch](https://pypi.org/project/pytest-watch/):
+## Katas
 
-```bash
-ptw
-```
+1. **Kata 00: Setup** (`kata_00_setup.py`)
 
-## Patterns Covered
+   - Basic environment setup
+   - API key verification
+   - LLM communication test
 
-Each kata focuses on a pattern from [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents):
+2. **Kata 01: Augmented LLM** (`kata_01_augmented.py`)
 
-1. **Kata 00: Setup**
+   - Integrates retrieval and tools
+   - Maintains memory across interactions
+   - Demonstrates context augmentation
 
-   - Basic environment setup, confirming your key is accessible.
+3. **Kata 02: Prompt Chaining** (`kata_02_chaining.py`)
 
-2. **Kata 01: Augmented LLM**
+   - Decomposes tasks into steps
+   - Implements checks and gates
+   - Handles errors and retries
 
-   - Integrates retrieval, tools, or memory into basic LLM calls.
+4. **Kata 03: Routing** (`kata_03_routing.py`)
 
-3. **Kata 02: Prompt Chaining**
+   - Classifies inputs
+   - Routes to specialized handlers
+   - Manages uncertainty
 
-   - Decomposes tasks into multiple LLM calls with optional gating or checks.
+5. **Kata 04: Parallelization** (`kata_04_parallel.py`)
 
-4. **Kata 03: Routing**
+   - Runs parallel LLM calls
+   - Implements voting mechanisms
+   - Aggregates results
 
-   - Classifies inputs and directs them to specialized prompts or tools.
+6. **Kata 05: Orchestrator-Workers** (`kata_05_orchestrator.py`)
 
-5. **Kata 04: Parallelization**
+   - Delegates tasks to workers
+   - Manages dependencies
+   - Handles failures
 
-   - Shows how to split tasks into parallel calls or use voting to improve accuracy.
+7. **Kata 06: Evaluator-Optimizer** (`kata_06_evaluator.py`)
 
-6. **Kata 05: Orchestrator-Workers**
+   - Evaluates LLM outputs
+   - Iteratively improves results
+   - Determines stopping conditions
 
-   - Demonstrates a central orchestrator LLM that delegates subtasks to workers.
-
-7. **Kata 06: Evaluator-Optimizer**
-
-   - Involves iterative loops where one LLM generates output and another critiques it.
-
-8. **Kata 07: Agent**
-   - Implements a simple autonomous agent that can plan, act, and use tools in a loop.
-
-Each kata includes docstrings, comments, and references back to Anthropic’s article for further reading and context.
+8. **Kata 07: Full Agent** (`kata_07_agent.py`)
+   - Implements autonomous behavior
+   - Uses tools effectively
+   - Maintains goal-directed behavior
 
 ## Contributing
 
-Contributions are welcome! Here’s how you can help:
+Contributions are welcome! Please:
 
-1. **Fork** the repository.
-2. **Create a new branch** for your feature or bug fix:
-   ```bash
-   git checkout -b feature/my-new-feature
-   ```
-3. **Make your changes** (add new kata, improve tests, etc.).
-4. **Run tests** to ensure everything passes:
-   ```bash
-   pytest
-   ```
-5. **Commit** and **push** to your fork:
-   ```bash
-   git push origin feature/my-new-feature
-   ```
-6. **Open a Pull Request** describing the changes.
+1. Fork the repository
+2. Create a feature branch
+3. Add or improve katas
+4. Ensure tests pass
+5. Submit a pull request
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
-Feel free to adapt the code for your own purposes. We appreciate attribution if you build upon it!
-
----
-
-Enjoy exploring these katas and applying the **agentic** patterns in your own LLM projects!  
-If you have any questions, suggestions, or feedback, please [open an issue](https://github.com/your-username/agentic-ai-kata/issues) or create a pull request.
+Feel free to adapt the code for your own projects. We appreciate attribution if you build upon it!
