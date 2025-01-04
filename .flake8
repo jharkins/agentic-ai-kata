@@ -1,0 +1,29 @@
+[flake8]
+max-line-length = 88
+extend-ignore = E203, W503, E501, I100, I201, I202
+per-file-ignores =
+    __init__.py:F401
+    test_*.py:F401,F811
+    # CDK constructs have their own conventions
+    the_operator/constructs/*.py:F821,I201
+    the_operator/the_operator_stack.py:F821,I201
+    # Scripts can be more lenient
+    scripts/*.py:D100,D103
+exclude =
+    .git,
+    __pycache__,
+    build,
+    dist,
+    *.egg-info,
+    cdk.out,
+    .venv,
+    .pytest_cache,
+    .mypy_cache
+
+# Import order settings
+import-order-style = google
+application-import-names = the_operator
+
+# Docstring settings
+docstring-convention = google
+max-complexity = 10

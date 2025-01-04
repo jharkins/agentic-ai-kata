@@ -1,5 +1,18 @@
+# Core dependencies
 pydantic-ai
 pydantic-settings
+
+# Testing
+pytest
+pytest-watch
+pytest-asyncio
+pytest-cov
+pytest-vcr
+
+# Linting & Formatting
 black
 isort
 autoflake
+
+# Optional: Development Tools
+ipython

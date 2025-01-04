@@ -1,0 +1,17 @@
+{
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "isort.args": ["--profile", "black"],
+  "black-formatter.args": ["--line-length", "88"],
+  "python.formatting.provider": "none",
+  "autoflake.args": [
+    "--remove-all-unused-imports",
+    "--ignore-init-module-imports",
+    "--remove-unused-variables"
+  ]
+}
