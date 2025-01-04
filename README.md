@@ -51,20 +51,25 @@ agentic_ai_kata/
    cd agentic-ai-kata
    ```
 
-2. **Create a virtual environment** (recommended):
+2. **Install Poetry** (if you haven't already):
 
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Linux/Mac
-   # or:
-   venv\Scripts\activate     # On Windows
+   curl -sSL https://install.python-poetry.org | python3 -
    ```
 
 3. **Install dependencies**:
 
    ```bash
-   pip install -r requirements.txt
+   poetry install
    ```
+
+4. **Activate the virtual environment**:
+
+   ```bash
+   poetry shell
+   ```
+
+Poetry will automatically create and manage a virtual environment for you, ensuring all dependencies are properly isolated.
 
 ## Environment Variables
 
@@ -94,7 +99,17 @@ def test_kata_run():
 Run the tests to see the katas in action:
 
 ```bash
-pytest -v
+# Run all tests
+poetry run pytest -v
+
+# Stop on first failure (useful during development)
+poetry run pytest -v -x
+
+# Show print output
+poetry run pytest -v -s
+
+# Run specific kata tests
+poetry run pytest -v -k "test_kata_01"
 ```
 
 ## Katas
@@ -153,7 +168,7 @@ Contributions are welcome! Please:
 1. Fork the repository
 2. Create a feature branch
 3. Add or improve katas
-4. Ensure tests pass
+4. Ensure tests pass (`poetry run pytest`)
 5. Submit a pull request
 
 ## License

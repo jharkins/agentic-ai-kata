@@ -1,9 +1,9 @@
-from typing import Any
+from typing import Any, Dict
 
 from pydantic import BaseModel, Field
 
-from agentic_ai_katabase import KataBase
-from agentic_ai_katasettings import KataSettings
+from agentic_ai_kata.base import KataBase
+from agentic_ai_kata.settings import KataSettings
 
 
 class ParallelResult(BaseModel):
@@ -39,3 +39,34 @@ class ParallelKata(KataBase):
         """Demonstrates the parallelization pattern"""
         # TODO: Implement parallelization pattern
         raise NotImplementedError("This kata is not yet implemented")
+
+    def validate_result(self, result: Dict[str, Any]) -> bool:
+        """Validates that the parallelization pattern worked correctly"""
+        # Check we have a valid result object
+        if not result or not isinstance(result.data, VotingResult):
+            return False
+
+        # Check we have parallel results
+        if (
+            not result.data.parallel_results or len(result.data.parallel_results) < 2
+        ):  # Need at least 2 for voting
+            return False
+
+        # Check each parallel result
+        for pr in result.data.parallel_results:
+            if not isinstance(pr, ParallelResult):
+                return False
+            if not pr.task_id or len(pr.task_id) == 0:
+                return False
+            if not pr.result or len(pr.result) == 0:
+                return False
+            if not 0 <= pr.confidence <= 1:
+                return False
+
+        # Check voting results
+        if not result.data.winning_result or len(result.data.winning_result) == 0:
+            return False
+        if not 0 <= result.data.vote_confidence <= 1:
+            return False
+
+        return True

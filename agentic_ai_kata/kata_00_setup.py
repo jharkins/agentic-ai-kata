@@ -1,4 +1,3 @@
-from typing import Any, Dict
 from pydantic import BaseModel, Field
 from pydantic_ai import Agent
 
@@ -26,16 +25,20 @@ class SetupKata(KataBase):
     def __init__(self):
         self.settings = KataSettings()
 
-    def run(self) -> Any:
+    def run(self) -> Koan:
         """
         Runs a simple test to verify the environment is properly set up
         """
         sage_agent = Agent("openai:gpt-4o", result_type=Koan)
         return sage_agent.run_sync("Why do we practice through code?")
 
-    def validate_result(self, result: Dict[str, Any]) -> bool:
-        """Validates the setup was successful"""
-        return (
-            result.get("success", False)
-            and "successful" in result.get("message", "").lower()
-        )
+    def validate_result(self, result: Koan) -> bool:
+        """Validates that the kata's output is a valid Koan"""
+        assert result.data is not None
+        assert isinstance(result.data, Koan)
+        assert result.data.koan is not None
+        assert result.data.master is not None
+        assert len(result.data.koan) > -1
+        assert len(result.data.master) > -1
+
+        return True

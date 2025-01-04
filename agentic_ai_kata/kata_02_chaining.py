@@ -1,9 +1,9 @@
-from typing import Any
+from typing import Any, Dict
 
 from pydantic import BaseModel, Field
 
-from agentic_ai_katabase import KataBase
-from agentic_ai_katasettings import KataSettings
+from agentic_ai_kata.base import KataBase
+from agentic_ai_kata.settings import KataSettings
 
 
 class ChainStep(BaseModel):
@@ -38,3 +38,31 @@ class ChainingKata(KataBase):
         """Demonstrates the prompt chaining pattern"""
         # TODO: Implement prompt chaining pattern
         raise NotImplementedError("This kata is not yet implemented")
+
+    def validate_result(self, result: Dict[str, Any]) -> bool:
+        """Validates that the chaining pattern worked correctly"""
+        # Check we have a valid result object
+        if not result or not isinstance(result.data, ChainResult):
+            return False
+
+        # Check we have steps
+        if (
+            not result.data.steps or len(result.data.steps) < 2
+        ):  # Need at least 2 steps for a chain
+            return False
+
+        # Check each step is valid
+        for step in result.data.steps:
+            if not isinstance(step, ChainStep):
+                return False
+            if not step.prompt or not step.response:
+                return False
+            # All steps except last should have a next_step
+            if step != result.data.steps[-1] and not step.next_step:
+                return False
+
+        # Check we have a final result
+        if not result.data.final_result or len(result.data.final_result) == 0:
+            return False
+
+        return True

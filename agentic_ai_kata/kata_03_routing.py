@@ -1,9 +1,9 @@
-from typing import Any
+from typing import Any, Dict
 
 from pydantic import BaseModel, Field
 
-from agentic_ai_katabase import KataBase
-from agentic_ai_katasettings import KataSettings
+from agentic_ai_kata.base import KataBase
+from agentic_ai_kata.settings import KataSettings
 
 
 class Route(BaseModel):
@@ -39,3 +39,31 @@ class RoutingKata(KataBase):
         """Demonstrates the routing pattern"""
         # TODO: Implement routing pattern
         raise NotImplementedError("This kata is not yet implemented")
+
+    def validate_result(self, result: Dict[str, Any]) -> bool:
+        """Validates that the routing pattern worked correctly"""
+        # Check we have a valid result object
+        if not result or not isinstance(result.data, RoutingResult):
+            return False
+
+        # Check we have an input
+        if not result.data.input or len(result.data.input) == 0:
+            return False
+
+        # Check we have a valid route
+        if not isinstance(result.data.route, Route):
+            return False
+
+        # Check route fields
+        if not result.data.route.category or len(result.data.route.category) == 0:
+            return False
+        if not 0 <= result.data.route.confidence <= 1:
+            return False
+        if not result.data.route.handler or len(result.data.route.handler) == 0:
+            return False
+
+        # Check we have a response
+        if not result.data.response or len(result.data.response) == 0:
+            return False
+
+        return True

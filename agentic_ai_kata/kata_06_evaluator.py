@@ -1,9 +1,9 @@
-from typing import Any
+from typing import Any, Dict
 
 from pydantic import BaseModel, Field
 
-from agentic_ai_katabase import KataBase
-from agentic_ai_katasettings import KataSettings
+from agentic_ai_kata.base import KataBase
+from agentic_ai_kata.settings import KataSettings
 
 
 class Evaluation(BaseModel):
@@ -47,3 +47,50 @@ class EvaluatorKata(KataBase):
         """Demonstrates the evaluator-optimizer pattern"""
         # TODO: Implement evaluator-optimizer pattern
         raise NotImplementedError("This kata is not yet implemented")
+
+    def validate_result(self, result: Dict[str, Any]) -> bool:
+        """Validates that the evaluator pattern worked correctly"""
+        # Check we have a valid result object
+        if not result or not isinstance(result.data, EvaluatorResult):
+            return False
+
+        # Check we have attempts
+        if not result.data.attempts or len(result.data.attempts) == 0:
+            return False
+
+        # Check each attempt
+        last_score = -1
+        for attempt in result.data.attempts:
+            if not isinstance(attempt, OptimizationAttempt):
+                return False
+            if attempt.attempt_number < 1:
+                return False
+            if not attempt.result or len(attempt.result) == 0:
+                return False
+
+            # Check evaluation
+            if not isinstance(attempt.evaluation, Evaluation):
+                return False
+            if not 0 <= attempt.evaluation.score <= 1:
+                return False
+            if not attempt.evaluation.feedback or len(attempt.evaluation.feedback) == 0:
+                return False
+            if not attempt.evaluation.suggestions:  # Empty list is ok for final attempt
+                if attempt != result.data.attempts[-1]:
+                    return False
+
+            # Scores should generally improve
+            if attempt.evaluation.score < last_score:
+                return False
+            last_score = attempt.evaluation.score
+
+        # Check final results
+        if not result.data.final_result or len(result.data.final_result) == 0:
+            return False
+        if not 0 <= result.data.final_score <= 1:
+            return False
+        # Final score should match best attempt
+        if result.data.final_score != last_score:
+            return False
+
+        return True

@@ -1,6 +1,7 @@
 # Core dependencies
 pydantic-ai
 pydantic-settings
+aiohttp
 
 # Testing
 pytest

@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from typing import Any, Dict, Optional
-
 from pydantic import BaseModel
 
 
@@ -10,6 +9,11 @@ class KataBase(ABC):
     @abstractmethod
     def run(self, *args, **kwargs) -> Any:
         """Run the kata"""
+        pass
+
+    @abstractmethod
+    def validate_result(self, result: Any) -> bool:
+        """Validate the kata's output"""
         pass
 
     def cleanup(self) -> None:
