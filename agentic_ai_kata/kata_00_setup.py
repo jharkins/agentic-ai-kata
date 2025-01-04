@@ -1,9 +1,9 @@
 from typing import Any, Dict
-
 from pydantic import BaseModel, Field
 from pydantic_ai import Agent
-from ..base import KataBase
-from ..settings import KataSettings
+
+from agentic_ai_kata.base import KataBase
+from agentic_ai_kata.settings import KataSettings
 
 
 class Koan(BaseModel):

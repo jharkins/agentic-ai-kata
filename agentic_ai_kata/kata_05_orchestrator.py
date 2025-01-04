@@ -2,8 +2,8 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 
-from ..base import KataBase
-from ..settings import KataSettings
+from agentic_ai_katabase import KataBase
+from agentic_ai_katasettings import KataSettings
 
 
 class WorkerTask(BaseModel):
