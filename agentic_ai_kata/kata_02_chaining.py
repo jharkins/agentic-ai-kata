@@ -1,17 +1,24 @@
-from typing import Any, Dict
-
+from typing import Any, Optional
+import os
+import json
+from slugify import slugify
+from dataclasses import dataclass
 from pydantic import BaseModel, Field
+from pydantic_ai import Agent, RunContext, capture_run_messages, UnexpectedModelBehavior
+import aiohttp
+import asyncio
 
 from agentic_ai_kata.base import KataBase
 from agentic_ai_kata.settings import KataSettings
+from agentic_ai_kata.utils.wiki_search_agent import WikiSearchAgent
 
 
 class ChainStep(BaseModel):
     """A single step in a chain of prompts"""
 
+    step_name: str = Field(description="The name of the step")
     prompt: str = Field(description="The prompt for this step")
     response: str = Field(description="The response from the LLM")
-    next_step: str | None = Field(description="The next step to take, if any")
 
 
 class ChainResult(BaseModel):
@@ -19,6 +26,11 @@ class ChainResult(BaseModel):
 
     steps: list[ChainStep] = Field(description="The steps in the chain")
     final_result: str = Field(description="The final result after all steps")
+
+    def add_step(self, step: ChainStep):
+        print(f"Finished Step: {step.step_name}")
+        self.steps.append(step)
+        self.final_result = step.response
 
 
 class ChainingKata(KataBase):
@@ -34,35 +46,428 @@ class ChainingKata(KataBase):
     def __init__(self):
         self.settings = KataSettings()
 
+    async def _run_async(self) -> Any:
+        """Async implementation of the kata run"""
+        chain_result = ChainResult(
+            steps=[],
+            final_result="",
+        )
+
+        # Step 0: Generate a fake solar system, planet, and planetary capital
+        class FakePlanetAndPlanetaryCapital(BaseModel):
+            solar_system: str = Field(description="The name of the solar system")
+            planet: str = Field(description="The name of the planet")
+            planetary_capital: str = Field(
+                description="The name of the planetary capital"
+            )
+
+            def to_string(self) -> str:
+                return f"Solar System: {self.solar_system}\nPlanet: {self.planet}\nPlanetary Capital: {self.planetary_capital}"
+
+        fake_planet_and_planetary_capital_agent = Agent(
+            "openai:gpt-4o",
+            result_type=FakePlanetAndPlanetaryCapital,
+            system_prompt=(
+                "You are an expert fiction writer, in the style of Rick & Morty."
+                "Your task is to generate a fake solar system, planet, and planetary capital."
+            ),
+        )
+
+        with capture_run_messages() as messages:
+            try:
+                fake_planet_and_planetary_capital_result = (
+                    await fake_planet_and_planetary_capital_agent.run("Ok, go!")
+                )
+            except UnexpectedModelBehavior as e:
+                print("Planet Generator Error:", e)
+                print("Cause:", repr(e.__cause__))
+                print("Messages:", messages)
+                # Retry with more explicit prompt
+                fake_planet_and_planetary_capital_result = await fake_planet_and_planetary_capital_agent.run(
+                    "Generate a funny solar system name, planet name, and planetary capital city name in the style of Rick & Morty."
+                )
+
+        chain_result.add_step(
+            ChainStep(
+                step_name="Fake Planet and Planetary Capital Agent",
+                prompt="Ok, go!",
+                response=fake_planet_and_planetary_capital_result.data.to_string(),
+            )
+        )
+
+        # Step 1: Ask a question about a fictional city. Use wikipedia search agent to verify.
+        question = (
+            f"Tell me about the city of {fake_planet_and_planetary_capital_result.data.planetary_capital}"
+            f" on the planet {fake_planet_and_planetary_capital_result.data.planet}"
+            f" in the solar system {fake_planet_and_planetary_capital_result.data.solar_system}."
+        )
+
+        print(f"Question: {question}")
+        search_agent = WikiSearchAgent()
+        with capture_run_messages() as messages:
+            try:
+                search_result = await search_agent.run(question)
+            except UnexpectedModelBehavior as e:
+                print("Search Agent Error:", e)
+                print("Cause:", repr(e.__cause__))
+                print("Messages:", messages)
+                # Retry with simpler query
+                search_result = await search_agent.run(
+                    f"Tell me about {fake_planet_and_planetary_capital_result.data.planetary_capital}"
+                )
+
+        chain_result.add_step(
+            ChainStep(
+                step_name="Search Agent",
+                prompt=question,
+                response=search_result.data.to_string(),
+            )
+        )
+
+        # Step 2: Let's chain right now just to interpret the result
+        class SearchAndOutlineResult(BaseModel):
+            is_real_city: bool = Field(description="Whether the city is real.")
+            outline: Optional[list[str]] = Field(
+                description="A list of markdown outline sections for a (made up) wiki article of the founding of the city.",
+                default=None,
+            )
+
+        outline_agent = Agent(
+            "openai:gpt-4o",
+            result_type=SearchAndOutlineResult,
+            deps_type=str,
+            system_prompt=(
+                "You are an expert fiction writer, in the style of Rick & Morty."
+                "You write outlines for wikipedia articles about made up citiies.",
+                "You are given an initial question.",
+                "You are given a wikipedia search result for a city.",
+                "You determine if the city is real or not.",
+                "If it's real, you set is_real_city to a funny message."
+                'If it\'s not a real city, write a fictional outline and generate a list of "facts" about the city.',
+            ),
+        )
+
+        @outline_agent.system_prompt
+        def add_the_question_and_search_result(ctx: RunContext[str]) -> str:
+            return f"The wikipedia search result was: {ctx.deps}"
+
+        with capture_run_messages() as messages:
+            try:
+                outline_result = await outline_agent.run(
+                    question, deps=search_result.data.to_string()
+                )
+            except UnexpectedModelBehavior as e:
+                print("Outline Agent Error:", e)
+                print("Cause:", repr(e.__cause__))
+                print("Messages:", messages)
+                # Retry with more explicit prompt
+                outline_result = await outline_agent.run(
+                    "Please create a fictional outline for a wikipedia article about this city. "
+                    "Include sections for history, geography, culture, and notable landmarks.",
+                    deps=search_result.data.to_string(),
+                )
+
+        chain_result.add_step(
+            ChainStep(
+                step_name="Outline Agent",
+                prompt=question,
+                response="\n".join(outline_result.data.outline),
+            )
+        )
+
+        # Check the result - in normal circumstances, we'd do something smarter
+        # print("\n".join(outline_result.data.outline))
+        assert outline_result.data.is_real_city is False
+
+        # Step 3: Generate fake facts about the city
+        class MadeUpFacts(BaseModel):
+            full_city_name: str = Field(
+                description="The full name of the city, including all the embellishments and titles given to it."
+            )
+            facts: list[dict[str, str]] = Field(
+                description="The (made up) facts about the city and the officially formatted bibliography entry (also made up)"
+            )
+
+        @dataclass
+        class FakeFactsDeps:
+            outline: list[str]
+
+        fake_facts_agent = Agent(
+            "openai:gpt-4o",
+            result_type=MadeUpFacts,
+            deps_type=FakeFactsDeps,
+            retries=3,
+            system_prompt=(
+                "You are an expert fiction writer, in the style of Rick & Morty. "
+                "You are given an outline for a wikipedia article about a made up city. "
+                "Your task is to generate a funny 'official' name for the city. "
+                "Then generate a list of 'facts'. "
+                "Each fact is a dictionary with the fact and a bibliography entry. "
+                "It's all made up, the facts aren't real. "
+                "The facts should be in the format: {'fact': 'the fact', 'bibliography': 'the bibliography entry'}"
+            ),
+        )
+
+        @fake_facts_agent.system_prompt
+        def add_outline_context(ctx: RunContext[FakeFactsDeps]) -> str:
+            return f"The article outline is:\n{ctx.deps.outline}"
+
+        # Use message capture to help debug any issues
+        with capture_run_messages() as messages:
+            try:
+                fake_facts_result = await fake_facts_agent.run(
+                    "Please generate a funny official name and 3-5 made up facts about this city.",
+                    deps=FakeFactsDeps(outline=outline_result.data.outline),
+                )
+            except UnexpectedModelBehavior as e:
+                print("Fake Facts Agent Error:", e)
+                print("Cause:", repr(e.__cause__))
+                print("Messages:", messages)
+                # Retry with more explicit prompt
+                fake_facts_result = await fake_facts_agent.run(
+                    "Please generate a funny official name and 3-5 made up facts about this city. "
+                    "Each fact should be a dictionary with 'fact' and 'bibliography' keys.",
+                    deps=FakeFactsDeps(outline=outline_result.data.outline),
+                )
+
+        chain_result.add_step(
+            ChainStep(
+                step_name="Fake Facts Agent",
+                prompt=f"The article outline for the city is: {outline_result.data.outline}",
+                response=f"full_city_name: {fake_facts_result.data.full_city_name}\n"
+                f"facts: {fake_facts_result.data.facts}",
+            )
+        )
+
+        # print(fake_facts_result.data)
+
+        # Step 4: Write a wikipedia style article about the city
+        @dataclass
+        class ArticleWriterDeps:
+            full_city_name: str
+            outline: list[str]
+            facts: list[dict[str, str]]
+
+        class ArticleWriterResult(BaseModel):
+            article: str = Field(
+                description="The wikipedia style article about the city."
+            )
+
+        article_writer_agent = Agent(
+            "openai:gpt-4o",
+            result_type=ArticleWriterResult,
+            system_prompt=(
+                "You are an expert fiction writer, in the style of Rick & Morty."
+                "You also write the best wikipedia style articles."
+                "You are given an outline and facts about a city."
+                "You write a wikipedia style article about the city."
+                "You care that the entire article is completely up to snuff for a wikipedia page."
+                "You turn the facts into bibiliography entires."
+            ),
+        )
+
+        @article_writer_agent.system_prompt
+        def add_the_outline_and_facts(ctx: RunContext[ArticleWriterDeps]) -> str:
+            outline = "\n".join(ctx.deps.outline)
+            facts = json.dumps(ctx.deps.facts)
+            return f"The full name of the city is: {ctx.deps.full_city_name}\nThe outline for the city is: {outline}\nThe facts about the city are: {facts}"
+
+        with capture_run_messages() as messages:
+            try:
+                article_writer_result = await article_writer_agent.run(
+                    f"Please write a wikipedia style article about the city of {fake_facts_result.data.full_city_name}.",
+                    deps=ArticleWriterDeps(
+                        full_city_name=fake_facts_result.data.full_city_name,
+                        outline=outline_result.data.outline,
+                        facts=fake_facts_result.data.facts,
+                    ),
+                )
+            except UnexpectedModelBehavior as e:
+                print("Article Writer Error:", e)
+                print("Cause:", repr(e.__cause__))
+                print("Messages:", messages)
+                # Retry with more explicit prompt
+                article_writer_result = await article_writer_agent.run(
+                    "Please write a wikipedia style article following the outline exactly. "
+                    "Include all facts with proper citations. "
+                    f"The city name is: {fake_facts_result.data.full_city_name}",
+                    deps=ArticleWriterDeps(
+                        full_city_name=fake_facts_result.data.full_city_name,
+                        outline=outline_result.data.outline,
+                        facts=fake_facts_result.data.facts,
+                    ),
+                )
+
+        chain_result.add_step(
+            ChainStep(
+                step_name="Article Writer Agent",
+                prompt=f"Please write a wikipedia style article about the city of {fake_facts_result.data.full_city_name}.",
+                response=article_writer_result.data.article,
+            )
+        )
+
+        # Step 5: Format the article into a wikipedia style article
+        @dataclass
+        class WikipediaFormatterDeps:
+            article_draft: str
+            outline: list[str]
+            facts: list[dict[str, str]]
+
+        class WikipediaFormatterResult(BaseModel):
+            article: str = Field(
+                description="The fully formatted wikipedia article about the city, including citations, that fully conforms (as applicable) to the wikipedia template."
+            )
+            highlight: str = Field(description="A short highlight of the article.")
+
+        wikipedia_formatter = Agent(
+            "openai:gpt-4o",
+            result_type=WikipediaFormatterResult,
+            system_prompt=(
+                "You are an expert wikipedia formatter."
+                "Your output is a markdown formatted wikipedia article."
+                "You are given: a draft article about a city, an outline for the article, and a list of facts about the city."
+                "You have a tool, get_template_defintion, that returns the wikipedia template for a city."
+            ),
+        )
+
+        # A tool that async gets a URL and returns the contents
+        @wikipedia_formatter.tool_plain
+        async def get_template_definition() -> str:
+            """Get the template definition for a wikipedia article about a city."""
+            async with aiohttp.ClientSession() as session:
+                async with session.get(
+                    "https://r.jina.ai/https://en.wikipedia.org/wiki/Template:Article_templates/City"
+                ) as response:
+                    return await response.text()
+
+        with capture_run_messages() as messages:
+            try:
+                wikipedia_formatter_result = await wikipedia_formatter.run(
+                    f"Please format the article about the city of {fake_facts_result.data.full_city_name} into a wikipedia style article.",
+                    deps=WikipediaFormatterDeps(
+                        article_draft=article_writer_result.data.article,
+                        outline=outline_result.data.outline,
+                        facts=fake_facts_result.data.facts,
+                    ),
+                )
+            except UnexpectedModelBehavior as e:
+                print("Wikipedia Formatter Error:", e)
+                print("Cause:", repr(e.__cause__))
+                print("Messages:", messages)
+                # Retry with more explicit prompt
+                wikipedia_formatter_result = await wikipedia_formatter.run(
+                    "Please format this article following the exact wikipedia template. "
+                    "Include all sections, citations, and proper formatting. "
+                    f"The city name is: {fake_facts_result.data.full_city_name}",
+                    deps=WikipediaFormatterDeps(
+                        article_draft=article_writer_result.data.article,
+                        outline=outline_result.data.outline,
+                        facts=fake_facts_result.data.facts,
+                    ),
+                )
+
+        chain_result.add_step(
+            ChainStep(
+                step_name="Wikipedia Formatter Agent",
+                prompt=f"Please format the article about the city of {fake_facts_result.data.full_city_name} into a wikipedia style article.",
+                response=wikipedia_formatter_result.data.article,
+            )
+        )
+
+        # Write the article to a file
+        # Make a folder in the current directory called "articles"
+        os.makedirs("articles", exist_ok=True)
+
+        # Write the article to a file in the folder
+        article_slug = slugify(fake_facts_result.data.full_city_name)
+        with open(f"articles/{article_slug}.md", "w") as f:
+            f.write(wikipedia_formatter_result.data.article)
+
+        print(f"Article written to articles/{article_slug}.md")
+        print(f"Highlight: {wikipedia_formatter_result.data.highlight}")
+
+        return chain_result
+
     def run(self) -> Any:
         """Demonstrates the prompt chaining pattern"""
-        # TODO: Implement prompt chaining pattern
-        raise NotImplementedError("This kata is not yet implemented")
+        return asyncio.run(self._run_async())
 
-    def validate_result(self, result: Dict[str, Any]) -> bool:
+    def validate_result(self, result: ChainResult) -> bool:
         """Validates that the chaining pattern worked correctly"""
         # Check we have a valid result object
-        if not result or not isinstance(result.data, ChainResult):
-            return False
+        assert result is not None
+        assert isinstance(result, ChainResult)
+        assert result.steps is not None
 
-        # Check we have steps
-        if (
-            not result.data.steps or len(result.data.steps) < 2
-        ):  # Need at least 2 steps for a chain
-            return False
+        # Print chain execution for visibility
+        print("\n🔗 Chain Execution Summary:")
+        print("=" * 30)
+        for step in result.steps:
+            print(f"\nStep: {step.step_name}")
+            print(f"Prompt: {step.prompt[:100]}...")
+            print(f"Response: {step.response[:100]}...")
 
-        # Check each step is valid
-        for step in result.data.steps:
-            if not isinstance(step, ChainStep):
-                return False
-            if not step.prompt or not step.response:
-                return False
-            # All steps except last should have a next_step
-            if step != result.data.steps[-1] and not step.next_step:
-                return False
+        # 1. Verify task decomposition into sequential steps
+        assert len(result.steps) >= 4, "Should have at least 4 steps in the chain"
+        step_names = [step.step_name for step in result.steps]
+        assert "Search Agent" in step_names, "Should start with search"
+        assert "Outline Agent" in step_names, "Should generate outline"
+        assert "Fake Facts Agent" in step_names, "Should generate facts"
+        assert "Article Writer Agent" in step_names, "Should write article"
 
-        # Check we have a final result
-        if not result.data.final_result or len(result.data.final_result) == 0:
-            return False
+        # 2. Verify correct sequence
+        step_order = {name: i for i, name in enumerate(step_names)}
+        assert (
+            step_order["Search Agent"] < step_order["Outline Agent"]
+        ), "Search should come before outline"
+        assert (
+            step_order["Outline Agent"] < step_order["Fake Facts Agent"]
+        ), "Outline should come before facts"
+        assert (
+            step_order["Fake Facts Agent"] < step_order["Article Writer Agent"]
+        ), "Facts should come before article"
+
+        # 3. Verify each step produces meaningful output
+        for step in result.steps:
+            assert (
+                step.response and len(step.response.strip()) > 0
+            ), f"Step {step.step_name} should have output"
+            assert (
+                len(step.response) > 50
+            ), f"Step {step.step_name} output seems too short"
+
+            # Content-specific checks
+            if step.step_name == "Search Agent":
+                # The response should be a QuestionAnswerWithContext string representation
+                assert (
+                    'question="' in step.response
+                ), "Search response should include question"
+                assert (
+                    'answer="' in step.response
+                ), "Search response should include answer"
+                assert (
+                    "context=[" in step.response
+                ), "Search response should include context"
+            elif step.step_name == "Outline Agent":
+                assert any(
+                    marker in step.response.lower() for marker in ["#", "*", "-"]
+                ), "Outline should have markdown-style formatting"
+            elif step.step_name == "Fake Facts Agent":
+                assert (
+                    "full_city_name" in step.response
+                ), "Facts should include city name"
+                assert "facts" in step.response, "Should include facts list"
+            elif step.step_name == "Article Writer Agent":
+                assert any(
+                    marker in step.response for marker in ["==", "#"]
+                ), "Article should have section markers"
+
+        # 4. Verify final result
+        assert (
+            result.final_result and len(result.final_result) > 0
+        ), "Should have final result"
+        assert any(
+            marker in result.final_result for marker in ["==", "#"]
+        ), "Final result should be formatted article"
 
         return True

@@ -18,18 +18,4 @@ def test_chaining_kata_run():
     result = kata.run()
 
     # Then: We should get a valid chain result
-    assert result.data is not None
-    assert isinstance(result.data, ChainResult)
-    assert len(result.data.steps) > 0
-    assert result.data.final_result is not None
-
-    # Display the chain of thought
-    print("\nChain of Thought:")
-    for step in result.data.steps:
-        assert isinstance(step, ChainStep)
-        print(f"\nStep: {step.prompt}")
-        print(f"Response: {step.response}")
-        if step.next_step:
-            print(f"Next: {step.next_step}")
-
-    print(f"\nFinal Result: {result.data.final_result}")
+    assert kata.validate_result(result)
