@@ -60,9 +60,17 @@ class ChainingKata(KataBase):
             planetary_capital: str = Field(
                 description="The name of the planetary capital"
             )
+            full_title_of_planetary_capital: str = Field(
+                description="The full title of the planetary capital, including all the embellishments and titles given to it."
+            )
 
             def to_string(self) -> str:
-                return f"Solar System: {self.solar_system}\nPlanet: {self.planet}\nPlanetary Capital: {self.planetary_capital}"
+                return (
+                    f"Solar System: {self.solar_system}\n"
+                    f"Planet: {self.planet}\n"
+                    f"Planetary Capital: {self.planetary_capital}\n"
+                    f"Full Title of Planetary Capital: {self.full_title_of_planetary_capital}\n"
+                )
 
         fake_planet_and_planetary_capital_agent = Agent(
             "openai:gpt-4o",
@@ -73,19 +81,9 @@ class ChainingKata(KataBase):
             ),
         )
 
-        with capture_run_messages() as messages:
-            try:
-                fake_planet_and_planetary_capital_result = (
-                    await fake_planet_and_planetary_capital_agent.run("Ok, go!")
-                )
-            except UnexpectedModelBehavior as e:
-                print("Planet Generator Error:", e)
-                print("Cause:", repr(e.__cause__))
-                print("Messages:", messages)
-                # Retry with more explicit prompt
-                fake_planet_and_planetary_capital_result = await fake_planet_and_planetary_capital_agent.run(
-                    "Generate a funny solar system name, planet name, and planetary capital city name in the style of Rick & Morty."
-                )
+        fake_planet_and_planetary_capital_result = (
+            await fake_planet_and_planetary_capital_agent.run("Ok, go!")
+        )
 
         chain_result.add_step(
             ChainStep(
@@ -104,17 +102,7 @@ class ChainingKata(KataBase):
 
         print(f"Question: {question}")
         search_agent = WikiSearchAgent()
-        with capture_run_messages() as messages:
-            try:
-                search_result = await search_agent.run(question)
-            except UnexpectedModelBehavior as e:
-                print("Search Agent Error:", e)
-                print("Cause:", repr(e.__cause__))
-                print("Messages:", messages)
-                # Retry with simpler query
-                search_result = await search_agent.run(
-                    f"Tell me about {fake_planet_and_planetary_capital_result.data.planetary_capital}"
-                )
+        search_result = await search_agent.run(question)
 
         chain_result.add_step(
             ChainStep(
@@ -143,7 +131,7 @@ class ChainingKata(KataBase):
                 "You are given a wikipedia search result for a city.",
                 "You determine if the city is real or not.",
                 "If it's real, you set is_real_city to a funny message."
-                'If it\'s not a real city, write a fictional outline and generate a list of "facts" about the city.',
+                "If it's not a real city, write a fictional wikipedia style city outline.",
             ),
         )
 
@@ -151,21 +139,9 @@ class ChainingKata(KataBase):
         def add_the_question_and_search_result(ctx: RunContext[str]) -> str:
             return f"The wikipedia search result was: {ctx.deps}"
 
-        with capture_run_messages() as messages:
-            try:
-                outline_result = await outline_agent.run(
-                    question, deps=search_result.data.to_string()
-                )
-            except UnexpectedModelBehavior as e:
-                print("Outline Agent Error:", e)
-                print("Cause:", repr(e.__cause__))
-                print("Messages:", messages)
-                # Retry with more explicit prompt
-                outline_result = await outline_agent.run(
-                    "Please create a fictional outline for a wikipedia article about this city. "
-                    "Include sections for history, geography, culture, and notable landmarks.",
-                    deps=search_result.data.to_string(),
-                )
+        outline_result = await outline_agent.run(
+            question, deps=search_result.data.to_string()
+        )
 
         chain_result.add_step(
             ChainStep(
@@ -181,9 +157,6 @@ class ChainingKata(KataBase):
 
         # Step 3: Generate fake facts about the city
         class MadeUpFacts(BaseModel):
-            full_city_name: str = Field(
-                description="The full name of the city, including all the embellishments and titles given to it."
-            )
             facts: list[dict[str, str]] = Field(
                 description="The (made up) facts about the city and the officially formatted bibliography entry (also made up)"
             )
@@ -196,15 +169,14 @@ class ChainingKata(KataBase):
             "openai:gpt-4o",
             result_type=MadeUpFacts,
             deps_type=FakeFactsDeps,
-            retries=3,
+            retries=3,  # Increase retries to handle potential tool call issues
             system_prompt=(
                 "You are an expert fiction writer, in the style of Rick & Morty. "
                 "You are given an outline for a wikipedia article about a made up city. "
-                "Your task is to generate a funny 'official' name for the city. "
-                "Then generate a list of 'facts'. "
+                "Your task is to generate a list of 'facts' about the city. They are all made up. "
                 "Each fact is a dictionary with the fact and a bibliography entry. "
                 "It's all made up, the facts aren't real. "
-                "The facts should be in the format: {'fact': 'the fact', 'bibliography': 'the bibliography entry'}"
+                "Return the facts directly in the response, do not use any tools."
             ),
         )
 
@@ -212,11 +184,11 @@ class ChainingKata(KataBase):
         def add_outline_context(ctx: RunContext[FakeFactsDeps]) -> str:
             return f"The article outline is:\n{ctx.deps.outline}"
 
-        # Use message capture to help debug any issues
         with capture_run_messages() as messages:
             try:
                 fake_facts_result = await fake_facts_agent.run(
-                    "Please generate a funny official name and 3-5 made up facts about this city.",
+                    "Please generate 3-5 made up facts about this city. "
+                    "Each fact should be a dictionary with 'fact' and 'bibliography' keys.",
                     deps=FakeFactsDeps(outline=outline_result.data.outline),
                 )
             except UnexpectedModelBehavior as e:
@@ -225,8 +197,9 @@ class ChainingKata(KataBase):
                 print("Messages:", messages)
                 # Retry with more explicit prompt
                 fake_facts_result = await fake_facts_agent.run(
-                    "Please generate a funny official name and 3-5 made up facts about this city. "
-                    "Each fact should be a dictionary with 'fact' and 'bibliography' keys.",
+                    "Please generate 3-5 made up facts about this city. "
+                    "Each fact should be a dictionary with 'fact' and 'bibliography' keys. "
+                    "Return the facts directly in your response, do not use any tools.",
                     deps=FakeFactsDeps(outline=outline_result.data.outline),
                 )
 
@@ -234,8 +207,7 @@ class ChainingKata(KataBase):
             ChainStep(
                 step_name="Fake Facts Agent",
                 prompt=f"The article outline for the city is: {outline_result.data.outline}",
-                response=f"full_city_name: {fake_facts_result.data.full_city_name}\n"
-                f"facts: {fake_facts_result.data.facts}",
+                response=f"facts: {fake_facts_result.data.facts}",
             )
         )
 
@@ -270,38 +242,21 @@ class ChainingKata(KataBase):
         def add_the_outline_and_facts(ctx: RunContext[ArticleWriterDeps]) -> str:
             outline = "\n".join(ctx.deps.outline)
             facts = json.dumps(ctx.deps.facts)
-            return f"The full name of the city is: {ctx.deps.full_city_name}\nThe outline for the city is: {outline}\nThe facts about the city are: {facts}"
+            return f"The outline for the city is: {outline}\nThe facts about the city are: {facts}"
 
-        with capture_run_messages() as messages:
-            try:
-                article_writer_result = await article_writer_agent.run(
-                    f"Please write a wikipedia style article about the city of {fake_facts_result.data.full_city_name}.",
-                    deps=ArticleWriterDeps(
-                        full_city_name=fake_facts_result.data.full_city_name,
-                        outline=outline_result.data.outline,
-                        facts=fake_facts_result.data.facts,
-                    ),
-                )
-            except UnexpectedModelBehavior as e:
-                print("Article Writer Error:", e)
-                print("Cause:", repr(e.__cause__))
-                print("Messages:", messages)
-                # Retry with more explicit prompt
-                article_writer_result = await article_writer_agent.run(
-                    "Please write a wikipedia style article following the outline exactly. "
-                    "Include all facts with proper citations. "
-                    f"The city name is: {fake_facts_result.data.full_city_name}",
-                    deps=ArticleWriterDeps(
-                        full_city_name=fake_facts_result.data.full_city_name,
-                        outline=outline_result.data.outline,
-                        facts=fake_facts_result.data.facts,
-                    ),
-                )
+        article_writer_result = await article_writer_agent.run(
+            f"Please write a wikipedia style article about the city of {fake_planet_and_planetary_capital_result.data.full_title_of_planetary_capital}.",
+            deps=ArticleWriterDeps(
+                full_city_name=fake_planet_and_planetary_capital_result.data.full_title_of_planetary_capital,
+                outline=outline_result.data.outline,
+                facts=fake_facts_result.data.facts,
+            ),
+        )
 
         chain_result.add_step(
             ChainStep(
                 step_name="Article Writer Agent",
-                prompt=f"Please write a wikipedia style article about the city of {fake_facts_result.data.full_city_name}.",
+                prompt=f"Please write a wikipedia style article about the city of {fake_planet_and_planetary_capital_result.data.full_title_of_planetary_capital}.",
                 response=article_writer_result.data.article,
             )
         )
@@ -340,36 +295,19 @@ class ChainingKata(KataBase):
                 ) as response:
                     return await response.text()
 
-        with capture_run_messages() as messages:
-            try:
-                wikipedia_formatter_result = await wikipedia_formatter.run(
-                    f"Please format the article about the city of {fake_facts_result.data.full_city_name} into a wikipedia style article.",
-                    deps=WikipediaFormatterDeps(
-                        article_draft=article_writer_result.data.article,
-                        outline=outline_result.data.outline,
-                        facts=fake_facts_result.data.facts,
-                    ),
-                )
-            except UnexpectedModelBehavior as e:
-                print("Wikipedia Formatter Error:", e)
-                print("Cause:", repr(e.__cause__))
-                print("Messages:", messages)
-                # Retry with more explicit prompt
-                wikipedia_formatter_result = await wikipedia_formatter.run(
-                    "Please format this article following the exact wikipedia template. "
-                    "Include all sections, citations, and proper formatting. "
-                    f"The city name is: {fake_facts_result.data.full_city_name}",
-                    deps=WikipediaFormatterDeps(
-                        article_draft=article_writer_result.data.article,
-                        outline=outline_result.data.outline,
-                        facts=fake_facts_result.data.facts,
-                    ),
-                )
+        wikipedia_formatter_result = await wikipedia_formatter.run(
+            f"Please format the article about the city of {fake_planet_and_planetary_capital_result.data.full_title_of_planetary_capital} into a wikipedia style article.",
+            deps=WikipediaFormatterDeps(
+                article_draft=article_writer_result.data.article,
+                outline=outline_result.data.outline,
+                facts=fake_facts_result.data.facts,
+            ),
+        )
 
         chain_result.add_step(
             ChainStep(
                 step_name="Wikipedia Formatter Agent",
-                prompt=f"Please format the article about the city of {fake_facts_result.data.full_city_name} into a wikipedia style article.",
+                prompt=f"Please format the article about the city of {fake_planet_and_planetary_capital_result.data.full_title_of_planetary_capital} into a wikipedia style article.",
                 response=wikipedia_formatter_result.data.article,
             )
         )
@@ -379,7 +317,9 @@ class ChainingKata(KataBase):
         os.makedirs("articles", exist_ok=True)
 
         # Write the article to a file in the folder
-        article_slug = slugify(fake_facts_result.data.full_city_name)
+        article_slug = slugify(
+            fake_planet_and_planetary_capital_result.data.full_title_of_planetary_capital
+        )
         with open(f"articles/{article_slug}.md", "w") as f:
             f.write(wikipedia_formatter_result.data.article)
 
@@ -453,9 +393,9 @@ class ChainingKata(KataBase):
                     marker in step.response.lower() for marker in ["#", "*", "-"]
                 ), "Outline should have markdown-style formatting"
             elif step.step_name == "Fake Facts Agent":
-                assert (
-                    "full_city_name" in step.response
-                ), "Facts should include city name"
+                # assert (
+                #     "full_city_name" in step.response
+                # ), "Facts should include city name"
                 assert "facts" in step.response, "Should include facts list"
             elif step.step_name == "Article Writer Agent":
                 assert any(
