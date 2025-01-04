@@ -1,17 +1,9 @@
-from typing import Dict, Any
-from .base import KataBase
-from pydantic_settings import BaseSettings
-from pydantic import ConfigDict, BaseModel, Field
+from typing import Any, Dict
+
+from pydantic import BaseModel, Field
 from pydantic_ai import Agent
-
-
-class Kata00Settings(BaseSettings):
-    OPENAI_API_KEY: str
-
-    model_config = ConfigDict(
-        env_file=".env",
-        extra="ignore",  # This will ignore extra fields in the .env file
-    )
+from ..base import KataBase
+from ..settings import KataSettings
 
 
 class Koan(BaseModel):
@@ -32,9 +24,9 @@ class SetupKata(KataBase):
     """
 
     def __init__(self):
-        self.settings = Kata00Settings()
+        self.settings = KataSettings()
 
-    def run(self) -> Koan:
+    def run(self) -> Any:
         """
         Runs a simple test to verify the environment is properly set up
         """

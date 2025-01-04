@@ -1,5 +1,5 @@
 import pytest
-from agentic_ai_kata.kata_00_setup import SetupKata, Koan
+from agentic_ai_kata.kata.kata_00_setup import SetupKata, Koan
 
 
 def test_setup_kata_initialization():

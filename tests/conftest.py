@@ -1,6 +1,7 @@
+from typing import Optional
+
 import pytest
 from pydantic_settings import BaseSettings
-from typing import Optional
 
 
 class TestSettings(BaseSettings):
