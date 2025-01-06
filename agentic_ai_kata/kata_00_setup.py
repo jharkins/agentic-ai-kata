@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field
 from pydantic_ai import Agent
 
 from agentic_ai_kata.base import KataBase
-from agentic_ai_kata.settings import KataSettings
+from agentic_ai_kata.settings import settings
 
 
 class Koan(BaseModel):
@@ -22,14 +22,11 @@ class SetupKata(KataBase):
     3. Basic LLM communication works
     """
 
-    def __init__(self):
-        self.settings = KataSettings()
-
     def run(self) -> Koan:
         """
         Runs a simple test to verify the environment is properly set up
         """
-        sage_agent = Agent("openai:gpt-4o", result_type=Koan)
+        sage_agent = Agent(settings.DEFAULT_MODEL, result_type=Koan)
         return sage_agent.run_sync("Why do we practice through code?")
 
     def validate_result(self, result: Koan) -> bool:

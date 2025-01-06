@@ -3,7 +3,7 @@ from openai import AsyncOpenAI
 from pydantic import BaseModel, Field
 from pydantic_ai import Agent, RunContext
 
-from agentic_ai_kata.settings import KataSettings
+from agentic_ai_kata.settings import settings
 from agentic_ai_kata.utils import ColBERTv2
 
 
@@ -36,16 +36,15 @@ class WikiSearchAgent:
     """
 
     def __init__(self):
-        self.settings = KataSettings.get_settings()
         self.retriever = ColBERTv2(url="http://20.102.90.50:2017/wiki17_abstracts")
-        self.openai = AsyncOpenAI(api_key=self.settings.OPENAI_API_KEY)
+        self.openai = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
         self.deps = Deps(openai=self.openai)
         self.agent = self._create_agent()
 
     def _create_agent(self) -> Agent:
         """Creates the augmented agent with tools"""
         agent = Agent(
-            "openai:gpt-4o",
+            settings.DEFAULT_MODEL,
             deps_type=Deps,
             system_prompt=(
                 "You are a helpful assistant that uses tools to augment your knowledge. "

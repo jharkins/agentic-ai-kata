@@ -1,9 +1,16 @@
 from typing import Any, Dict
+from dataclasses import dataclass
+from openai import AsyncOpenAI
 
 from pydantic import BaseModel, Field
 
 from agentic_ai_kata.base import KataBase
-from agentic_ai_kata.settings import KataSettings
+from agentic_ai_kata.settings import settings
+
+
+@dataclass
+class Deps:
+    openai: AsyncOpenAI
 
 
 class ParallelResult(BaseModel):
@@ -24,16 +31,18 @@ class VotingResult(BaseModel):
 
 class ParallelKata(KataBase):
     """
-    Kata 04: Parallelization Pattern
+    Kata 04: Parallel Processing Pattern
 
     This kata demonstrates:
-    1. How to split tasks into parallel LLM calls
-    2. How to use voting to improve accuracy
-    3. How to aggregate parallel results
+    1. How to run parallel LLM calls
+    2. How to implement voting mechanisms
+    3. How to aggregate results
     """
 
     def __init__(self):
-        self.settings = KataSettings()
+        self.openai = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
+        self.deps = Deps(openai=self.openai)
+        self.agent = self._create_agent()
 
     def run(self) -> Any:
         """Demonstrates the parallelization pattern"""

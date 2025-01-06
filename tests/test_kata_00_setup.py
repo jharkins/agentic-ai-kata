@@ -10,6 +10,7 @@ def test_setup_kata_initialization():
     assert kata.settings.OPENAI_API_KEY is not None
 
 
+@pytest.mark.vcr()
 def test_setup_kata_run():
     # Given: A configured kata instance
     kata = SetupKata()

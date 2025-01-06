@@ -1,0 +1,53 @@
+{
+  "id": "bd1add31-c280-43e5-b950-36476f6ad012",
+  "who": [
+    {
+      "name": "Zorp-Bot 9000",
+      "phone": "+12345678901"
+    },
+    {
+      "name": "Beep-Boop 3000",
+      "phone": "+10987654321"
+    }
+  ],
+  "topic": "luscious-plumbus",
+  "messages": [
+    {
+      "id": "b451c742-b29a-4e1e-9dfc-38bdb147b386",
+      "from_": "+12345678901",
+      "to": "+10987654321",
+      "body": "Hey! You won't believe what I just got my hands on! It's the most luscious Plumbus ever designed.",
+      "media": null,
+      "meta": null,
+      "createdAt": 1736043472,
+      "expected_handler": "conversation"
+    },
+    {
+      "id": "bb2c53f0-466f-40c3-b460-ec72eda3a012",
+      "from_": "+10987654321",
+      "to": "+12345678901",
+      "body": "A luscious Plumbus? Are you serious? I thought those were just a myth! Tell me more about it!",
+      "media": null,
+      "meta": null,
+      "createdAt": 1736043472
+    },
+    {
+      "id": "a661f51e-1ad5-4ab5-8593-b2eb4086600e",
+      "from_": "+12345678901",
+      "to": "+10987654321",
+      "body": "I kid you not! It has a shimmer like no other and the handling knobs are made from pure galactic fiber, giving it a silky touch. You've got to see it to believe it!",
+      "media": null,
+      "meta": null,
+      "createdAt": 1736043472
+    },
+    {
+      "id": "c069f457-aa06-4bc3-86db-02b53eefc219",
+      "from_": "+10987654321",
+      "to": "+12345678901",
+      "body": "I've got to come over and see this. When are you free? I've ever only seen the old models.",
+      "media": null,
+      "meta": null,
+      "createdAt": 1736043472
+    }
+  ]
+}

@@ -1,9 +1,16 @@
 from typing import Any, Dict
+from dataclasses import dataclass
+from openai import AsyncOpenAI
 
 from pydantic import BaseModel, Field
 
 from agentic_ai_kata.base import KataBase
-from agentic_ai_kata.settings import KataSettings
+from agentic_ai_kata.settings import settings
+
+
+@dataclass
+class Deps:
+    openai: AsyncOpenAI
 
 
 class Evaluation(BaseModel):
@@ -35,18 +42,45 @@ class EvaluatorKata(KataBase):
     Kata 06: Evaluator-Optimizer Pattern
 
     This kata demonstrates:
-    1. How to use one LLM to evaluate another's output
+    1. How to evaluate LLM outputs
     2. How to iteratively improve results
-    3. How to know when to stop optimizing
+    3. How to determine stopping conditions
     """
 
     def __init__(self):
-        self.settings = KataSettings()
+        self.openai = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
+        self.deps = Deps(openai=self.openai)
+        self.agent = self._create_agent()
 
     def run(self) -> Any:
         """Demonstrates the evaluator-optimizer pattern"""
         # TODO: Implement evaluator-optimizer pattern
         raise NotImplementedError("This kata is not yet implemented")
+
+    def _validate_attempt(
+        self, attempt: OptimizationAttempt, last_score: float
+    ) -> tuple[bool, float]:
+        """Validates a single optimization attempt"""
+        if not isinstance(attempt, OptimizationAttempt):
+            return False, last_score
+        if attempt.attempt_number < 1:
+            return False, last_score
+        if not attempt.result or len(attempt.result) == 0:
+            return False, last_score
+
+        # Check evaluation
+        if not isinstance(attempt.evaluation, Evaluation):
+            return False, last_score
+        if not 0 <= attempt.evaluation.score <= 1:
+            return False, last_score
+        if not attempt.evaluation.feedback or len(attempt.evaluation.feedback) == 0:
+            return False, last_score
+
+        # Scores should generally improve
+        if attempt.evaluation.score < last_score:
+            return False, last_score
+
+        return True, attempt.evaluation.score
 
     def validate_result(self, result: Dict[str, Any]) -> bool:
         """Validates that the evaluator pattern worked correctly"""
@@ -61,28 +95,10 @@ class EvaluatorKata(KataBase):
         # Check each attempt
         last_score = -1
         for attempt in result.data.attempts:
-            if not isinstance(attempt, OptimizationAttempt):
+            is_valid, new_score = self._validate_attempt(attempt, last_score)
+            if not is_valid:
                 return False
-            if attempt.attempt_number < 1:
-                return False
-            if not attempt.result or len(attempt.result) == 0:
-                return False
-
-            # Check evaluation
-            if not isinstance(attempt.evaluation, Evaluation):
-                return False
-            if not 0 <= attempt.evaluation.score <= 1:
-                return False
-            if not attempt.evaluation.feedback or len(attempt.evaluation.feedback) == 0:
-                return False
-            if not attempt.evaluation.suggestions:  # Empty list is ok for final attempt
-                if attempt != result.data.attempts[-1]:
-                    return False
-
-            # Scores should generally improve
-            if attempt.evaluation.score < last_score:
-                return False
-            last_score = attempt.evaluation.score
+            last_score = new_score
 
         # Check final results
         if not result.data.final_result or len(result.data.final_result) == 0:

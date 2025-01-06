@@ -1,0 +1,62 @@
+{
+  "id": "64176b4f-b7c4-4ec7-b53c-8730055a8ed3",
+  "who": [
+    {
+      "name": "Boss",
+      "phone": "+12345678901"
+    },
+    {
+      "name": "Assistant",
+      "phone": "+10987654321"
+    }
+  ],
+  "topic": "made-up-scifi-sounding-disease",
+  "messages": [
+    {
+      "id": "61d83131-53bb-4d42-acfc-a78298e7ce7b",
+      "from_": "+12345678901",
+      "to": "+10987654321",
+      "body": "Could you look up Zygoplexian Plague?",
+      "media": null,
+      "meta": null,
+      "createdAt": 1697055840,
+      "expected_handler": "search_wikipedia"
+    },
+    {
+      "id": "f8008ac8-4710-45db-bb91-260f01615d33",
+      "from_": "+10987654321",
+      "to": "+12345678901",
+      "body": "I'll search for information on Zygoplexian Plague and get back to you shortly.",
+      "media": null,
+      "meta": null,
+      "createdAt": 1697055900
+    },
+    {
+      "id": "750b1f80-1f37-4bd0-b72b-c4c7f199bfd1",
+      "from_": "+10987654321",
+      "to": "+12345678901",
+      "body": "I found out more about Zygoplexian Plague. It affects only those living on binary star systems, disrupting their circadian rhythm.",
+      "media": null,
+      "meta": null,
+      "createdAt": 1697055960
+    },
+    {
+      "id": "ff67fa6c-4660-4075-8b7c-306b77f331ec",
+      "from_": "+12345678901",
+      "to": "+10987654321",
+      "body": "Ok, go on.",
+      "media": null,
+      "meta": null,
+      "createdAt": 1697056020
+    },
+    {
+      "id": "bc87f0dc-4039-4a01-8920-aebcbc413b14",
+      "from_": "+10987654321",
+      "to": "+12345678901",
+      "body": "(to the tune of a sea shanty)\nOh the Zygoplexian Plague came down from the stars, \nWith a wave of quantum flux it left its scars, \nIn the orbit's light, 'neath twin suns so bright, \nThe crew did fight through endless night!",
+      "media": null,
+      "meta": null,
+      "createdAt": 1697056080
+    }
+  ]
+}

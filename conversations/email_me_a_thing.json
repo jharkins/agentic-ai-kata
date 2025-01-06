@@ -1,0 +1,53 @@
+{
+  "id": "52572e57-c1bc-4d6f-8f3b-432ed5d53b72",
+  "who": [
+    {
+      "name": "Boss",
+      "phone": "+18015551234"
+    },
+    {
+      "name": "Assistant",
+      "phone": "+18015554321"
+    }
+  ],
+  "topic": "monty-python-style-sms-about-report",
+  "messages": [
+    {
+      "id": "8b05aaab-6b88-48a7-81a9-9c4a96c41b57",
+      "from_": "+18015551234",
+      "to": "+18015554321",
+      "body": "Ahoy, young squire! I require the report on squanchberries, posthaste! Make sure it sails through the digital seas to my inbox!",
+      "media": null,
+      "meta": null,
+      "createdAt": 1736043501,
+      "expected_handler": "generate_and_email_report"
+    },
+    {
+      "id": "3f7ca884-43e1-41f4-b8bd-ef243004327e",
+      "from_": "+18015554321",
+      "to": "+18015551234",
+      "body": "Greetings, oh illustrious leader! To which sacred email vessel should I deliver said report? Squanchberries must be respected, after all.",
+      "media": null,
+      "meta": null,
+      "createdAt": 1736043501
+    },
+    {
+      "id": "608a85fd-3f90-45c8-86d3-05116d564894",
+      "from_": "+18015551234",
+      "to": "+18015554321",
+      "body": "Ah, indeed! Send it forth to lordofberries@fruityempire.com. And ensure it's pronto! The squanches wait for no one.",
+      "media": null,
+      "meta": null,
+      "createdAt": 1736043501
+    },
+    {
+      "id": "d4f24fe4-6b0c-45d1-a835-f9a6fa7bc039",
+      "from_": "+18015554321",
+      "to": "+18015551234",
+      "body": "Report en route to lordofberries@fruityempire.com, my liege! The squanchberries will be honoured with utmost urgency!",
+      "media": null,
+      "meta": null,
+      "createdAt": 1736043501
+    }
+  ]
+}

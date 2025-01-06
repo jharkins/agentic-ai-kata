@@ -7,10 +7,16 @@ from pydantic import BaseModel, Field
 from pydantic_ai import Agent, RunContext, capture_run_messages, UnexpectedModelBehavior
 import aiohttp
 import asyncio
+from openai import AsyncOpenAI
 
 from agentic_ai_kata.base import KataBase
-from agentic_ai_kata.settings import KataSettings
+from agentic_ai_kata.settings import settings
 from agentic_ai_kata.utils.wiki_search_agent import WikiSearchAgent
+
+
+@dataclass
+class Deps:
+    openai: AsyncOpenAI
 
 
 class ChainStep(BaseModel):
@@ -44,7 +50,9 @@ class ChainingKata(KataBase):
     """
 
     def __init__(self):
-        self.settings = KataSettings()
+        self.openai = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
+        self.deps = Deps(openai=self.openai)
+        self.agent = self._create_agent()
 
     async def _run_async(self) -> Any:
         """Async implementation of the kata run"""
@@ -73,7 +81,7 @@ class ChainingKata(KataBase):
                 )
 
         fake_planet_and_planetary_capital_agent = Agent(
-            "openai:gpt-4o",
+            settings.DEFAULT_MODEL,
             result_type=FakePlanetAndPlanetaryCapital,
             system_prompt=(
                 "You are an expert fiction writer, in the style of Rick & Morty."
@@ -121,7 +129,7 @@ class ChainingKata(KataBase):
             )
 
         outline_agent = Agent(
-            "openai:gpt-4o",
+            self.settings.DEFAULT_MODEL,
             result_type=SearchAndOutlineResult,
             deps_type=str,
             system_prompt=(
@@ -166,7 +174,7 @@ class ChainingKata(KataBase):
             outline: list[str]
 
         fake_facts_agent = Agent(
-            "openai:gpt-4o",
+            self.settings.DEFAULT_MODEL,
             result_type=MadeUpFacts,
             deps_type=FakeFactsDeps,
             retries=3,  # Increase retries to handle potential tool call issues
@@ -226,7 +234,7 @@ class ChainingKata(KataBase):
             )
 
         article_writer_agent = Agent(
-            "openai:gpt-4o",
+            self.settings.DEFAULT_MODEL,
             result_type=ArticleWriterResult,
             system_prompt=(
                 "You are an expert fiction writer, in the style of Rick & Morty."
@@ -275,7 +283,7 @@ class ChainingKata(KataBase):
             highlight: str = Field(description="A short highlight of the article.")
 
         wikipedia_formatter = Agent(
-            "openai:gpt-4o",
+            self.settings.DEFAULT_MODEL,
             result_type=WikipediaFormatterResult,
             system_prompt=(
                 "You are an expert wikipedia formatter."

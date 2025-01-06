@@ -12,6 +12,8 @@ A collection of Python katas illustrating how to build and reason about effectiv
 - [Repository Structure](#repository-structure)
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
+- [Cache Initialization](#cache-initialization)
+- [Testing and VCR](#testing-and-vcr)
 - [Usage](#usage)
 - [Katas](#katas)
 - [Contributing](#contributing)
@@ -79,6 +81,64 @@ We use [Pydantic Settings](https://docs.pydantic.dev/latest/usage/pydantic_setti
 OPENAI_API_KEY=your_openai_key_here
 ANTHROPIC_API_KEY=your_anthropic_key_here  # Optional
 ```
+
+## Cache Initialization
+
+Some katas use example conversations that are generated using LLMs. To avoid regenerating these conversations every time, we use a caching system. Initialize the conversations by running:
+
+```bash
+python -m agentic_ai_kata.utils.text_message
+```
+
+This will:
+
+1. Create a `conversations` directory in your project root
+2. Generate example conversations using the LLM
+3. Save them as JSON files for future use
+
+The generated conversations include:
+
+- Casual banter between friends
+- "New phone, who dis?" between knights
+- A Monty Python-style email request
+- A sea shanty about a made-up disease
+
+The katas will automatically use these saved conversations when needed. If a conversation isn't in the directory, it will be generated on demand.
+
+## Testing and VCR
+
+The tests use [VCR.py](https://vcrpy.readthedocs.io/) to record and replay API interactions. This:
+
+- Makes tests faster and more reliable
+- Reduces API costs during development
+- Documents expected API behavior
+- Works offline once cassettes are recorded
+
+The cassettes are stored in `tests/cassettes/` and are committed to the repository. They contain:
+
+- API request/response pairs
+- Sanitized data (API keys replaced with "DUMMY")
+- Expected model outputs
+
+### Working with Cassettes
+
+To regenerate cassettes (e.g., after changing tests or updating model behavior):
+
+```bash
+# Remove existing cassettes
+rm -rf tests/cassettes
+
+# Run tests to generate new cassettes
+poetry run pytest -v
+```
+
+When running tests:
+
+1. First run: Records real API calls to cassettes
+2. Subsequent runs: Uses recorded cassettes
+3. CI/CD: Uses committed cassettes (no API keys needed)
+
+Note: Cassettes are automatically sanitized to remove sensitive data like API keys.
 
 ## Usage
 
