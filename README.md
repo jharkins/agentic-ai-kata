@@ -79,18 +79,28 @@ In these katas, we explore each pattern using minimal but illustrative code. You
 ## Repository Structure
 
 ```plaintext
-agentic_ai_kata/
-├── __init__.py
-├── base.py           # Base classes and interfaces
-├── settings.py       # Configuration and environment settings
-├── kata_00_setup.py  # Basic setup and environment verification
-├── kata_01_augmented.py  # Augmented LLM with retrieval/tools
-├── kata_02_chaining.py   # Prompt chaining and decomposition
-├── kata_03_routing.py    # Input classification and routing
-├── kata_04_parallel.py   # Parallel processing and voting
-├── kata_05_orchestrator.py  # Orchestrator-workers pattern
-├── kata_06_evaluator.py    # Evaluator-optimizer pattern
-└── kata_07_agent.py        # Full agent pattern
+.
+├── agentic_ai_kata/           # Main package directory
+│   ├── base.py               # Base classes and interfaces
+│   ├── settings.py           # Configuration and settings
+│   ├── kata_*.py            # Individual kata implementations
+│   └── utils/               # Utility modules
+│       ├── colbert_v2.py    # ColBERT retrieval
+│       ├── routing.py       # Message routing
+│       ├── text_message.py  # Example conversations
+│       └── wiki_search_agent.py  # Wikipedia search
+├── articles/                # Generated wiki-style articles
+├── conversations/          # Cached example conversations
+│   ├── casual_banter.json
+│   ├── email_me_a_thing.json
+│   ├── new_phone_who_dis.json
+│   └── sea_shanty_lookup.json
+├── tests/                  # Test suite
+│   ├── cassettes/         # VCR.py recorded API responses
+│   └── test_kata_*.py     # Individual kata tests
+├── poetry.lock            # Poetry dependency lock file
+├── pyproject.toml         # Project configuration
+└── requirements.txt       # Direct dependencies
 ```
 
 ## Installation
