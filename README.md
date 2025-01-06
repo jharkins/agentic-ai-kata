@@ -9,13 +9,13 @@ A collection of Python katas illustrating how to build and reason about effectiv
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Katas](#katas)
 - [Repository Structure](#repository-structure)
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
 - [Cache Initialization](#cache-initialization)
 - [Testing and VCR](#testing-and-vcr)
 - [Usage](#usage)
-- [Katas](#katas)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -26,6 +26,55 @@ A collection of Python katas illustrating how to build and reason about effectiv
 "Agentic systems" can range from orchestrated **workflows** to fully autonomous **agents** that dynamically choose their own steps and tool usage. The article [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents) lays out patterns for composing LLMs effectively without unnecessary complexity.
 
 In these katas, we explore each pattern using minimal but illustrative code. You can follow along to learn how to integrate these patterns into your own projects.
+
+## Katas
+
+1. **Kata 00: Setup** ([`kata_00_setup.py`](agentic_ai_kata/kata_00_setup.py) | [test](tests/test_kata_00_setup.py))
+
+   - Basic environment setup
+   - API key verification
+   - LLM communication test
+
+2. **Kata 01: Augmented LLM** ([`kata_01_augmented.py`](agentic_ai_kata/kata_01_augmented.py) | [test](tests/test_kata_01_augmented.py))
+
+   - Integrates retrieval and tools
+   - Maintains memory across interactions
+   - Demonstrates context augmentation
+
+3. **Kata 02: Prompt Chaining** ([`kata_02_chaining.py`](agentic_ai_kata/kata_02_chaining.py) | [test](tests/test_kata_02_chaining.py))
+
+   - Decomposes tasks into steps
+   - Implements checks and gates
+   - Handles errors and retries
+
+4. **Kata 03: Routing** ([`kata_03_routing.py`](agentic_ai_kata/kata_03_routing.py) | [test](tests/test_kata_03_routing.py))
+
+   - Classifies inputs
+   - Routes to specialized handlers
+   - Manages uncertainty
+
+5. **Kata 04: Parallelization** ([`kata_04_parallel.py`](agentic_ai_kata/kata_04_parallel.py) | [test](tests/test_kata_04_parallel.py))
+
+   - Runs parallel LLM calls
+   - Implements voting mechanisms
+   - Aggregates results
+
+6. **Kata 05: Orchestrator-Workers** ([`kata_05_orchestrator.py`](agentic_ai_kata/kata_05_orchestrator.py) | [test](tests/test_kata_05_orchestrator.py))
+
+   - Delegates tasks to workers
+   - Manages dependencies
+   - Handles failures
+
+7. **Kata 06: Evaluator-Optimizer** ([`kata_06_evaluator.py`](agentic_ai_kata/kata_06_evaluator.py) | [test](tests/test_kata_06_evaluator.py))
+
+   - Evaluates LLM outputs
+   - Iteratively improves results
+   - Determines stopping conditions
+
+8. **Kata 07: Full Agent** ([`kata_07_agent.py`](agentic_ai_kata/kata_07_agent.py) | [test](tests/test_kata_07_agent.py))
+   - Implements autonomous behavior
+   - Uses tools effectively
+   - Maintains goal-directed behavior
 
 ## Repository Structure
 
@@ -171,55 +220,6 @@ poetry run pytest -v -s
 # Run specific kata tests
 poetry run pytest -v -k "test_kata_01"
 ```
-
-## Katas
-
-1. **Kata 00: Setup** ([`kata_00_setup.py`](agentic_ai_kata/kata_00_setup.py) | [test](tests/test_kata_00_setup.py))
-
-   - Basic environment setup
-   - API key verification
-   - LLM communication test
-
-2. **Kata 01: Augmented LLM** ([`kata_01_augmented.py`](agentic_ai_kata/kata_01_augmented.py) | [test](tests/test_kata_01_augmented.py))
-
-   - Integrates retrieval and tools
-   - Maintains memory across interactions
-   - Demonstrates context augmentation
-
-3. **Kata 02: Prompt Chaining** ([`kata_02_chaining.py`](agentic_ai_kata/kata_02_chaining.py) | [test](tests/test_kata_02_chaining.py))
-
-   - Decomposes tasks into steps
-   - Implements checks and gates
-   - Handles errors and retries
-
-4. **Kata 03: Routing** ([`kata_03_routing.py`](agentic_ai_kata/kata_03_routing.py) | [test](tests/test_kata_03_routing.py))
-
-   - Classifies inputs
-   - Routes to specialized handlers
-   - Manages uncertainty
-
-5. **Kata 04: Parallelization** ([`kata_04_parallel.py`](agentic_ai_kata/kata_04_parallel.py) | [test](tests/test_kata_04_parallel.py))
-
-   - Runs parallel LLM calls
-   - Implements voting mechanisms
-   - Aggregates results
-
-6. **Kata 05: Orchestrator-Workers** ([`kata_05_orchestrator.py`](agentic_ai_kata/kata_05_orchestrator.py) | [test](tests/test_kata_05_orchestrator.py))
-
-   - Delegates tasks to workers
-   - Manages dependencies
-   - Handles failures
-
-7. **Kata 06: Evaluator-Optimizer** ([`kata_06_evaluator.py`](agentic_ai_kata/kata_06_evaluator.py) | [test](tests/test_kata_06_evaluator.py))
-
-   - Evaluates LLM outputs
-   - Iteratively improves results
-   - Determines stopping conditions
-
-8. **Kata 07: Full Agent** ([`kata_07_agent.py`](agentic_ai_kata/kata_07_agent.py) | [test](tests/test_kata_07_agent.py))
-   - Implements autonomous behavior
-   - Uses tools effectively
-   - Maintains goal-directed behavior
 
 ## Contributing
 
