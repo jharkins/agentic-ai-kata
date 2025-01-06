@@ -1,13 +1,11 @@
 import pytest
 from agentic_ai_kata.kata_01_augmented import AugmentedKata, AugmentedResult
+from agentic_ai_kata.settings import settings
 
 
 def test_augmented_kata_initialization():
-    # Given: A new kata instance
-    kata = AugmentedKata()
-
     # Then: It should have a valid API key
-    assert kata.settings.OPENAI_API_KEY is not None
+    assert settings.OPENAI_API_KEY is not None
 
 
 @pytest.mark.vcr()

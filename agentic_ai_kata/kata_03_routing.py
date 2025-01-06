@@ -140,7 +140,13 @@ class RoutingKata(KataBase):
             )
 
             message = c.messages[0]
-            classification_result = await classify_text_message(message, mock_tools)
+
+            # Create a copy of the message without expected_handler before classification
+            message_for_classification = message.model_copy()
+            message_for_classification.expected_handler = None
+            classification_result = await classify_text_message(
+                message_for_classification, mock_tools
+            )
 
             # Create a proper Route from the classification
             route = Route(

@@ -1,0 +1,2897 @@
+interactions:
+- request:
+    body: !!binary |
+      H4sIAG10e2cC/81Uz28bRRSOQ5ualzZpxpS60KLtpiGJlWx3beNfIoKABOpWVfgDkFbj2bG99Xp2
+      2RkXjLVFCDhxAP4ApEhw5YQAISQUJIoEQogLICSQuCF6B/WEmF3vujWJ1RwqwR5Wb968980373tv
+      4P0l2J2FOuQ4Da45hGoO4wKzyLCRCopRM3SD1FqlYrNUrmK7Vi5VqiVdxxUDV3GTgAoPCurSHhXB
+      QON2V3Mxa/dxm6IszPkD0fEYrACajGG4R9EinPB8ysY7cB5OTYZdowF3PBYhGVqxruky5HhKNMZY
+      gsU+6zLvRWYlfsjBvB94hHKu+fIOR/IffJaBLVhM81LQAqzV9ArVW7RISLVMMa7VWkXSbJb0arlu
+      Y1qt0kqlqVOjjP5egFMSdmBjJhyyiR00V9QMQzPQV8fg5E/P/PGD8tpf/bc+XO5/El7/BWULV55b
+      O5u7/oWa/Xb15uu/7q0vFi4MZU2YsCLaoRL0mTKUNHu+2AqVNVkG22HtdT1Tv7n75Xt7R/P57dQw
+      K3CCeDbVWo5LfSw6aAWWYyyHWNixuljgi9HP0osW6WCHSSTNH5iFNK/PiIhufAZOP53sX5bxmiVZ
+      WJgPGDGXYD6OdR1GmYdm88+bOSlfTBDdD8d2uhtK2ztvvpmBo/HZ6NUMvDJUezLJVRuJEV9Obaht
+      X2yWPTXcUBNHC3ep5cvOoMLCzE5MHAwsgn1HYNeKQdUNVRbC4iLAgrYHMpHiwB1I9wieUyEkea42
+      WN91Q/McwO1z037CTmN0vlkFuF1ztA6rh6RhluEB12u3nIBqPd62BO3JSEHRWXhouormZZi/Iws9
+      Do1DnhfjJDBpod+ehVyKdpV7sr1Jh/YwupWBPzNDVQz8qK5e8yolUdlktk8D4VAeiTHCkpZUYFTY
+      xv4U4Qg3cmwnlX9pczStm7bsjSQ4MomLOd93xFj4abA7UortS1fisLuBh2G4MdFBY+LjdRiay7CU
+      VoT7mFkRDFqA48nwWJHTvAhn0qDU7+MgQpJvAYKT+r++l2feyMxkZmbQd/cdNMjv7PU/X/jtqd07
+      BnnFD+QYBhJZiSkrUllFeJ7LlWE0UFxQfyuUk1wrfD+a5E87P/6nk7wA2ZSYXGfMJ6a09yoc7m7m
+      Y5Od/ihcmJ43TjPMZw9uaR20uzV0CpJ0wsMHdcIcHIkWY0G/OVDQW1T/6GN1Nq9mz/3+7tdPdm7s
+      FE6PKAf0hT7lYuIx7l76eSRhavxfJFydIqF8AyduYz4yKdW+/XumyT2ZTkKKVYprZdsmerGut1Ix
+      /wHUIB8+pwgAAA==
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '979'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f50cfe5f7bf-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:02 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=WMqr4HA5oXgL1xQXOHllqbWqfHgJRr59FaApk2cYbktdgkshxRxo3F%2F6%2BFI1fAqNb8WNa15%2F%2BKcY6bsi8wF6%2B3dGrmWKC9W%2BjVdljJRGnQKn5GLcA8nmeiR3OGHNBAL45xkG85nqS0jfow%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=20103&min_rtt=20009&rtt_var=5791&sent=5&recv=8&lost=0&retrans=0&sent_bytes=2840&recv_bytes=1921&delivery_rate=201028&cwnd=249&unsent_bytes=0&cid=6198131c165b43d6&ts=255&x=0"
+      traceparent:
+      - 00-b2ef88ed0bf2542a779b03d7125a889d-efd4f1671efaf5fc-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are an expert fiction writer,
+      in the style of Rick & Morty.Your task is to generate a fake solar system, planet,
+      and planetary capital."},{"role":"user","content":"Ok, go!"}],"model":"gpt-4o","n":1,"parallel_tool_calls":true,"stream":false,"tool_choice":"required","tools":[{"type":"function","function":{"name":"final_result","description":"The
+      final response which ends this conversation","parameters":{"properties":{"solar_system":{"description":"The
+      name of the solar system","title":"Solar System","type":"string"},"planet":{"description":"The
+      name of the planet","title":"Planet","type":"string"},"planetary_capital":{"description":"The
+      name of the planetary capital","title":"Planetary Capital","type":"string"},"full_title_of_planetary_capital":{"description":"The
+      full title of the planetary capital, including all the embellishments and titles
+      given to it.","title":"Full Title Of Planetary Capital","type":"string"}},"required":["solar_system","planet","planetary_capital","full_title_of_planetary_capital"],"title":"FakePlanetAndPlanetaryCapital","type":"object"}}}]}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '1124'
+      content-type:
+      - application/json
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmaeDy6vJB7TAmW6fqaVTCqkuaw1T\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736143981,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_lEKXWkIF6qkkE2bFcnIA4iXe\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"final_result\",\n
+        \             \"arguments\": \"{\\\"solar_system\\\":\\\"Zelquar Glimpse\\\",\\\"planet\\\":\\\"Flarmzog-5\\\",\\\"planetary_capital\\\":\\\"Blortzville\\\",\\\"full_title_of_planetary_capital\\\":\\\"Blortzville,
+        the Eminent Sprawl of Enigma and Hub of Cosmic Curiosities\\\"}\"\n            }\n
+        \         }\n        ],\n        \"refusal\": null\n      },\n      \"logprobs\":
+        null,\n      \"finish_reason\": \"tool_calls\"\n    }\n  ],\n  \"usage\":
+        {\n    \"prompt_tokens\": 172,\n    \"completion_tokens\": 70,\n    \"total_tokens\":
+        242,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 0,\n      \"audio_tokens\":
+        0\n    },\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\":
+        0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n
+        \     \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f4e4b035309-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:13:03 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=OZE0sSPm7Aq.UANSne4S18Iqb81SqS0oFOkPJALDzXE-1736143983-1.0.1.1-cUxKyR1EYTnj19RWFfybIPFKvB3bn93YT.0jyoUo6WZHKUv4BnohWb7eVp3LyQBD_oDUtl6gJHdhsbf3keUq3w;
+        path=/; expires=Mon, 06-Jan-25 06:43:03 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=v4h2HXQwv7ItXSRke.bTJFDLJ74Hsh1XOo3DErVmTw0-1736143983081-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '1220'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '1179'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '29945'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 110ms
+      x-request-id:
+      - req_1f140376dee2c32a28bddd23de6ec3bc
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      H4sIAG50e2cC/+1XTYwURRRmWGCxAJFGYP3BFE0QWWeGntlhZncjxnXD6g4hbAADyG46tT01s8X0
+      VDfd1cCwGQkRD8aD8WA0JiQQSTgZTYwh8SfhoCYkknjAEI16NXLRxMSzr6qnZ2dgdnZXETGBw9JT
+      9d6reu9973uv0KU4Or8YDaC1PvWOM4smGfcF4fKjoOkIp/pTRsrqL/alJ/syOVLoz/Rlc32GQbIp
+      kiOTFtLRekFtWqHCqyb9QjlpE14KSIlqy9EytyqmHI62IK1VhpMK1VajVY5LeWMHbULrWsWOU89n
+      DpeWUsn0QNIAkZXRRZWNNWh1wMvcOcHN+jpai1a4nmNR30+64MOSng8+i6GdaHWkFxntRU/1G1lq
+      FGnasnIZSkh/fzFtTU72GbnMQIHQXI5ms5MGTWW0M71oHZitFggXzEoQpi1LJ1OpZEq7vAI9dGPk
+      1+/wq38Gb368Obhce+VHbfnGX85dfW7qq7368m+23jz705Vtq3tXVZwCtbFHjwXUF0ZsoDz6/ftX
+      lvb0DH3x+tE/5Ec+i1ZZIJQsMpu6RExpW9BmCKQ80iTMLBNBtss/ppE2rSnCOOOlpFvN90Z6AbeE
+      dO0RtGG4vr8b5JOmF3CT+FVu5degFUrWZpxyR1vcM55/EC2X+76gLvyO5beih22nVGQeTVb8kilo
+      xbWJUPlq8SH/BFrRJHj7/mNoTbTvu4SboupSbRlaIn/kL3XBsdR3He5T7b0u9E7XtO4ST/j64JFp
+      XTiObcoM64N6kXFimyAb2EKP68Qrgcy0+t886jscRKbHdd+xiWf6VXCjMq4PjusvU/tYQDz8gs0q
+      rk/H9fi4Do5wKtT2CIhXTjmlxI6mHeJVTYu4TBBbCT1vO544dZzZdqhfDGzbFEzY1HSK5pw6cSym
+      KN5VkbEWeL/rkRM2dop4F2elCsGEF/CLwaRcGXb8CrPwcOAxx2eCUX9cr+m1eBgIi8CxrACOqi97
+      1+5DB8ujI9lj5fKu9OSIxUeHMuwQheDICJplxqWsVE1IBb02AYZYBXJCKi7spI30joSRShjZA0Z2
+      MNU3aKSeNoxBwwALdeUoNXot/0MMLQ18WdHfxtC12LRezy9kwYhHP0zhlCmHpVQuHW9oN1ZzhnQF
+      QtRYSWdArgDhY3aYTsuirqAF0/VogSkcN2RBmQQF5jQveJRA7gHhrYtHqTW7EYtYU7DZWKnV8r91
+      obURSCWYTB9EKkS70YWuAyIlZCEazqS0K+PrAWV5Mj/yzlHZwHdtxmm5c6uewgws7JEFsi8SjOsn
+      EyFFJgpQp3Ul+WnZxPdvO69eHw3zxPNIFaQYYN7vdOwBgMIwIGEMDCz41KjgZjM+BPt5WYdzGa7B
+      vxYgNmz6woNMgoGi41WICLVoQorqSknhr9MlXlIC87jBqUWvxRbFFi3Sfl/ajrkPfti9ZuLns+ub
+      mHvdFBSqTXFEbmHygMEPU1cR99C5a6fvKQbfPguDb0DtfenM1NdjaFnIvtrVGPoaCKCZayG+tzCt
+      BJBiRtiaYdnGahNfgkATW8r0d+bXVvl/wq5Aa9nW7rUVbWkbG5x4FqsOhMMY5D+KtWeMd2Po7diC
+      GUP2tA6wHiFlOqbCMMQLY1E8huvhaA/3sfqYorimBfKf9rSDfAPoj04rrKq+W8NwVTwNt6+4YmcN
+      0H7z/JfhvLL4rTP/KdrXwlyprqU9gLr3luO45GzKvwFNSp2tnYmh09O6SqKMrPqIRomSKxIZR/bV
+      aLaA+NZxZkL2b4ecqYxCpCnsAk1BGZWqoEiJZ0vqDc37VAi4PKSYA4Jr+Y0IzZwbDbqEDYbn53MI
+      zURa24a2zvMa+cwshf046pC7/O5WpD+DBud5nrJTNxMFuiNVfNKNVsoJBRhe8rGvXexGF7qPNE92
+      lgMTP5fccNgJMPEoFCqmJ2WNQJ0pPOATHnQ0L44ZVyXuiyqUJdTxPmaV8ZN4D1BANQnqHhbEL2Pm
+      Y+FguDCV6cEES/ewIikcklQchx7GFSs0vMV1b5O3TE6hUiL0HNDSfOt6HPQ5Jyp4sKT6+nKNwar5
+      gAAeIw3zE01Dl5ql1In3Z+F7cBaeb15m4DLS1Dpw/V1KCxJwC/Sm853TyWw6N7DDaIs25bxHReDx
+      tmib6DTip/73I/7nqH3DvojQBTRXw64XqWrXYSvoNAnXe8XC5utGq5rN7F5oHkOjYTufx4Qbb+l5
+      jYs3/26i6DbPCYhskZ0cDR8VR+Z8zIQoulNvmfkevl+x25hKz7yeNbJ4Z389UG8Bpm715W88aSZk
+      ou6/E+/wO/EuY3Ve8dyniPdu4UpB6994L/8Fn9ZoYCoWAAA=
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1745'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f571ed17c67-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:03 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=MlotkdkhXiIVy6vziNNR6JNDJK3waSpGblbZpG2CwqORfjHJVZJ5maHqSOUrIA8aWZQiZ%2BT3EhahVJhxNRkF%2BVC1i0S9p1xpQK35LANM6YQVqV8NZmRNloj8rsIgFhO21%2FyLOFaz1yweZQ%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=19970&min_rtt=19800&rtt_var=5718&sent=5&recv=9&lost=0&retrans=0&sent_bytes=2839&recv_bytes=2688&delivery_rate=207178&cwnd=233&unsent_bytes=0&cid=dc32a1bea942e1fb&ts=238&x=0"
+      traceparent:
+      - 00-0f02b8ff9a4fb625375c67b2e8a584ec-097342d718efa535-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a helpful assistant that
+      uses tools to augment your knowledge. Always use the search_wikipedia tool to
+      verify facts before answering. Be concise and reply with one or two sentences
+      at most."},{"role":"user","content":"Tell me about the city of Blortzville on
+      the planet Flarmzog-5 in the solar system Zelquar Glimpse."}],"model":"gpt-4o","n":1,"parallel_tool_calls":true,"stream":false,"tool_choice":"required","tools":[{"type":"function","function":{"name":"search_wikipedia","description":"Retrieve
+      wikipedia sections based on a search query.","parameters":{"properties":{"query":{"description":"The
+      search query.","title":"Query","type":"string"}},"required":["query"],"type":"object","additionalProperties":false}}},{"type":"function","function":{"name":"final_result","description":"A
+      question, with context, and an answer","parameters":{"properties":{"question":{"description":"The
+      question.","title":"Question","type":"string"},"answer":{"description":"A concise,
+      one sentence answer to the question.","title":"Answer","type":"string"},"context":{"description":"A
+      list of context used for the answer.","items":{"type":"string"},"title":"Context","type":"array"}},"required":["question","answer","context"],"title":"QuestionAnswerWithContext","type":"object"}}}]}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '1318'
+      content-type:
+      - application/json
+      cookie:
+      - __cf_bm=OZE0sSPm7Aq.UANSne4S18Iqb81SqS0oFOkPJALDzXE-1736143983-1.0.1.1-cUxKyR1EYTnj19RWFfybIPFKvB3bn93YT.0jyoUo6WZHKUv4BnohWb7eVp3LyQBD_oDUtl6gJHdhsbf3keUq3w;
+        _cfuvid=v4h2HXQwv7ItXSRke.bTJFDLJ74Hsh1XOo3DErVmTw0-1736143983081-0.0.1.1-604800000
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmaeFyVjbnCJxjFP9JULSlDcV4ppd\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736143983,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_qpNpKGQpJ3wOQPwfWdBv57No\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"search_wikipedia\",\n
+        \             \"arguments\": \"{\\\"query\\\":\\\"Blortzville Flarmzog-5 Zelquar
+        Glimpse\\\"}\"\n            }\n          }\n        ],\n        \"refusal\":
+        null\n      },\n      \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n
+        \   }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 192,\n    \"completion_tokens\":
+        30,\n    \"total_tokens\": 222,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\":
+        0,\n      \"audio_tokens\": 0\n    },\n    \"completion_tokens_details\":
+        {\n      \"reasoning_tokens\": 0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\":
+        0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f56b9c05309-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:13:03 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '1064'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '656'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '29791'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 416ms
+      x-request-id:
+      - req_663b8f4bed592abb015afd7266950698
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      H4sIAG90e2cC/81UTYgcRRTeWZN1eLvZzfZkzRqNtO0mWdeZ3u757V1YZD0YbJFAFAPBMNR018xU
+      trq601UzcXbog2ggKEE9edW7EfSaoF48eAgkBxXvEjwInhRBBKt7pieZZId4CGqfql597/X33vfe
+      gz8X4eNp2IAcx2GXOFgnjAvE4oOraKCalmmYjtUsFRulcg25VrlUrZUMA1VNVEMNBzR4TGCKPSzC
+      ns7dHZ0i1uqgFlayMBP0RNtncAyUcQxDHlYW4IAfYDZ6gadhaRzWxSEnPosjmXpxQzckZC4lmsRY
+      hIUO22H+RVYf2iEHs0HoO5hzPZA57Fu+ei0DW7CQ+qVB12DVMqrYaOKi49TKGCHLahadRqNk1Mob
+      LsK1Gq5WGwY2y8p3C7Akw/ZcxARxCogoM0XdNHVT+SgLBz//5fbta99U6+KHue5fv372oZI9srL+
+      7Vs3r76sZXNXGm+vnj7zztpKX9aEiXpMO1LDDlP7kqYXiK1IXZVlcAlrPWtkNl4/uvL71/uXl7fT
+      g70FBxzfxXqTUBwg0VbysJbEIk4dkfoOEmi9Iwjl6xfJDpF1QKHTricIPejZx1P3DnNEnPgS5M5I
+      4KsJbjuBSTr2IswmOEoYZr4yvXza9qWCCUcFg/MaplT1sIoafkeooo1Vh4ie6jfVF6gfit0uoRSr
+      PkueAtkFWKgvUhR6u36rUFHJ4IH70qTyHhfYU89ieqEjrycp8QKOdRvD/oS38gac7WuepEO1zeEh
+      qZy2qbUCUSj7WpTXBgbWoTSvyQLWuQiRwK2eBMncaE/LDz05FkKWlw/AkX0U4E7ItA8R2RyEtpcA
+      7milPDrkZJfhEPVbTRJi3eOtukxAZimw8iQcmaytfSkDs3e5KV0QCTiBDVH/Rmk/mIZcyuM89+W8
+      OG3sIeWPDPyW6WuiF8TF9RvnsSNk4SSzAIeCYB4LMOApT7LqCfvYeK+LIILGhqSl5P3NwmD8C67s
+      0CE4PjoUcX7fL0ZiTwp7Smq0/dIrCexBwaMoyo91zYj46B5F9jOwmFaEB4jV4zDKPMwNp7EeG+11
+      eDwFpfYAhXEkuVwUOGjc8+1OXcpMZaamlFuP7LUZvvjx+qEvr3x66q7NcCwI5VyHMrKaUFYRc1Xh
+      +5Srfdkksq1xsBXJ1dCq5ger4b13K//1apiHbMpN3jP28xOG4wT8s/TsyviYHIeVyX4jN9M+uXdX
+      G6A/qKfTIMNmeGKvZpiBffFlpOmNPTU9d2v3k/nL17/Xsujn979qX/7p8NrhAeUQX+hgLsYW/Lnn
+      rIGK6eF/pOKJCSrKFTmWkP3UuFr3vT80WR7KjJoly60WrVLRqhQrNauc6vk3MhwKk/4IAAA=
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1022'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f5a1cadcb7a-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:03 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=CI8bp3EW4fxsxXTUuIA%2B9nweStNhMLFIMWXnHdXU1ua6oAuC8RvIMrAE8d8rmAhbWdMpEIE39HaULpBCWQ4Y41nJozElErR2B%2FZ3pYUzQUujG2mtWJXeBtNPzDQEPW9x%2B4SrBgmBmoQgnQ%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=14962&min_rtt=14776&rtt_var=4320&sent=5&recv=8&lost=0&retrans=0&sent_bytes=2839&recv_bytes=1965&delivery_rate=277616&cwnd=223&unsent_bytes=0&cid=fa753226ec57705a&ts=231&x=0"
+      traceparent:
+      - 00-18e87fd038f61b0a13e06a5ea5859f35-496ffaab6a2f83d7-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: http://20.102.90.50:2017/wiki17_abstracts?query=Blortzville+Flarmzog-5+Zelquar+Glimpse&k=3
+  response:
+    body:
+      string: "{\"topk\":[{\"text\":\"Blo\xDFe Zelle | The Blo\xDFe Zelle is, at ,
+        the highest elevation on the Hils and in the Alfeld Uplands (\\\"Ith-Hils
+        Upland\\\"). It lies on the boundary of the districts of Holzminden and Hildesheim,
+        a good 4 kilometres northeast of Eschershausen.\",\"pid\":4351255,\"rank\":1,\"score\":13.80843448638916,\"prob\":0.3529239660386173,\"long_text\":\"Blo\xDFe
+        Zelle | The Blo\xDFe Zelle is, at , the highest elevation on the Hils and
+        in the Alfeld Uplands (\\\"Ith-Hils Upland\\\"). It lies on the boundary of
+        the districts of Holzminden and Hildesheim, a good 4 kilometres northeast
+        of Eschershausen.\"},{\"text\":\"Konrad Bleuler | Konrad Bleuler (] ; 23 September
+        1912, Herzogenbuchsee \u2013 1 January 1992, K\xF6nigswinter) was a Swiss
+        physicist who worked in the field of theoretical particle physics and quantum
+        field theory. He is known for his work on the quantisation of the photon,
+        the Gupta\u2013Bleuler formalism.\",\"pid\":4885686,\"rank\":2,\"score\":13.769338607788086,\"prob\":0.3393923325903075,\"long_text\":\"Konrad
+        Bleuler | Konrad Bleuler (] ; 23 September 1912, Herzogenbuchsee \u2013 1
+        January 1992, K\xF6nigswinter) was a Swiss physicist who worked in the field
+        of theoretical particle physics and quantum field theory. He is known for
+        his work on the quantisation of the photon, the Gupta\u2013Bleuler formalism.\"},{\"text\":\"Guntzviller
+        | Guntzviller (German: \\\"Gunzweiler\\\" ) is a commune in the Moselle department
+        in Grand Est in north-eastern France.\",\"pid\":3722042,\"rank\":3,\"score\":13.67125415802002,\"prob\":0.30768370137107526,\"long_text\":\"Guntzviller
+        | Guntzviller (German: \\\"Gunzweiler\\\" ) is a commune in the Moselle department
+        in Grand Est in north-eastern France.\"}],\"latency\":110.55397987365723}"
+    headers:
+      content-length:
+      - '1689'
+      content-type:
+      - application/json
+      date:
+      - Mon, 06 Jan 2025 06:13:03 GMT
+      server:
+      - uvicorn
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      H4sIAG90e2cC/81VTWgcZRjO5q/Ll6RtJkmbqth1qiZudyfzs/8aMBWMjFjbWAmYhOHbmW93Jzs7
+      M5n5NulmWRBaQSgi3jyJN0FQ9OCpB+uhB4VCD2LFs60elJ70oFV8v8nO2k02rQVBc8k37/u8z/v/
+      Lro2id7vR3k04RNv09SJYNo+xTZ7GByPYlJOEiU9V1LkopLKYiOXUjJZRRRxRsJZXNQRj45QYpEa
+      oV5D8I2qYGG7XMdlwkXRsNugFcdGTyCuG2PjGuEOoTHHJXZHgx5DU92wTeL5pmMzJkmQ84IIkNEw
+      0IBjHB2q21Xb2bK1thxNoBHXc3Ti+4ILOQxOf3Q5gubRodAuJI2j2ZyYIWKJyLqeTRGMc7mSrBeL
+      iphN5Q1MslmSyRRFIqW4Dzg0BbQNA9vU1JPY5IZlQZIEiXsPocOf/nTr1uWrGY3eGN384/bH73BR
+      /OPbn1fe/P4oH514q3hhdmn5Ynys5hjEinlko058Kkbyaydzv14Zmp5eeOYX58QX8FDn0ZgOIKFk
+      WsTFtMIlUBwKyVxq2NSqmOK5OjUtf27LrJqQMPb0ihYgBLehPhma122dsgyn0MQyAF8JcAsBzKvb
+      6jgaCXCWaRPb4fqnl9SDKAoazafEhe+IOoMmLadcMj0i1PyyRknNtTANWtaVhvooGrkLuFf/MBoP
+      9b6LbY02XMINo0H2oV7qB7fEdx3bJ9yfEfR7pMm72KM+X1hp8tRxLI01mS/w7VRZ2i4xTMwneOyV
+      AdcM/mvrvmMDrLnKg1uvscoXVvlTluPR7U3TskjseQt7tW2nnEzHXiPWRh17sUXLrLk+WeVbfCux
+      40zHlqWZBhAFrw33tPvi4llXVbZePntmq7RsnNpMZ0874JxFqVVNm2GZaZIZ8K01IDJrkDeuuaCR
+      RTmdFKWkmDknZgqSUhCVk6JYEEVgaBuH6fMt9bsIGqr7bHGuR9A1KEW7hpClmAg/NOpUiQ0iKS8n
+      OtYdqSKyVCi2OhJZBpxBKIaxCcql68SlxNBcDwoZzEkHC8a4bpjO3QKPYKitaZe7hetE359Ex3oF
+      lB1Jq6XeHkAT4SCwZmk+QGqYuzGAvh6AXsNYQDWcIuNl9fXgMnjUJEHM4WjCu/V30kyz246a1GKC
+      l9gQLoXABH8+uXOJkgbsUNuIPXUL+/4ef+0Z7NBjz8MNQJmwB/693J6DUXgOJuEMEDyw13Cg9yNf
+      AL3K5vx+xC346xrEDqdPPegkEJQcr4bpjhVJMigfGAXzd68gXg0A/yCC7b43In2Rvj7u5kCvA3ld
+      /u3Zqy8sf8ZHm3d+uHlH+nIyfryCbQN2NTwgO82LzcJPhAFRPwUns7XuB5dyIXz8j07m3D4n8yia
+      6pkY+O46nfviFntvjoiEB9kb2METvW7xQTTaLrAW3OQ5dCwEhXJYB6gDHEaOQ4clJWdk5Jwi59Jy
+      OptLdfp8cbBXnz955EBs+8qBb/noh+ePvf7NV5d+jj8EYbGDEmuyy+nPt7pa/O78hZ0Wh4//sMXH
+      0VAQIncETa7s/Q1aU+P79BzqtDtJVelu9+OIDyE7iJWZ3Q5m1tSl3r1/GuXv1/uAdM8N+9fGIFss
+      6SRL0iVdkfS81BmDvwBb3EVAUAoAAA==
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1219'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f5d49aadb62-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:04 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=OhgNKvPN5glKmLKZQFPzilpevb4n6H7C3gON2nz4COqLzcSkHqtoj2v8yt7HS9KXtvYDVBnr4ymeZ6tDK6FnjdyleywqujuLU0P0U1KePnZdICzV8kjVZpAoG3E8FoClzn7%2BdvEzrVxEjg%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=15054&min_rtt=15021&rtt_var=4283&sent=5&recv=8&lost=0&retrans=0&sent_bytes=2839&recv_bytes=2162&delivery_rate=270551&cwnd=243&unsent_bytes=0&cid=81fcdca99baba760&ts=240&x=0"
+      traceparent:
+      - 00-5a57b92531f326719606f879ce590cea-5027989633898df2-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      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
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1516'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f606c4bd7a4-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:04 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=vSo2dqKl8F4HfYpBnOS5iYLCmim0HqnU1R7zp4P0JbWt8GYm7hx1PS0lX91UCn2WbuBiBSOy45ONuzs2fYcnEkrQh6SsKhNuy8zZIu7yL7HM98oigHAlVicn6JdIhlPyUmyG%2BYzlVWRIfA%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=18913&min_rtt=18714&rtt_var=5439&sent=6&recv=9&lost=0&retrans=0&sent_bytes=2838&recv_bytes=2459&delivery_rate=219207&cwnd=248&unsent_bytes=0&cid=40c8d26078f467e8&ts=226&x=0"
+      traceparent:
+      - 00-b3a281304c61bc5b97ca982debbb9897-cbddf44d6fe94f2c-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "{\"messages\":[{\"role\":\"system\",\"content\":\"You are a helpful assistant
+      that uses tools to augment your knowledge. Always use the search_wikipedia tool
+      to verify facts before answering. Be concise and reply with one or two sentences
+      at most.\"},{\"role\":\"user\",\"content\":\"Tell me about the city of Blortzville
+      on the planet Flarmzog-5 in the solar system Zelquar Glimpse.\"},{\"role\":\"assistant\",\"tool_calls\":[{\"id\":\"call_qpNpKGQpJ3wOQPwfWdBv57No\",\"type\":\"function\",\"function\":{\"name\":\"search_wikipedia\",\"arguments\":\"{\\\"query\\\":\\\"Blortzville
+      Flarmzog-5 Zelquar Glimpse\\\"}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"call_qpNpKGQpJ3wOQPwfWdBv57No\",\"content\":\"Blo\xDFe
+      Zelle | The Blo\xDFe Zelle is, at , the highest elevation on the Hils and in
+      the Alfeld Uplands (\\\"Ith-Hils Upland\\\"). It lies on the boundary of the
+      districts of Holzminden and Hildesheim, a good 4 kilometres northeast of Eschershausen.\\nKonrad
+      Bleuler | Konrad Bleuler (] ; 23 September 1912, Herzogenbuchsee \u2013 1 January
+      1992, K\xF6nigswinter) was a Swiss physicist who worked in the field of theoretical
+      particle physics and quantum field theory. He is known for his work on the quantisation
+      of the photon, the Gupta\u2013Bleuler formalism.\\nGuntzviller | Guntzviller
+      (German: \\\"Gunzweiler\\\" ) is a commune in the Moselle department in Grand
+      Est in north-eastern France.\"}],\"model\":\"gpt-4o\",\"n\":1,\"parallel_tool_calls\":true,\"stream\":false,\"tool_choice\":\"required\",\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"search_wikipedia\",\"description\":\"Retrieve
+      wikipedia sections based on a search query.\",\"parameters\":{\"properties\":{\"query\":{\"description\":\"The
+      search query.\",\"title\":\"Query\",\"type\":\"string\"}},\"required\":[\"query\"],\"type\":\"object\",\"additionalProperties\":false}}},{\"type\":\"function\",\"function\":{\"name\":\"final_result\",\"description\":\"A
+      question, with context, and an answer\",\"parameters\":{\"properties\":{\"question\":{\"description\":\"The
+      question.\",\"title\":\"Question\",\"type\":\"string\"},\"answer\":{\"description\":\"A
+      concise, one sentence answer to the question.\",\"title\":\"Answer\",\"type\":\"string\"},\"context\":{\"description\":\"A
+      list of context used for the answer.\",\"items\":{\"type\":\"string\"},\"title\":\"Context\",\"type\":\"array\"}},\"required\":[\"question\",\"answer\",\"context\"],\"title\":\"QuestionAnswerWithContext\",\"type\":\"object\"}}}]}"
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '2270'
+      content-type:
+      - application/json
+      cookie:
+      - __cf_bm=OZE0sSPm7Aq.UANSne4S18Iqb81SqS0oFOkPJALDzXE-1736143983-1.0.1.1-cUxKyR1EYTnj19RWFfybIPFKvB3bn93YT.0jyoUo6WZHKUv4BnohWb7eVp3LyQBD_oDUtl6gJHdhsbf3keUq3w;
+        _cfuvid=v4h2HXQwv7ItXSRke.bTJFDLJ74Hsh1XOo3DErVmTw0-1736143983081-0.0.1.1-604800000
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmaeGPGuKB80KDXxrcsFYXECVEBsx\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736143984,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_Rj8k7knDHlGygcbP3mdM9PWe\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"final_result\",\n
+        \             \"arguments\": \"{\\\"question\\\":\\\"Tell me about the city
+        of Blortzville on the planet Flarmzog-5 in the solar system Zelquar Glimpse.\\\",\\\"answer\\\":\\\"There
+        is no information available on the city of Blortzville on the planet Flarmzog-5
+        in the solar system Zelquar Glimpse.\\\",\\\"context\\\":[]}\"\n            }\n
+        \         }\n        ],\n        \"refusal\": null\n      },\n      \"logprobs\":
+        null,\n      \"finish_reason\": \"tool_calls\"\n    }\n  ],\n  \"usage\":
+        {\n    \"prompt_tokens\": 409,\n    \"completion_tokens\": 79,\n    \"total_tokens\":
+        488,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 0,\n      \"audio_tokens\":
+        0\n    },\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\":
+        0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n
+        \     \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f5d1eb15309-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:13:05 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '1277'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '1536'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '29738'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 524ms
+      x-request-id:
+      - req_f5c4925c2b522e40ac67c6592c12694a
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      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
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2662'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f69cf182b88-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:06 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=yP6f7Gpu2%2FinRbbVLDTeYGkD4aMGK%2BGBKUPs5WNoPpHXRuT9JcHFMlIEQTVXTJTbG9xQ7xCyt%2FtsuURRGxC6NMSPqu7lznj4EPRGVCTaqsxCZRntAEEPcB6WDU%2BgyWvLiraCyjXDPuUclg%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=19997&min_rtt=19954&rtt_var=5687&sent=5&recv=9&lost=0&retrans=0&sent_bytes=2839&recv_bytes=3605&delivery_rate=203743&cwnd=236&unsent_bytes=0&cid=a564b867bd8a7794&ts=241&x=0"
+      traceparent:
+      - 00-319e772da1fca57ac549bdae4fffca20-e12c4a39cd9f6e17-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are an expert fiction writer,
+      in the style of Rick & Morty.You write outlines for wikipedia articles about
+      made up citiies."},{"role":"system","content":"You are given an initial question."},{"role":"system","content":"You
+      are given a wikipedia search result for a city."},{"role":"system","content":"You
+      determine if the city is real or not."},{"role":"system","content":"If it''s
+      real, you set is_real_city to a funny message.If it''s not a real city, write
+      a fictional wikipedia style city outline."},{"role":"system","content":"The
+      wikipedia search result was: <QuestionAnswerWithContext question=\"Tell me about
+      the city of Blortzville on the planet Flarmzog-5 in the solar system Zelquar
+      Glimpse.\" answer=\"There is no information available on the city of Blortzville
+      on the planet Flarmzog-5 in the solar system Zelquar Glimpse.\" context=[\n\n]>"},{"role":"user","content":"Tell
+      me about the city of Blortzville on the planet Flarmzog-5 in the solar system
+      Zelquar Glimpse."}],"model":"gpt-4o","n":1,"parallel_tool_calls":true,"stream":false,"tool_choice":"required","tools":[{"type":"function","function":{"name":"final_result","description":"The
+      final response which ends this conversation","parameters":{"properties":{"is_real_city":{"description":"Whether
+      the city is real.","title":"Is Real City","type":"boolean"},"outline":{"anyOf":[{"items":{"type":"string"},"type":"array"},{"type":"null"}],"default":null,"description":"A
+      list of markdown outline sections for a (made up) wiki article of the founding
+      of the city.","title":"Outline"}},"required":["is_real_city"],"title":"SearchAndOutlineResult","type":"object"}}}]}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '1678'
+      content-type:
+      - application/json
+      cookie:
+      - __cf_bm=OZE0sSPm7Aq.UANSne4S18Iqb81SqS0oFOkPJALDzXE-1736143983-1.0.1.1-cUxKyR1EYTnj19RWFfybIPFKvB3bn93YT.0jyoUo6WZHKUv4BnohWb7eVp3LyQBD_oDUtl6gJHdhsbf3keUq3w;
+        _cfuvid=v4h2HXQwv7ItXSRke.bTJFDLJ74Hsh1XOo3DErVmTw0-1736143983081-0.0.1.1-604800000
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmaeHyPc0KFateYySHl9yMEA3LoAL\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736143985,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_G1BiUpdH9AfT989cJdmN8feP\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"final_result\",\n
+        \             \"arguments\": \"{\\\"is_real_city\\\":false,\\\"outline\\\":[\\\"#
+        Blortzville\\\",\\\"## Introduction\\\",\\\"Blortzville is a bustling metropolis
+        located on the vibrant planet of Flarmzog-5, nestled within the solar system
+        known as Zelquar Glimpse. Known for its eclectic architecture and bizarre
+        cultural practices, Blortzville is a hub of innovation and creativity.\\\",\\\"##
+        History\\\",\\\"### Founding\\\",\\\"The city was founded in the early Zlorfian
+        Era by a group of renegade scientists and artists seeking freedom from the
+        oppressive regime of Planet Glumnok.\\\",\\\"### Galactic Expansion\\\",\\\"Following
+        the establishment of the Interplanetary Expressway, Blortzville became a key
+        player in galactic trade and exploration, leading to its rapid growth and
+        transformation into a modern space-age city.\\\",\\\"## Geography\\\",\\\"Blortzville
+        is situated on the edge of the Great Snerkel Dunes, offering stunning panoramic
+        views of the Flarmzogian landscape. The city is divided into several districts,
+        each with its own unique character.\\\",\\\"## Government\\\",\\\"Blortzville
+        operates under a unique democratic system known as 'Squarzocratic Flair',
+        where leaders are chosen not just for their political acumen but also their
+        ability to perform interpretative dance.\\\",\\\"## Demographics\\\",\\\"The
+        city is home to a diverse population of Flarmzogians, intergalactic expatriates,
+        and various sentient fungi. Multilingual communication is facilitated by the
+        universal translator nanobots widely used in public spaces.\\\",\\\"## Economy\\\",\\\"The
+        economy of Blortzville thrives on the production of rare precious Electroluminescent
+        Crystals and the export of uniquely flavored galactic snacks known as Zogtreats.\\\",\\\"##
+        Culture\\\",\\\"### Festivals\\\",\\\"Blortzville hosts the annual 'Lumption
+        Festival', celebrating the luminescence of the three moons with dance, music,
+        and artistic light displays.\\\",\\\"### Cuisine\\\",\\\"Local cuisine is
+        famous for incorporating naturally bioluminescent ingredients, a staple among
+        its iconic dishes is the \\\\\\\"Glowworms Casserole.\\\\\\\"\\\",\\\"## Transportation\\\",\\\"An
+        intricate network of anti-gravity gondolas and solar slidewalks enables efficient
+        and eco-friendly travel across the city's districts.\\\",\\\"## Education\\\",\\\"Home
+        to the prestigious 'Blortzville Quantum Arts Academy', the city is a beacon
+        of higher learning in both scientific and creative disciplines.\\\",\\\"##
+        In Popular Culture\\\",\\\"Featured in several interstellar films and galactic
+        novels, Blortzville is often depicted as a city of endless possibilities and
+        peculiar charms.\\\"]}\"\n            }\n          }\n        ],\n        \"refusal\":
+        null\n      },\n      \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n
+        \   }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 314,\n    \"completion_tokens\":
+        513,\n    \"total_tokens\": 827,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\":
+        0,\n      \"audio_tokens\": 0\n    },\n    \"completion_tokens_details\":
+        {\n      \"reasoning_tokens\": 0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\":
+        0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f678fc05309-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:13:11 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '3521'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '5669'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '29605'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 788ms
+      x-request-id:
+      - req_68ab895a901942478c15f11123a04d8b
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      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
+      /wvt21aKRj4AAA==
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '3715'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f8c2ff92f02-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:11 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=MNUAe4PGMHPuKFQc%2FQd7TM4XiRTPMpWBO3FCv6DAfoK9tVGURBEzdOzATQyFVN6AKKnMy2b7l8fbv9%2BTLAUP2JPiG7D4IZjrIexisyQulYrHV3%2FN3sWMaPDjCdenwbbBkRZdl2hflFn9%2Fw%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=14858&min_rtt=14397&rtt_var=5728&sent=7&recv=9&lost=0&retrans=0&sent_bytes=2838&recv_bytes=4658&delivery_rate=285059&cwnd=227&unsent_bytes=0&cid=ae0eb919b2ac8ceb&ts=261&x=0"
+      traceparent:
+      - 00-1551b3d78a4595c7e313eef1209d55d5-a119d967d94c50a6-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are an expert fiction writer,
+      in the style of Rick & Morty. You are given an outline for a wikipedia article
+      about a made up city. Your task is to generate a list of ''facts'' about the
+      city. They are all made up. Each fact is a dictionary with the fact and a bibliography
+      entry. It''s all made up, the facts aren''t real. Return the facts directly
+      in the response, do not use any tools."},{"role":"system","content":"The article
+      outline is:\n[''# Blortzville'', ''## Introduction'', ''Blortzville is a bustling
+      metropolis located on the vibrant planet of Flarmzog-5, nestled within the solar
+      system known as Zelquar Glimpse. Known for its eclectic architecture and bizarre
+      cultural practices, Blortzville is a hub of innovation and creativity.'', ''##
+      History'', ''### Founding'', ''The city was founded in the early Zlorfian Era
+      by a group of renegade scientists and artists seeking freedom from the oppressive
+      regime of Planet Glumnok.'', ''### Galactic Expansion'', ''Following the establishment
+      of the Interplanetary Expressway, Blortzville became a key player in galactic
+      trade and exploration, leading to its rapid growth and transformation into a
+      modern space-age city.'', ''## Geography'', ''Blortzville is situated on the
+      edge of the Great Snerkel Dunes, offering stunning panoramic views of the Flarmzogian
+      landscape. The city is divided into several districts, each with its own unique
+      character.'', ''## Government'', \"Blortzville operates under a unique democratic
+      system known as ''Squarzocratic Flair'', where leaders are chosen not just for
+      their political acumen but also their ability to perform interpretative dance.\",
+      ''## Demographics'', ''The city is home to a diverse population of Flarmzogians,
+      intergalactic expatriates, and various sentient fungi. Multilingual communication
+      is facilitated by the universal translator nanobots widely used in public spaces.'',
+      ''## Economy'', ''The economy of Blortzville thrives on the production of rare
+      precious Electroluminescent Crystals and the export of uniquely flavored galactic
+      snacks known as Zogtreats.'', ''## Culture'', ''### Festivals'', \"Blortzville
+      hosts the annual ''Lumption Festival'', celebrating the luminescence of the
+      three moons with dance, music, and artistic light displays.\", ''### Cuisine'',
+      ''Local cuisine is famous for incorporating naturally bioluminescent ingredients,
+      a staple among its iconic dishes is the \"Glowworms Casserole.\"'', ''## Transportation'',
+      \"An intricate network of anti-gravity gondolas and solar slidewalks enables
+      efficient and eco-friendly travel across the city''s districts.\", ''## Education'',
+      \"Home to the prestigious ''Blortzville Quantum Arts Academy'', the city is
+      a beacon of higher learning in both scientific and creative disciplines.\",
+      ''## In Popular Culture'', ''Featured in several interstellar films and galactic
+      novels, Blortzville is often depicted as a city of endless possibilities and
+      peculiar charms.'']"},{"role":"user","content":"Please generate 3-5 made up
+      facts about this city. Each fact should be a dictionary with ''fact'' and ''bibliography''
+      keys."}],"model":"gpt-4o","n":1,"parallel_tool_calls":true,"stream":false,"tool_choice":"required","tools":[{"type":"function","function":{"name":"final_result","description":"The
+      final response which ends this conversation","parameters":{"properties":{"facts":{"description":"The
+      (made up) facts about the city and the officially formatted bibliography entry
+      (also made up)","items":{"additionalProperties":{"type":"string"},"type":"object"},"title":"Facts","type":"array"}},"required":["facts"],"title":"MadeUpFacts","type":"object"}}}]}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '3620'
+      content-type:
+      - application/json
+      cookie:
+      - __cf_bm=OZE0sSPm7Aq.UANSne4S18Iqb81SqS0oFOkPJALDzXE-1736143983-1.0.1.1-cUxKyR1EYTnj19RWFfybIPFKvB3bn93YT.0jyoUo6WZHKUv4BnohWb7eVp3LyQBD_oDUtl6gJHdhsbf3keUq3w;
+        _cfuvid=v4h2HXQwv7ItXSRke.bTJFDLJ74Hsh1XOo3DErVmTw0-1736143983081-0.0.1.1-604800000
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmaeNvXPw5qng7bSOm1MaO80TTvOw\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736143991,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_LhMCBI6BB5GrRg0JmKOSrtaX\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"final_result\",\n
+        \             \"arguments\": \"{\\\"fact\\\":\\\"Blortzville's sky is known
+        to emit a unique spectrum of colors at dawn and dusk, caused by the interaction
+        of its atmosphere with the gaseous Snerkmen particles originating from the
+        Great Snerkel Dunes.\\\",\\\"bibliography\\\":\\\"Zorblat, X. (2021). 'Atmospheric
+        Phenomena of Flarmzog-5'. Intergalactic Weather Journal, 42(7), 145-160.\\\"}\"\n
+        \           }\n          }\n        ],\n        \"refusal\": null\n      },\n
+        \     \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n    }\n
+        \ ],\n  \"usage\": {\n    \"prompt_tokens\": 686,\n    \"completion_tokens\":
+        102,\n    \"total_tokens\": 788,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\":
+        0,\n      \"audio_tokens\": 0\n    },\n    \"completion_tokens_details\":
+        {\n      \"reasoning_tokens\": 0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\":
+        0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f8bcf805309-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:13:13 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '1351'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '1326'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '28685'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 2.628s
+      x-request-id:
+      - req_479ba993addffd18ca5cde3a59b65490
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      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
+      JoRnUhAAAA==
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1603'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f95885e08cb-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:13 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=4DVwMDJRVr1ODggdEhyk%2Foibu9MEjBk5A7YQwqlaNCCRozhIsuxga3J3WMGmnj2%2BUVp1fiHksbyLn6ViTwRiucosdcCQa97URrIZjIhCiDyNXbUM5gUqhCpBPIaZUATZZir6o2XVWmPNrA%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=14819&min_rtt=14141&rtt_var=4583&sent=5&recv=9&lost=0&retrans=0&sent_bytes=2838&recv_bytes=2546&delivery_rate=290014&cwnd=239&unsent_bytes=0&cid=1b50e3af87890a90&ts=121&x=0"
+      traceparent:
+      - 00-f24f6a98165046bab3ad30f67817b5fe-a049605e83ba336a-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are an expert fiction writer,
+      in the style of Rick & Morty. You are given an outline for a wikipedia article
+      about a made up city. Your task is to generate a list of ''facts'' about the
+      city. They are all made up. Each fact is a dictionary with the fact and a bibliography
+      entry. It''s all made up, the facts aren''t real. Return the facts directly
+      in the response, do not use any tools."},{"role":"system","content":"The article
+      outline is:\n[''# Blortzville'', ''## Introduction'', ''Blortzville is a bustling
+      metropolis located on the vibrant planet of Flarmzog-5, nestled within the solar
+      system known as Zelquar Glimpse. Known for its eclectic architecture and bizarre
+      cultural practices, Blortzville is a hub of innovation and creativity.'', ''##
+      History'', ''### Founding'', ''The city was founded in the early Zlorfian Era
+      by a group of renegade scientists and artists seeking freedom from the oppressive
+      regime of Planet Glumnok.'', ''### Galactic Expansion'', ''Following the establishment
+      of the Interplanetary Expressway, Blortzville became a key player in galactic
+      trade and exploration, leading to its rapid growth and transformation into a
+      modern space-age city.'', ''## Geography'', ''Blortzville is situated on the
+      edge of the Great Snerkel Dunes, offering stunning panoramic views of the Flarmzogian
+      landscape. The city is divided into several districts, each with its own unique
+      character.'', ''## Government'', \"Blortzville operates under a unique democratic
+      system known as ''Squarzocratic Flair'', where leaders are chosen not just for
+      their political acumen but also their ability to perform interpretative dance.\",
+      ''## Demographics'', ''The city is home to a diverse population of Flarmzogians,
+      intergalactic expatriates, and various sentient fungi. Multilingual communication
+      is facilitated by the universal translator nanobots widely used in public spaces.'',
+      ''## Economy'', ''The economy of Blortzville thrives on the production of rare
+      precious Electroluminescent Crystals and the export of uniquely flavored galactic
+      snacks known as Zogtreats.'', ''## Culture'', ''### Festivals'', \"Blortzville
+      hosts the annual ''Lumption Festival'', celebrating the luminescence of the
+      three moons with dance, music, and artistic light displays.\", ''### Cuisine'',
+      ''Local cuisine is famous for incorporating naturally bioluminescent ingredients,
+      a staple among its iconic dishes is the \"Glowworms Casserole.\"'', ''## Transportation'',
+      \"An intricate network of anti-gravity gondolas and solar slidewalks enables
+      efficient and eco-friendly travel across the city''s districts.\", ''## Education'',
+      \"Home to the prestigious ''Blortzville Quantum Arts Academy'', the city is
+      a beacon of higher learning in both scientific and creative disciplines.\",
+      ''## In Popular Culture'', ''Featured in several interstellar films and galactic
+      novels, Blortzville is often depicted as a city of endless possibilities and
+      peculiar charms.'']"},{"role":"user","content":"Please generate 3-5 made up
+      facts about this city. Each fact should be a dictionary with ''fact'' and ''bibliography''
+      keys."},{"role":"assistant","tool_calls":[{"id":"call_LhMCBI6BB5GrRg0JmKOSrtaX","type":"function","function":{"name":"final_result","arguments":"{\"fact\":\"Blortzville''s
+      sky is known to emit a unique spectrum of colors at dawn and dusk, caused by
+      the interaction of its atmosphere with the gaseous Snerkmen particles originating
+      from the Great Snerkel Dunes.\",\"bibliography\":\"Zorblat, X. (2021). ''Atmospheric
+      Phenomena of Flarmzog-5''. Intergalactic Weather Journal, 42(7), 145-160.\"}"}}]},{"role":"tool","tool_call_id":"call_LhMCBI6BB5GrRg0JmKOSrtaX","content":"1
+      validation errors: [\n  {\n    \"type\": \"missing\",\n    \"loc\": [\n      \"facts\"\n    ],\n    \"msg\":
+      \"Field required\",\n    \"input\": {\n      \"fact\": \"Blortzville''s sky
+      is known to emit a unique spectrum of colors at dawn and dusk, caused by the
+      interaction of its atmosphere with the gaseous Snerkmen particles originating
+      from the Great Snerkel Dunes.\",\n      \"bibliography\": \"Zorblat, X. (2021).
+      ''Atmospheric Phenomena of Flarmzog-5''. Intergalactic Weather Journal, 42(7),
+      145-160.\"\n    }\n  }\n]\n\nFix the errors and try again."}],"model":"gpt-4o","n":1,"parallel_tool_calls":true,"stream":false,"tool_choice":"required","tools":[{"type":"function","function":{"name":"final_result","description":"The
+      final response which ends this conversation","parameters":{"properties":{"facts":{"description":"The
+      (made up) facts about the city and the officially formatted bibliography entry
+      (also made up)","items":{"additionalProperties":{"type":"string"},"type":"object"},"title":"Facts","type":"array"}},"required":["facts"],"title":"MadeUpFacts","type":"object"}}}]}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '4739'
+      content-type:
+      - application/json
+      cookie:
+      - __cf_bm=OZE0sSPm7Aq.UANSne4S18Iqb81SqS0oFOkPJALDzXE-1736143983-1.0.1.1-cUxKyR1EYTnj19RWFfybIPFKvB3bn93YT.0jyoUo6WZHKUv4BnohWb7eVp3LyQBD_oDUtl6gJHdhsbf3keUq3w;
+        _cfuvid=v4h2HXQwv7ItXSRke.bTJFDLJ74Hsh1XOo3DErVmTw0-1736143983081-0.0.1.1-604800000
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmaePv2CwM4x9iUCT47H7BKoSShWj\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736143993,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_QCk0mNPkAK5ogtLKy6BAPNvQ\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"final_result\",\n
+        \             \"arguments\": \"{\\\"facts\\\":[{\\\"fact\\\":\\\"Blortzville's
+        sky is known to emit a unique spectrum of colors at dawn and dusk, caused
+        by the interaction of its atmosphere with the gaseous Snerkmen particles originating
+        from the Great Snerkel Dunes.\\\",\\\"bibliography\\\":\\\"Zorblat, X. (2021).
+        'Atmospheric Phenomena of Flarmzog-5'. Intergalactic Weather Journal, 42(7),
+        145-160.\\\"},{\\\"fact\\\":\\\"The Blortzville city council once declared
+        'Opposite Day' a public holiday, leading to a week-long festival where everything
+        from clothing to government decisions was humorously inverted.\\\",\\\"bibliography\\\":\\\"Quixler,
+        Y. (2030). 'Cultural Dynamics of Blortzville: Festivals and Follies'. Galactic
+        Societies and Traditions, 88(2), 201-214.\\\"},{\\\"fact\\\":\\\"A peculiar
+        law in Blortzville requires all public buildings to be constructed with 'Wobble
+        Windows', glass panes that intentionally distort light to create whimsical
+        patterns inside.\\\",\\\"bibliography\\\":\\\"Flirp, T. (2025). 'Architectural
+        Wonders of Blortzville'. Building the Cosmos: Innovative Designs in Space,
+        15(4), 87-102.\\\"},{\\\"fact\\\":\\\"The annual 'Snerkball Tournament' in
+        Blortzville combines elements of baseball and anti-gravity acrobatics, drawing
+        athletes from across the Zelquar Glimpse system.\\\",\\\"bibliography\\\":\\\"Gorfin,
+        R. (2028). 'Sports and Extraterrestrial Events: The Case of Snerkball'. Journal
+        of Intergalactic Games, 7(8), 123-139.\\\"},{\\\"fact\\\":\\\"Blortzville's
+        ruling council is equipped with a 'Decision Dance Floor', where political
+        debates are resolved through complex rhythmic expressions rather than verbal
+        discourse.\\\",\\\"bibliography\\\":\\\"Wizzle, P. (2026). 'The Dance of Politics:
+        Analyzing Squarzocratic Flair'. Flarmzogian Political Review, 22(6), 299-317.\\\"}]}\"\n
+        \           }\n          }\n        ],\n        \"refusal\": null\n      },\n
+        \     \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n    }\n
+        \ ],\n  \"usage\": {\n    \"prompt_tokens\": 941,\n    \"completion_tokens\":
+        433,\n    \"total_tokens\": 1374,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\":
+        0,\n      \"audio_tokens\": 0\n    },\n    \"completion_tokens_details\":
+        {\n      \"reasoning_tokens\": 0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\":
+        0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98f94d85a5309-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:13:18 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '2723'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '5300'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '28486'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 3.027s
+      x-request-id:
+      - req_cf81a4ebb660028b34aa5a4bc03a80bf
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      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
+      /L3Ia6k2/w+t47uPL0MAAA==
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '4576'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98fb7eb0f08da-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:18 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=QiaDK%2B5VTrAYrnKCcciwIV8qKfmMQWdVTs8AgGsT2wYX1uo7alf1g1Vphx94xsAHeP%2F4N9svYuyb%2B5jE2PM02ok9JDjbyJ7bNIu95R4iaqFwvwGv5GzdkWO2T8g3oFF9Z65ldYDT3%2BszSg%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=15087&min_rtt=14994&rtt_var=4378&sent=6&recv=11&lost=0&retrans=0&sent_bytes=2840&recv_bytes=5519&delivery_rate=266562&cwnd=231&unsent_bytes=0&cid=36bb9114b93e2e6b&ts=120&x=0"
+      traceparent:
+      - 00-2083b75d49f99c3e2e5264994980c9f8-a6156c5a0e8ff8f3-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are an expert fiction writer,
+      in the style of Rick & Morty. You also write the best wikipedia style articles.
+      You are given an outline and facts about a city. Write a wikipedia style article
+      about the city using markdown formatting: - Use ''# '' for the main title -
+      Use ''## '' for section headings - Use ''### '' for subsection headings You
+      care that the entire article is completely up to snuff for a wikipedia page.
+      You turn the facts into bibliography entries."},{"role":"system","content":"The
+      outline for the city is: # Blortzville\n## Introduction\nBlortzville is a bustling
+      metropolis located on the vibrant planet of Flarmzog-5, nestled within the solar
+      system known as Zelquar Glimpse. Known for its eclectic architecture and bizarre
+      cultural practices, Blortzville is a hub of innovation and creativity.\n## History\n###
+      Founding\nThe city was founded in the early Zlorfian Era by a group of renegade
+      scientists and artists seeking freedom from the oppressive regime of Planet
+      Glumnok.\n### Galactic Expansion\nFollowing the establishment of the Interplanetary
+      Expressway, Blortzville became a key player in galactic trade and exploration,
+      leading to its rapid growth and transformation into a modern space-age city.\n##
+      Geography\nBlortzville is situated on the edge of the Great Snerkel Dunes, offering
+      stunning panoramic views of the Flarmzogian landscape. The city is divided into
+      several districts, each with its own unique character.\n## Government\nBlortzville
+      operates under a unique democratic system known as ''Squarzocratic Flair'',
+      where leaders are chosen not just for their political acumen but also their
+      ability to perform interpretative dance.\n## Demographics\nThe city is home
+      to a diverse population of Flarmzogians, intergalactic expatriates, and various
+      sentient fungi. Multilingual communication is facilitated by the universal translator
+      nanobots widely used in public spaces.\n## Economy\nThe economy of Blortzville
+      thrives on the production of rare precious Electroluminescent Crystals and the
+      export of uniquely flavored galactic snacks known as Zogtreats.\n## Culture\n###
+      Festivals\nBlortzville hosts the annual ''Lumption Festival'', celebrating the
+      luminescence of the three moons with dance, music, and artistic light displays.\n###
+      Cuisine\nLocal cuisine is famous for incorporating naturally bioluminescent
+      ingredients, a staple among its iconic dishes is the \"Glowworms Casserole.\"\n##
+      Transportation\nAn intricate network of anti-gravity gondolas and solar slidewalks
+      enables efficient and eco-friendly travel across the city''s districts.\n##
+      Education\nHome to the prestigious ''Blortzville Quantum Arts Academy'', the
+      city is a beacon of higher learning in both scientific and creative disciplines.\n##
+      In Popular Culture\nFeatured in several interstellar films and galactic novels,
+      Blortzville is often depicted as a city of endless possibilities and peculiar
+      charms.\nThe facts about the city are: [{\"fact\": \"Blortzville''s sky is known
+      to emit a unique spectrum of colors at dawn and dusk, caused by the interaction
+      of its atmosphere with the gaseous Snerkmen particles originating from the Great
+      Snerkel Dunes.\", \"bibliography\": \"Zorblat, X. (2021). ''Atmospheric Phenomena
+      of Flarmzog-5''. Intergalactic Weather Journal, 42(7), 145-160.\"}, {\"fact\":
+      \"The Blortzville city council once declared ''Opposite Day'' a public holiday,
+      leading to a week-long festival where everything from clothing to government
+      decisions was humorously inverted.\", \"bibliography\": \"Quixler, Y. (2030).
+      ''Cultural Dynamics of Blortzville: Festivals and Follies''. Galactic Societies
+      and Traditions, 88(2), 201-214.\"}, {\"fact\": \"A peculiar law in Blortzville
+      requires all public buildings to be constructed with ''Wobble Windows'', glass
+      panes that intentionally distort light to create whimsical patterns inside.\",
+      \"bibliography\": \"Flirp, T. (2025). ''Architectural Wonders of Blortzville''.
+      Building the Cosmos: Innovative Designs in Space, 15(4), 87-102.\"}, {\"fact\":
+      \"The annual ''Snerkball Tournament'' in Blortzville combines elements of baseball
+      and anti-gravity acrobatics, drawing athletes from across the Zelquar Glimpse
+      system.\", \"bibliography\": \"Gorfin, R. (2028). ''Sports and Extraterrestrial
+      Events: The Case of Snerkball''. Journal of Intergalactic Games, 7(8), 123-139.\"},
+      {\"fact\": \"Blortzville''s ruling council is equipped with a ''Decision Dance
+      Floor'', where political debates are resolved through complex rhythmic expressions
+      rather than verbal discourse.\", \"bibliography\": \"Wizzle, P. (2026). ''The
+      Dance of Politics: Analyzing Squarzocratic Flair''. Flarmzogian Political Review,
+      22(6), 299-317.\"}]"},{"role":"user","content":"Please write a wikipedia style
+      article about the city of Blortzville, the Eminent Sprawl of Enigma and Hub
+      of Cosmic Curiosities."}],"model":"gpt-4o","n":1,"parallel_tool_calls":true,"stream":false,"tool_choice":"required","tools":[{"type":"function","function":{"name":"final_result","description":"The
+      final response which ends this conversation","parameters":{"properties":{"article":{"description":"The
+      wikipedia style article about the city.","title":"Article","type":"string"}},"required":["article"],"title":"ArticleWriterResult","type":"object"}}}]}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '5293'
+      content-type:
+      - application/json
+      cookie:
+      - __cf_bm=OZE0sSPm7Aq.UANSne4S18Iqb81SqS0oFOkPJALDzXE-1736143983-1.0.1.1-cUxKyR1EYTnj19RWFfybIPFKvB3bn93YT.0jyoUo6WZHKUv4BnohWb7eVp3LyQBD_oDUtl6gJHdhsbf3keUq3w;
+        _cfuvid=v4h2HXQwv7ItXSRke.bTJFDLJ74Hsh1XOo3DErVmTw0-1736143983081-0.0.1.1-604800000
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmaeUCXUZGXyiWJ70MXI6u3qO1Dkx\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736143998,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_EW6rQrRBbKgq0cQYbFxtLWyW\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"final_result\",\n
+        \             \"arguments\": \"{\\\"article\\\":\\\"# Blortzville\\\\n\\\\n##
+        Introduction\\\\nBlortzville is a bustling metropolis located on the vibrant
+        planet of Flarmzog-5, nestled within the solar system known as Zelquar Glimpse.
+        Known for its eclectic architecture and bizarre cultural practices, Blortzville
+        is a hub of innovation and creativity.\\\\n\\\\n## History\\\\n\\\\n### Founding\\\\nThe
+        city was founded in the early Zlorfian Era by a group of renegade scientists
+        and artists seeking freedom from the oppressive regime of Planet Glumnok.\\\\n\\\\n###
+        Galactic Expansion\\\\nFollowing the establishment of the Interplanetary Expressway,
+        Blortzville became a key player in galactic trade and exploration, leading
+        to its rapid growth and transformation into a modern space-age city.\\\\n\\\\n##
+        Geography\\\\nBlortzville is situated on the edge of the Great Snerkel Dunes,
+        offering stunning panoramic views of the Flarmzogian landscape. The city is
+        divided into several districts, each with its own unique character. Blortzville's
+        sky is known to emit a unique spectrum of colors at dawn and dusk, caused
+        by the interaction of its atmosphere with the gaseous Snerkmen particles originating
+        from the Great Snerkel Dunes (Zorblat, 2021).\\\\n\\\\n## Government\\\\nBlortzville
+        operates under a unique democratic system known as 'Squarzocratic Flair',
+        where leaders are chosen not just for their political acumen but also their
+        ability to perform interpretative dance. The ruling council is equipped with
+        a 'Decision Dance Floor', where political debates are resolved through complex
+        rhythmic expressions rather than verbal discourse (Wizzle, 2026).\\\\n\\\\n##
+        Demographics\\\\nThe city is home to a diverse population of Flarmzogians,
+        intergalactic expatriates, and various sentient fungi. Multilingual communication
+        is facilitated by the universal translator nanobots widely used in public
+        spaces.\\\\n\\\\n## Economy\\\\nThe economy of Blortzville thrives on the
+        production of rare precious Electroluminescent Crystals and the export of
+        uniquely flavored galactic snacks known as Zogtreats.\\\\n\\\\n## Culture\\\\n\\\\n###
+        Festivals\\\\nBlortzville hosts the annual 'Lumption Festival', celebrating
+        the luminescence of the three moons with dance, music, and artistic light
+        displays. The Blortzville city council once declared 'Opposite Day' a public
+        holiday, leading to a week-long festival where everything from clothing to
+        government decisions was humorously inverted (Quixler, 2030).\\\\n\\\\n###
+        Cuisine\\\\nLocal cuisine is famous for incorporating naturally bioluminescent
+        ingredients, a staple among its iconic dishes is the \\\\\\\"Glowworms Casserole.\\\\\\\"\\\\n\\\\n##
+        Transportation\\\\nAn intricate network of anti-gravity gondolas and solar
+        slidewalks enables efficient and eco-friendly travel across the city's districts.\\\\n\\\\n##
+        Education\\\\nHome to the prestigious 'Blortzville Quantum Arts Academy',
+        the city is a beacon of higher learning in both scientific and creative disciplines.\\\\n\\\\n##
+        In Popular Culture\\\\nFeatured in several interstellar films and galactic
+        novels, Blortzville is often depicted as a city of endless possibilities and
+        peculiar charms.\\\\n\\\\n## Notable Legislation and Public Works\\\\nA peculiar
+        law in Blortzville requires all public buildings to be constructed with 'Wobble
+        Windows', glass panes that intentionally distort light to create whimsical
+        patterns inside (Flirp, 2025). The annual 'Snerkball Tournament' in Blortzville
+        combines elements of baseball and anti-gravity acrobatics, drawing athletes
+        from across the Zelquar Glimpse system (Gorfin, 2028).\\\\n\\\\n## References\\\\n-
+        Zorblat, X. (2021). 'Atmospheric Phenomena of Flarmzog-5'. Intergalactic Weather
+        Journal, 42(7), 145-160.\\\\n- Quixler, Y. (2030). 'Cultural Dynamics of Blortzville:
+        Festivals and Follies'. Galactic Societies and Traditions, 88(2), 201-214.\\\\n-
+        Flirp, T. (2025). 'Architectural Wonders of Blortzville'. Building the Cosmos:
+        Innovative Designs in Space, 15(4), 87-102.\\\\n- Gorfin, R. (2028). 'Sports
+        and Extraterrestrial Events: The Case of Snerkball'. Journal of Intergalactic
+        Games, 7(8), 123-139.\\\\n- Wizzle, P. (2026). 'The Dance of Politics: Analyzing
+        Squarzocratic Flair'. Flarmzogian Political Review, 22(6), 299-317.\\\"}\"\n
+        \           }\n          }\n        ],\n        \"refusal\": null\n      },\n
+        \     \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n    }\n
+        \ ],\n  \"usage\": {\n    \"prompt_tokens\": 1137,\n    \"completion_tokens\":
+        978,\n    \"total_tokens\": 2115,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\":
+        0,\n      \"audio_tokens\": 0\n    },\n    \"completion_tokens_details\":
+        {\n      \"reasoning_tokens\": 0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\":
+        0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98fb6bed15309-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:13:27 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '5162'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '9355'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '28376'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 3.246s
+      x-request-id:
+      - req_69556ef2c61956eb9c958a65133afa81
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      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
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '4664'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98ff3595af7a1-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:28 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=u7cXpY231hQAXUtSEQ9p%2FyP5mfu89MLlSMcwhTY7b%2FqD0wt54W%2FLe3DoMR5AgWU31q0ZVV8XpeYHfo%2FTdaLlC3tAKCyLAIZDMmgbJeyS5znV1OShw%2BndcP76M0FBfbWn%2Bj%2Bb852wxvc4CA%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=19087&min_rtt=18952&rtt_var=5564&sent=6&recv=11&lost=0&retrans=0&sent_bytes=2839&recv_bytes=5607&delivery_rate=210127&cwnd=225&unsent_bytes=0&cid=b4d273856905dc59&ts=224&x=0"
+      traceparent:
+      - 00-be9ad5e17faa0b110c5d7073a81902bb-e5f865c60cf057f2-01
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are an expert fiction writer,
+      in the style of Rick & Morty.You also write the best wikipedia style articles.You
+      are given an article draft, outline, and facts about a city.You format the article
+      to match the wikipedia template.You add citations for all the facts.You make
+      sure the article is completely up to snuff for a wikipedia page."},{"role":"user","content":"Please
+      format the article about the city of Blortzville, the Eminent Sprawl of Enigma
+      and Hub of Cosmic Curiosities into a wikipedia style article."}],"model":"gpt-4o","n":1,"parallel_tool_calls":true,"stream":false,"tool_choice":"required","tools":[{"type":"function","function":{"name":"get_template_definition","description":"Get
+      the template definition for a wikipedia article about a city.","parameters":{"properties":{},"type":"object","additionalProperties":false}}},{"type":"function","function":{"name":"final_result","description":"The
+      final response which ends this conversation","parameters":{"properties":{"article":{"description":"The
+      fully formatted wikipedia article about the city, including citations, that
+      fully conforms (as applicable) to the wikipedia template.","title":"Article","type":"string"},"highlight":{"description":"A
+      short highlight of the article.","title":"Highlight","type":"string"}},"required":["article","highlight"],"title":"WikipediaFormatterResult","type":"object"}}}]}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '1420'
+      content-type:
+      - application/json
+      cookie:
+      - __cf_bm=OZE0sSPm7Aq.UANSne4S18Iqb81SqS0oFOkPJALDzXE-1736143983-1.0.1.1-cUxKyR1EYTnj19RWFfybIPFKvB3bn93YT.0jyoUo6WZHKUv4BnohWb7eVp3LyQBD_oDUtl6gJHdhsbf3keUq3w;
+        _cfuvid=v4h2HXQwv7ItXSRke.bTJFDLJ74Hsh1XOo3DErVmTw0-1736143983081-0.0.1.1-604800000
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmaeeLIaxmLvYpA2XBzQolGaJC0md\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736144008,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_DFdEMbfbgFyfYU8KreLYaRHk\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"get_template_definition\",\n
+        \             \"arguments\": \"{}\"\n            }\n          }\n        ],\n
+        \       \"refusal\": null\n      },\n      \"logprobs\": null,\n      \"finish_reason\":
+        \"tool_calls\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 216,\n
+        \   \"completion_tokens\": 30,\n    \"total_tokens\": 246,\n    \"prompt_tokens_details\":
+        {\n      \"cached_tokens\": 0,\n      \"audio_tokens\": 0\n    },\n    \"completion_tokens_details\":
+        {\n      \"reasoning_tokens\": 0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\":
+        0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98ff1fd245309-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:13:28 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '1019'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '651'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '28988'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 2.023s
+      x-request-id:
+      - req_92075573ef1f2bb9de0f80dc51491e3f
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      H4sIAIh0e2cC/81WW2gcVRjO5sb2pGnaSWJSQ9N0Qpo23Z3M7G72FiqEaq1TCxJasYYwnJ05s5nu
+      7JnpnLPVbVwUoQg+6ZMvgkVEBJW+eUFQUfBNUREERREEwQutD/ruf2Z3tt1mEy0Imofk7H++//tv
+      3/k36LUxdLUXFdAoI8ElxySKQxnHVBwsSUYzWl5TNTNvp1OldCaHrXwmnc2lVRVnNZzDJRPJ6C5O
+      XFIlPKgrzKooLqblGi4TKY4G/Trf8CiaQ1InhuIqkUbQsOcT2r5Bh9B4J+wSCZjjUcGkKamCogJk
+      d5RoyLEPjdRohXqPUaNlR6NoyA88kzCm+FBD/+Sb78XQcTQS+UWkC+hIXs0S1SYp08xlCMb5vJ0y
+      S6W0mssULExyOZLNllSiZaSnJTQOtHULU+6YSexIgylF0xRNurEL7c3+8fxP2RfueXj+2wPX3vn5
+      1GUp/rE1zRNs+l05vvz+E1cOPvLs8sJw1bOIOxOQizXCuBormC/NffDJwOTkynfeG7+Jg55FwyaA
+      FNtxiY/5hjSHZqGRIqSBHaOCOV4Uvww1ZZgb2KEOLSt+XV+I/GrU5KK0/WjiROv+NOAVI6hRA7M6
+      NXUJDYVY16GEelLf5Nu9+h4UFwDGiS/1Tsb0eTTmemXbCYhSZWWDk6rvYh4OrKMIfRoN3QLcej+F
+      9kX3zMfU4HWfSIOoX3zQv49BWMJ8jzIifRFDn8U2ZR8HnMnFtU2Ze55riBHLRblMeDsJwyI2FCbK
+      lBMyDsoA3wz/GhcY2IryZkNuJJr+JnZdw7HAGJ7uPWndd6Zkl8on6/b5c/nTAXnwPF49VQEiEdio
+      OFRghWtSOMiNdSByqlAKrvpwk1JTS0lVS6rZs2q2qKWLqfwxVS2qKjC0nKOK5Ib+TQwN1Jh4CZ/H
+      0KdQXastkLGaiD4Y3KsQCqaUlk20vdvWtCpK4di9icsAziIcO26zdNMkPieW4QfEcsL5t7HgjGuW
+      491qCAiGPoEyOo0XiLk9iYnNDbhsWxoN/UYfGo1mKxpvMIBUsfR1H/qqD8YHk4ZueCXBK/obwFMP
+      uEPCnCO1wblxs2hxc7sfd7grDGeErlYjYEJ+PNlcLUkL9N1yEkfTxYxtideSVZseBwGuA8oBVbGd
+      wp4FKZwAJTwEBHccNRLnduQrcK+zUMc7Ezfgp0OIbU7GA5gkENheUMW86UWSAiqHTqH+dkriXAj4
+      Bxlc7rkS64n19Eg/9nXbeBc/emXXo9enbDn+4cSLf06PXf994eAGppZLZqKd0BzezBHY+RZkfRR2
+      4JcvXwtX30p0+N/swMVtduAEGu9aln64cxdui7u/+7tRkXInrwZe4Gy35boH7W611wiX7CLaH4Ei
+      OzwGaCesRUlCe9OlEsmZ+SXNXsrncbrUnvJz/d2m/Hrsl+KvDzzJ5Hj11R8YPXR1duFuSEs0eWZT
+      7E12vNEx4Geeeqs54Ojwnw34MBoIE5QOoKm1bb9S1iFO98FDs26vVC92zvwYOhpBmoi1+W3izK/r
+      q911sIwKf6eDkHvLNvvXJGGqWq5g2ksa/ONDiK1GkvgLASzWdysKAAA=
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1181'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98ff99a8b7ea5-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:29 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=4QyyMYuORlXtpduQJvYuULFY9PyRZ2WdZYoRr5cpkr926RCrVadevM3yRkdROX8oJQ6Ij4nu6cRqNL2YHBfxu3naRwgL%2BqX2PKuXzg4snzfRNPdx9%2BObhqrpCYonr6RD9Nvb4fZVuPH8pg%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=15613&min_rtt=14514&rtt_var=5065&sent=5&recv=8&lost=0&retrans=0&sent_bytes=2839&recv_bytes=2124&delivery_rate=282566&cwnd=216&unsent_bytes=0&cid=95119b311382ea18&ts=113&x=0"
+      traceparent:
+      - 00-ed237ef51ac3cb312e1d5cfbd9319eef-7f1fdd526df800eb-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://r.jina.ai/https://en.wikipedia.org/wiki/Template:Article_templates/City
+  response:
+    body:
+      string: "Title: Template:Article templates/City - Wikipedia\n\nURL Source: https://en.wikipedia.org/wiki/Template:Article_templates/City\n\nMarkdown
+        Content:\nTemplate:Article templates/City - Wikipedia\n===============                    \n\n[Jump
+        to content](https://en.wikipedia.org/wiki/Template:Article_templates/City#bodyContent)\n\n
+        Main menu\n\nMain menu\n\nmove to sidebar hide\n\nNavigation\n\n*   [Main
+        page](https://en.wikipedia.org/wiki/Main_Page \"Visit the main page [alt-shift-z]\")\n*
+        \  [Contents](https://en.wikipedia.org/wiki/Wikipedia:Contents \"Guides to
+        browsing Wikipedia\")\n*   [Current events](https://en.wikipedia.org/wiki/Portal:Current_events
+        \"Articles related to current events\")\n*   [Random article](https://en.wikipedia.org/wiki/Special:Random
+        \"Visit a randomly selected article [alt-shift-x]\")\n*   [About Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:About
+        \"Learn about Wikipedia and how it works\")\n*   [Contact us](https://en.wikipedia.org/wiki/Wikipedia:Contact_us
+        \"How to contact Wikipedia\")\n\nContribute\n\n*   [Help](https://en.wikipedia.org/wiki/Help:Contents
+        \"Guidance on how to use and edit Wikipedia\")\n*   [Learn to edit](https://en.wikipedia.org/wiki/Help:Introduction
+        \"Learn how to edit Wikipedia\")\n*   [Community portal](https://en.wikipedia.org/wiki/Wikipedia:Community_portal
+        \"The hub for editors\")\n*   [Recent changes](https://en.wikipedia.org/wiki/Special:RecentChanges
+        \"A list of recent changes to Wikipedia [alt-shift-r]\")\n*   [Upload file](https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard
+        \"Add images or other media for use on Wikipedia\")\n\n  [![Image 7](https://en.wikipedia.org/static/images/icons/wikipedia.png)
+        ![Image 8: Wikipedia](https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-en.svg)
+        ![Image 9: The Free Encyclopedia](https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-tagline-en.svg)](https://en.wikipedia.org/wiki/Main_Page)\n\n[Search](https://en.wikipedia.org/wiki/Special:Search
+        \"Search Wikipedia [alt-shift-f]\")\n\nSearch\n\n Appearance\n\nAppearance\n\nmove
+        to sidebar hide\n\nText\n\n*   Small\n    \n    Standard\n    \n    Large\n
+        \   \n\nThis page always uses small font size\n\nWidth\n\n*   Standard\n    \n
+        \   Wide\n    \n\nThe content is as wide as possible for your browser window.\n\nColor
+        (beta)\n\n*   Automatic\n    \n    Light\n    \n    Dark\n    \n\nThis page
+        is always in light mode.\n\n*   [Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)\n*
+        \  [Create account](https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Template%3AArticle+templates%2FCity
+        \"You are encouraged to create an account and log in; however, it is not mandatory\")\n*
+        \  [Log in](https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Template%3AArticle+templates%2FCity
+        \"You're encouraged to log in; however, it's not mandatory. [alt-shift-o]\")\n\n
+        Personal tools\n\n*   [Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)\n*
+        \  [Create account](https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Template%3AArticle+templates%2FCity
+        \"You are encouraged to create an account and log in; however, it is not mandatory\")\n*
+        \  [Log in](https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Template%3AArticle+templates%2FCity
+        \"You're encouraged to log in; however, it's not mandatory. [alt-shift-o]\")\n\nPages
+        for logged out editors [learn more](https://en.wikipedia.org/wiki/Help:Introduction)\n\n*
+        \  [Contributions](https://en.wikipedia.org/wiki/Special:MyContributions \"A
+        list of edits made from this IP address [alt-shift-y]\")\n*   [Talk](https://en.wikipedia.org/wiki/Special:MyTalk
+        \"Discussion about edits from this IP address [alt-shift-n]\")\n\n Toggle
+        the table of contents\n\nContents\n--------\n\nmove to sidebar hide\n\n*   [(Top)](https://en.wikipedia.org/wiki/Template:Article_templates/City#)\n*
+        \  [1 Etymology](https://en.wikipedia.org/wiki/Template:Article_templates/City#Etymology)\n
+        \   \n*   [2 History](https://en.wikipedia.org/wiki/Template:Article_templates/City#History)Toggle
+        History subsection\n    *   [2.1 Original inhabitants](https://en.wikipedia.org/wiki/Template:Article_templates/City#Original_inhabitants)\n
+        \       \n    *   [2.2 Original settlements](https://en.wikipedia.org/wiki/Template:Article_templates/City#Original_settlements)\n
+        \       \n    *   [2.3 Occupying powers/transitions of power](https://en.wikipedia.org/wiki/Template:Article_templates/City#Occupying_powers/transitions_of_power)\n
+        \       \n    *   [2.4 Population spikes](https://en.wikipedia.org/wiki/Template:Article_templates/City#Population_spikes)\n
+        \       \n    *   [2.5 Recessions](https://en.wikipedia.org/wiki/Template:Article_templates/City#Recessions)\n
+        \       \n    *   [2.6 Reasons for settlement/growth](https://en.wikipedia.org/wiki/Template:Article_templates/City#Reasons_for_settlement/growth)\n
+        \       \n    *   [2.7 Dominant activities](https://en.wikipedia.org/wiki/Template:Article_templates/City#Dominant_activities)\n
+        \       \n    *   [2.8 Events that shaped the community](https://en.wikipedia.org/wiki/Template:Article_templates/City#Events_that_shaped_the_community)\n
+        \       \n    *   [2.9 Earliest known history](https://en.wikipedia.org/wiki/Template:Article_templates/City#Earliest_known_history)\n
+        \       \n    *   [2.10 Industrial history](https://en.wikipedia.org/wiki/Template:Article_templates/City#Industrial_history)\n
+        \       \n    *   [2.11 Social history](https://en.wikipedia.org/wiki/Template:Article_templates/City#Social_history)\n
+        \       \n    *   [2.12 Political history](https://en.wikipedia.org/wiki/Template:Article_templates/City#Political_history)\n
+        \       \n*   [3 Geography](https://en.wikipedia.org/wiki/Template:Article_templates/City#Geography)Toggle
+        Geography subsection\n    *   [3.1 Geographic setting](https://en.wikipedia.org/wiki/Template:Article_templates/City#Geographic_setting)\n
+        \       \n    *   [3.2 Geographical features](https://en.wikipedia.org/wiki/Template:Article_templates/City#Geographical_features)\n
+        \       \n    *   [3.3 Subdivisions](https://en.wikipedia.org/wiki/Template:Article_templates/City#Subdivisions)\n
+        \       \n    *   [3.4 Climate](https://en.wikipedia.org/wiki/Template:Article_templates/City#Climate)\n
+        \       \n*   [4 Governance](https://en.wikipedia.org/wiki/Template:Article_templates/City#Governance)\n
+        \   \n*   [5 Demographics / Population](https://en.wikipedia.org/wiki/Template:Article_templates/City#Demographics_/_Population)Toggle
+        Demographics / Population subsection\n    *   [5.1 Population info](https://en.wikipedia.org/wiki/Template:Article_templates/City#Population_info)\n
+        \       \n    *   [5.2 Census data](https://en.wikipedia.org/wiki/Template:Article_templates/City#Census_data)\n
+        \       \n    *   [5.3 Ethnicity](https://en.wikipedia.org/wiki/Template:Article_templates/City#Ethnicity)\n
+        \       \n    *   [5.4 Language](https://en.wikipedia.org/wiki/Template:Article_templates/City#Language)\n
+        \       \n    *   [5.5 Religious affiliation](https://en.wikipedia.org/wiki/Template:Article_templates/City#Religious_affiliation)\n
+        \       \n*   [6 Economy](https://en.wikipedia.org/wiki/Template:Article_templates/City#Economy)Toggle
+        Economy subsection\n    *   [6.1 Dominant industries](https://en.wikipedia.org/wiki/Template:Article_templates/City#Dominant_industries)\n
+        \       \n    *   [6.2 Agriculture](https://en.wikipedia.org/wiki/Template:Article_templates/City#Agriculture)\n
+        \       \n    *   [6.3 Major employers](https://en.wikipedia.org/wiki/Template:Article_templates/City#Major_employers)\n
+        \       \n    *   [6.4 Breweries](https://en.wikipedia.org/wiki/Template:Article_templates/City#Breweries)\n
+        \       \n    *   [6.5 Exports](https://en.wikipedia.org/wiki/Template:Article_templates/City#Exports)\n
+        \       \n    *   [6.6 Tourism](https://en.wikipedia.org/wiki/Template:Article_templates/City#Tourism)\n
+        \       \n*   [7 Culture](https://en.wikipedia.org/wiki/Template:Article_templates/City#Culture)Toggle
+        Culture subsection\n    *   [7.1 Cultural venues](https://en.wikipedia.org/wiki/Template:Article_templates/City#Cultural_venues)\n
+        \       \n    *   [7.2 Arts](https://en.wikipedia.org/wiki/Template:Article_templates/City#Arts)\n
+        \       \n    *   [7.3 Artifacts](https://en.wikipedia.org/wiki/Template:Article_templates/City#Artifacts)\n
+        \       \n    *   [7.4 Festivals](https://en.wikipedia.org/wiki/Template:Article_templates/City#Festivals)\n
+        \       \n    *   [7.5 Cuisine](https://en.wikipedia.org/wiki/Template:Article_templates/City#Cuisine)\n
+        \       \n    *   [7.6 Significant cultural events](https://en.wikipedia.org/wiki/Template:Article_templates/City#Significant_cultural_events)\n
+        \       \n*   [8 Attractions / Amenities](https://en.wikipedia.org/wiki/Template:Article_templates/City#Attractions_/_Amenities)\n
+        \   \n*   [9 Sports](https://en.wikipedia.org/wiki/Template:Article_templates/City#Sports)\n
+        \   \n*   [10 Infrastructure](https://en.wikipedia.org/wiki/Template:Article_templates/City#Infrastructure)\n
+        \   \n*   [11 Education](https://en.wikipedia.org/wiki/Template:Article_templates/City#Education)\n
+        \   \n*   [12 Media](https://en.wikipedia.org/wiki/Template:Article_templates/City#Media)\n
+        \   \n*   [13 Notable people](https://en.wikipedia.org/wiki/Template:Article_templates/City#Notable_people)\n
+        \   \n*   [14 See also](https://en.wikipedia.org/wiki/Template:Article_templates/City#See_also)\n
+        \   \n*   [15 References](https://en.wikipedia.org/wiki/Template:Article_templates/City#References)\n
+        \   \n*   [16 Further reading](https://en.wikipedia.org/wiki/Template:Article_templates/City#Further_reading)\n
+        \   \n*   [17 External links](https://en.wikipedia.org/wiki/Template:Article_templates/City#External_links)\n
+        \   \n\nTemplate:Article templates/City\n===============================\n\n
+        Add languages\n\n[Add links](https://www.wikidata.org/wiki/Special:NewItem?site=enwiki&page=Template%3AArticle+templates%2FCity
+        \"Add interlanguage links\")\n\n*   [Template](https://en.wikipedia.org/wiki/Template:Article_templates/City
+        \"View the template [alt-shift-c]\")\n*   [Talk](https://en.wikipedia.org/w/index.php?title=Template_talk:Article_templates/City&action=edit&redlink=1
+        \"Discuss improvements to the content page (page does not exist) [alt-shift-t]\")\n\n
+        English\n\n*   [Read](https://en.wikipedia.org/wiki/Template:Article_templates/City)\n*
+        \  [Edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit
+        \"Edit this page [alt-shift-e]\")\n*   [View history](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=history
+        \"Past revisions of this page [alt-shift-h]\")\n\n Tools\n\nTools\n\nmove
+        to sidebar hide\n\nActions\n\n*   [Read](https://en.wikipedia.org/wiki/Template:Article_templates/City)\n*
+        \  [Edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit
+        \"Edit this page [alt-shift-e]\")\n*   [View history](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=history)\n\nGeneral\n\n*
+        \  [What links here](https://en.wikipedia.org/wiki/Special:WhatLinksHere/Template:Article_templates/City
+        \"List of all English Wikipedia pages containing links to this page [alt-shift-j]\")\n*
+        \  [Related changes](https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Template:Article_templates/City
+        \"Recent changes in pages linked from this page [alt-shift-k]\")\n*   [Upload
+        file](https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard \"Upload
+        files [alt-shift-u]\")\n*   [Special pages](https://en.wikipedia.org/wiki/Special:SpecialPages
+        \"A list of all special pages [alt-shift-q]\")\n*   [Permanent link](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&oldid=1156726642
+        \"Permanent link to this revision of this page\")\n*   [Page information](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=info
+        \"More information about this page\")\n*   [Get shortened URL](https://en.wikipedia.org/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTemplate%3AArticle_templates%2FCity)\n*
+        \  [Download QR code](https://en.wikipedia.org/w/index.php?title=Special:QrCode&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTemplate%3AArticle_templates%2FCity)\n*
+        \  [Add interlanguage links](https://www.wikidata.org/wiki/Special:NewItem?site=enwiki&page=Template%3AArticle+templates%2FCity
+        \"Add interlanguage links\")\n\nPrint/export\n\n*   [Download as PDF](https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&page=Template%3AArticle_templates%2FCity&action=show-download-screen)\n*
+        \  [Printable version](javascript:print(); \"Printable version of this page
+        [alt-shift-p]\")\n\nIn other projects\n\nFrom Wikipedia, the free encyclopedia\n\n<
+        [Template:Article templates](https://en.wikipedia.org/wiki/Template:Article_templates
+        \"Template:Article templates\")\n\n| \nCity\n\n |\n| --- |\n| \n\nError: Must
+        specify an image in the first line.\n\n**Clockwise from top:**\n\n |\n\nThis
+        template is about \u2026. For other uses, see [City (disambiguation)](https://en.wikipedia.org/wiki/City_(disambiguation)
+        \"City (disambiguation)\").\n\n**City** is \u2026\n\nEtymology\n---------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=1
+        \"Edit section: Etymology\")\\]\n\nHistory\n-------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=2
+        \"Edit section: History\")\\]\n\n### Original inhabitants\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=3
+        \"Edit section: Original inhabitants\")\\]\n\n### Original settlements\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=4
+        \"Edit section: Original settlements\")\\]\n\n### Occupying powers/transitions
+        of power\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=5
+        \"Edit section: Occupying powers/transitions of power\")\\]\n\n### Population
+        spikes\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=6
+        \"Edit section: Population spikes\")\\]\n\n### Recessions\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=7
+        \"Edit section: Recessions\")\\]\n\n### Reasons for settlement/growth\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=8
+        \"Edit section: Reasons for settlement/growth\")\\]\n\n### Dominant activities\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=9
+        \"Edit section: Dominant activities\")\\]\n\n### Events that shaped the community\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=10
+        \"Edit section: Events that shaped the community\")\\]\n\n### Earliest known
+        history\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=11
+        \"Edit section: Earliest known history\")\\]\n\n### Industrial history\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=12
+        \"Edit section: Industrial history\")\\]\n\n### Social history\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=13
+        \"Edit section: Social history\")\\]\n\n### Political history\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=14
+        \"Edit section: Political history\")\\]\n\nGeography\n---------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=15
+        \"Edit section: Geography\")\\]\n\n(the geography and history sections can
+        be reversed if desired)\n\n### Geographic setting\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=16
+        \"Edit section: Geographic setting\")\\]\n\n### Geographical features\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=17
+        \"Edit section: Geographical features\")\\]\n\n### Subdivisions\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=18
+        \"Edit section: Subdivisions\")\\]\n\n### Climate\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=19
+        \"Edit section: Climate\")\\]\n\nGovernance\n----------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=20
+        \"Edit section: Governance\")\\]\n\nDemographics / Population\n-------------------------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=21
+        \"Edit section: Demographics / Population\")\\]\n\n### Population info\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=22
+        \"Edit section: Population info\")\\]\n\n### Census data\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=23
+        \"Edit section: Census data\")\\]\n\n### Ethnicity\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=24
+        \"Edit section: Ethnicity\")\\]\n\n### Language\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=25
+        \"Edit section: Language\")\\]\n\n### Religious affiliation\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=26
+        \"Edit section: Religious affiliation\")\\]\n\nEconomy\n-------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=27
+        \"Edit section: Economy\")\\]\n\n### Dominant industries\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=28
+        \"Edit section: Dominant industries\")\\]\n\n### Agriculture\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=29
+        \"Edit section: Agriculture\")\\]\n\n### Major employers\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=30
+        \"Edit section: Major employers\")\\]\n\n### Breweries\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=31
+        \"Edit section: Breweries\")\\]\n\n### Exports\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=32
+        \"Edit section: Exports\")\\]\n\n### Tourism\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=33
+        \"Edit section: Tourism\")\\]\n\nCulture\n-------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=34
+        \"Edit section: Culture\")\\]\n\n### Cultural venues\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=35
+        \"Edit section: Cultural venues\")\\]\n\n### Arts\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=36
+        \"Edit section: Arts\")\\]\n\n### Artifacts\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=37
+        \"Edit section: Artifacts\")\\]\n\n### Festivals\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=38
+        \"Edit section: Festivals\")\\]\n\n### Cuisine\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=39
+        \"Edit section: Cuisine\")\\]\n\n### Significant cultural events\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=40
+        \"Edit section: Significant cultural events\")\\]\n\nAttractions / Amenities\n-----------------------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=41
+        \"Edit section: Attractions / Amenities\")\\]\n\n(museums and other points
+        of interest, parks (local, regional, provincial parks), recreation venues,
+        pubs, restaurants, etc)\n\nSports\n------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=42
+        \"Edit section: Sports\")\\]\n\n(sport teams and significant athletic events)\n\nInfrastructure\n--------------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=43
+        \"Edit section: Infrastructure\")\\]\n\n(transport, utilities, health care,
+        security/safety, amenities)\n\nEducation\n---------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=44
+        \"Edit section: Education\")\\]\n\n(schools, colleges, responsible organizations)\n\nMedia\n-----\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=45
+        \"Edit section: Media\")\\]\n\n(local newspapers, TV, and radio stations)\n\nNotable
+        people\n--------------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=46
+        \"Edit section: Notable people\")\\]\n\nSee also\n--------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=47
+        \"Edit section: See also\")\\]\n\nReferences\n----------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=48
+        \"Edit section: References\")\\]\n\nFurther reading\n---------------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=49
+        \"Edit section: Further reading\")\\]\n\n*   _title_.\n*   _title_.\n\nExternal
+        links\n--------------\n\n\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=50
+        \"Edit section: External links\")\\]\n\nRetrieved from \"[https://en.wikipedia.org/w/index.php?title=Template:Article\\_templates/City&oldid=1156726642](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&oldid=1156726642)\"\n\n*
+        \  This page was last edited on 24 May 2023, at 08:58\_(UTC).\n*   Text is
+        available under the [Creative Commons Attribution-ShareAlike 4.0 License](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License
+        \"Wikipedia:Text of the Creative Commons Attribution-ShareAlike 4.0 International
+        License\"); additional terms may apply. By using this site, you agree to the
+        [Terms of Use](https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Terms_of_Use
+        \"foundation:Special:MyLanguage/Policy:Terms of Use\") and [Privacy Policy](https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy
+        \"foundation:Special:MyLanguage/Policy:Privacy policy\"). Wikipedia\xAE is
+        a registered trademark of the [Wikimedia Foundation, Inc.](https://wikimediafoundation.org/),
+        a non-profit organization.\n\n*   [Privacy policy](https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy)\n*
+        \  [About Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:About)\n*   [Disclaimers](https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer)\n*
+        \  [Contact Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Contact_us)\n*
+        \  [Code of Conduct](https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Universal_Code_of_Conduct)\n*
+        \  [Developers](https://developer.wikimedia.org/)\n*   [Statistics](https://stats.wikimedia.org/#/en.wikipedia.org)\n*
+        \  [Cookie statement](https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement)\n*
+        \  [Mobile view](https://en.m.wikipedia.org/w/index.php?title=Template:Article_templates/City&mobileaction=toggle_view_mobile)\n*
+        \  [Edit preview settings](https://en.wikipedia.org/wiki/Template:Article_templates/City#)\n\n*
+        \  [![Image 11: Wikimedia Foundation](https://en.wikipedia.org/static/images/footer/wikimedia-button.svg)](https://wikimediafoundation.org/)\n*
+        \  [![Image 12: Powered by MediaWiki](https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg)](https://www.mediawiki.org/)\n"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98ff71a0d092e-LAX
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Mon, 06 Jan 2025 06:13:29 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=tHsdEn77j4VIf0FH7ULs39SI1sgLLwxx3%2BIcwFfPPTTQU8Ljx70UOC4ETB1kylPPz3OO%2BdExHrLbpiQScHlh8rk8R6%2FsRYFlkKKaBIiqi08H9QSuYK5PKCuJdA%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '23951'
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=15001&min_rtt=14839&rtt_var=4316&sent=5&recv=7&lost=0&retrans=0&sent_bytes=2827&recv_bytes=801&delivery_rate=276382&cwnd=193&unsent_bytes=0&cid=bea551709c75a0e3&ts=879&x=0"
+      x-cloud-trace-context:
+      - 2ce6309e24e87bcc51611bd582a23ca7
+      x-powered-by:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      H4sIAIl0e2cC/81WXWgcVRTOpk26nLRJOklMSmmcTtpuk2YnM7vJ/oVGSm0NUwWNVQxLGO7M3N1M
+      d/bOOHO3dhsX+lIE3wShLz4UH3yTvmlFEB/8QUSl0jdfBPEPivQh6qv3zu5ss2RXKwj2ZTl773fO
+      mXO+75wZ2B6Hm/2Qh7EA+5dtE8s2CSgi3LAECUQ1pyqqmSulU0Z6MYus3GI6k00rCsqoKIsMEyR4
+      jGIHVzH163JgVWQHkXINlbEQh0GvTjddAsdB6MQQVMXCCBxwPUzaN3AUJjphl7Ef2C7hkVQ5lZcV
+      BtkfPWgY4yCM1EiFuK8QvXUOYzDk+a6Jg0D2WA17p979MAanYSTyi4LOwcmcksFKCadMM7uIEcrl
+      SinTMNJKdjFvIZzN4kzGULC6KHwtwAQLW7cQobaZRLYwmJJVVVaFr/bAaGb7jZ8yN1ZeTHx35Nbt
+      X1evCvHqO98H5OjNGSn+8eRbv0+P/3Z/btSvEWKTsrhFXdcJTjeUWP61a+/d+2xgaupMKlY79jkz
+      tAwcMF0LyyXbwR6im8JxmGG95Fl1ZOsVRNEC/9GVlG5uIptHlL26Nhf51YhJeXWHYPJs6/4Cw8s6
+      S6+joE5MTYChEOvYBBNX2DP1fr92AgbCxxKOwOGiVMZUp7jqOYhi3cIlFoYHlTZYnnHHLZdsH8vV
+      oNwGCQLsqk8rwNAOrHAKZiNIE1FM9MiT2NDWYCzyvRS4jFxzE1eRsAz5LYnWPSwVJNe4hE0qzUuM
+      bQ/71MaBVGC3PHZoNGHI91FdajQa2mE4GMUMPER0DhAGYS//c7Xveqwv1tcnfLKvG58Ri1J8+aNX
+      rz/+0uvLcxObiFgOFquslY7o48BzSYAZqd++fatJqrtS/39JHYY4BwQUe0L/VExb6EHeJHQv5m87
+      pv0cg2HebD2CB8LdGNyJFZsc6Hw+pYLYU0zzomS6bPoJ5aji86ZfMwxsiVYNM4GIibOuW7FxYoMD
+      w4Amchzdtjg6NJ88b517xigZ5fP10voLuQs+fnodra1WQge7itkeq3ocnVJSS0lFTSqZi0qmoKYL
+      bJWk1PxSRjmlKAVF4Q4e8qlesUkYnqdL+pjWfCI1NrSlTiGfgGNd2yUmV8Qdntq1/u4i/iUGP8b+
+      ScYRccxuzEudfd6l7nnJZh3eed6OSm3q8IOLLMJa+FzPskrZxZVkczknLaaklhc3TQcFwe6petDP
+      do6A+kyIDFpy/SqiTX+c5FA+b3zkXBhtC6jFr1CEdSYRPges1UUJURbGqFGWJyL6QaHzorJDJhvM
+      ZolYFy09qBmt/IyvplQYVe0x/qbrWv5g8k/7zdFBeccYH/d8NpM8UItNxmxzP4lbEQfhrv7i/r1w
+      ms98emP7URrrfu2JHmOdgIcrrou+e/u13VLaU93lrYD8b8T9sIv5y66MOhNbq2PmXUGKPze778r0
+      yLk7c5PRVL5cY5IVT7JPDItVMss4/GHgjyaHkfHIcJjowSH7RuooR5vu5GrX/X9Gykw3UoZhf6ud
+      evgOWIBDESg6Z7ph7WN7mn8TpNnEZ83cklpayuVQ2ojY/AvxIQtMdwoAAA==
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1183'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98fffdec87c79-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:30 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=gFr7fI%2F4v%2B5jF%2FzPZd0ZQ4PMdn%2Fsl6TWQUCXi5xaykZBNjONlCd0kU1MWeCPFA4YuG0ZWuAZJTdoikfZzwlKCQOxhZH9317w5557Id45Wh5RAbgmlLjL1zjhcuePMlsiEh5Aem98eEoPXQ%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=20035&min_rtt=19995&rtt_var=5694&sent=5&recv=8&lost=0&retrans=0&sent_bytes=2838&recv_bytes=2126&delivery_rate=203440&cwnd=235&unsent_bytes=0&cid=2a072a9ca5bcd052&ts=253&x=0"
+      traceparent:
+      - 00-27bb26f36f7f791f787d660b2650b3c1-164124b1c1c64796-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "{\"messages\":[{\"role\":\"system\",\"content\":\"You are an expert fiction
+      writer, in the style of Rick & Morty.You also write the best wikipedia style
+      articles.You are given an article draft, outline, and facts about a city.You
+      format the article to match the wikipedia template.You add citations for all
+      the facts.You make sure the article is completely up to snuff for a wikipedia
+      page.\"},{\"role\":\"user\",\"content\":\"Please format the article about the
+      city of Blortzville, the Eminent Sprawl of Enigma and Hub of Cosmic Curiosities
+      into a wikipedia style article.\"},{\"role\":\"assistant\",\"tool_calls\":[{\"id\":\"call_DFdEMbfbgFyfYU8KreLYaRHk\",\"type\":\"function\",\"function\":{\"name\":\"get_template_definition\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"call_DFdEMbfbgFyfYU8KreLYaRHk\",\"content\":\"Title:
+      Template:Article templates/City - Wikipedia\\n\\nURL Source: https://en.wikipedia.org/wiki/Template:Article_templates/City\\n\\nMarkdown
+      Content:\\nTemplate:Article templates/City - Wikipedia\\n===============                    \\n\\n[Jump
+      to content](https://en.wikipedia.org/wiki/Template:Article_templates/City#bodyContent)\\n\\n
+      Main menu\\n\\nMain menu\\n\\nmove to sidebar hide\\n\\nNavigation\\n\\n*   [Main
+      page](https://en.wikipedia.org/wiki/Main_Page \\\"Visit the main page [alt-shift-z]\\\")\\n*
+      \  [Contents](https://en.wikipedia.org/wiki/Wikipedia:Contents \\\"Guides to
+      browsing Wikipedia\\\")\\n*   [Current events](https://en.wikipedia.org/wiki/Portal:Current_events
+      \\\"Articles related to current events\\\")\\n*   [Random article](https://en.wikipedia.org/wiki/Special:Random
+      \\\"Visit a randomly selected article [alt-shift-x]\\\")\\n*   [About Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:About
+      \\\"Learn about Wikipedia and how it works\\\")\\n*   [Contact us](https://en.wikipedia.org/wiki/Wikipedia:Contact_us
+      \\\"How to contact Wikipedia\\\")\\n\\nContribute\\n\\n*   [Help](https://en.wikipedia.org/wiki/Help:Contents
+      \\\"Guidance on how to use and edit Wikipedia\\\")\\n*   [Learn to edit](https://en.wikipedia.org/wiki/Help:Introduction
+      \\\"Learn how to edit Wikipedia\\\")\\n*   [Community portal](https://en.wikipedia.org/wiki/Wikipedia:Community_portal
+      \\\"The hub for editors\\\")\\n*   [Recent changes](https://en.wikipedia.org/wiki/Special:RecentChanges
+      \\\"A list of recent changes to Wikipedia [alt-shift-r]\\\")\\n*   [Upload file](https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard
+      \\\"Add images or other media for use on Wikipedia\\\")\\n\\n  [![Image 7](https://en.wikipedia.org/static/images/icons/wikipedia.png)
+      ![Image 8: Wikipedia](https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-en.svg)
+      ![Image 9: The Free Encyclopedia](https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-tagline-en.svg)](https://en.wikipedia.org/wiki/Main_Page)\\n\\n[Search](https://en.wikipedia.org/wiki/Special:Search
+      \\\"Search Wikipedia [alt-shift-f]\\\")\\n\\nSearch\\n\\n Appearance\\n\\nAppearance\\n\\nmove
+      to sidebar hide\\n\\nText\\n\\n*   Small\\n    \\n    Standard\\n    \\n    Large\\n
+      \   \\n\\nThis page always uses small font size\\n\\nWidth\\n\\n*   Standard\\n
+      \   \\n    Wide\\n    \\n\\nThe content is as wide as possible for your browser
+      window.\\n\\nColor (beta)\\n\\n*   Automatic\\n    \\n    Light\\n    \\n    Dark\\n
+      \   \\n\\nThis page is always in light mode.\\n\\n*   [Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)\\n*
+      \  [Create account](https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Template%3AArticle+templates%2FCity
+      \\\"You are encouraged to create an account and log in; however, it is not mandatory\\\")\\n*
+      \  [Log in](https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Template%3AArticle+templates%2FCity
+      \\\"You're encouraged to log in; however, it's not mandatory. [alt-shift-o]\\\")\\n\\n
+      Personal tools\\n\\n*   [Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)\\n*
+      \  [Create account](https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Template%3AArticle+templates%2FCity
+      \\\"You are encouraged to create an account and log in; however, it is not mandatory\\\")\\n*
+      \  [Log in](https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Template%3AArticle+templates%2FCity
+      \\\"You're encouraged to log in; however, it's not mandatory. [alt-shift-o]\\\")\\n\\nPages
+      for logged out editors [learn more](https://en.wikipedia.org/wiki/Help:Introduction)\\n\\n*
+      \  [Contributions](https://en.wikipedia.org/wiki/Special:MyContributions \\\"A
+      list of edits made from this IP address [alt-shift-y]\\\")\\n*   [Talk](https://en.wikipedia.org/wiki/Special:MyTalk
+      \\\"Discussion about edits from this IP address [alt-shift-n]\\\")\\n\\n Toggle
+      the table of contents\\n\\nContents\\n--------\\n\\nmove to sidebar hide\\n\\n*
+      \  [(Top)](https://en.wikipedia.org/wiki/Template:Article_templates/City#)\\n*
+      \  [1 Etymology](https://en.wikipedia.org/wiki/Template:Article_templates/City#Etymology)\\n
+      \   \\n*   [2 History](https://en.wikipedia.org/wiki/Template:Article_templates/City#History)Toggle
+      History subsection\\n    *   [2.1 Original inhabitants](https://en.wikipedia.org/wiki/Template:Article_templates/City#Original_inhabitants)\\n
+      \       \\n    *   [2.2 Original settlements](https://en.wikipedia.org/wiki/Template:Article_templates/City#Original_settlements)\\n
+      \       \\n    *   [2.3 Occupying powers/transitions of power](https://en.wikipedia.org/wiki/Template:Article_templates/City#Occupying_powers/transitions_of_power)\\n
+      \       \\n    *   [2.4 Population spikes](https://en.wikipedia.org/wiki/Template:Article_templates/City#Population_spikes)\\n
+      \       \\n    *   [2.5 Recessions](https://en.wikipedia.org/wiki/Template:Article_templates/City#Recessions)\\n
+      \       \\n    *   [2.6 Reasons for settlement/growth](https://en.wikipedia.org/wiki/Template:Article_templates/City#Reasons_for_settlement/growth)\\n
+      \       \\n    *   [2.7 Dominant activities](https://en.wikipedia.org/wiki/Template:Article_templates/City#Dominant_activities)\\n
+      \       \\n    *   [2.8 Events that shaped the community](https://en.wikipedia.org/wiki/Template:Article_templates/City#Events_that_shaped_the_community)\\n
+      \       \\n    *   [2.9 Earliest known history](https://en.wikipedia.org/wiki/Template:Article_templates/City#Earliest_known_history)\\n
+      \       \\n    *   [2.10 Industrial history](https://en.wikipedia.org/wiki/Template:Article_templates/City#Industrial_history)\\n
+      \       \\n    *   [2.11 Social history](https://en.wikipedia.org/wiki/Template:Article_templates/City#Social_history)\\n
+      \       \\n    *   [2.12 Political history](https://en.wikipedia.org/wiki/Template:Article_templates/City#Political_history)\\n
+      \       \\n*   [3 Geography](https://en.wikipedia.org/wiki/Template:Article_templates/City#Geography)Toggle
+      Geography subsection\\n    *   [3.1 Geographic setting](https://en.wikipedia.org/wiki/Template:Article_templates/City#Geographic_setting)\\n
+      \       \\n    *   [3.2 Geographical features](https://en.wikipedia.org/wiki/Template:Article_templates/City#Geographical_features)\\n
+      \       \\n    *   [3.3 Subdivisions](https://en.wikipedia.org/wiki/Template:Article_templates/City#Subdivisions)\\n
+      \       \\n    *   [3.4 Climate](https://en.wikipedia.org/wiki/Template:Article_templates/City#Climate)\\n
+      \       \\n*   [4 Governance](https://en.wikipedia.org/wiki/Template:Article_templates/City#Governance)\\n
+      \   \\n*   [5 Demographics / Population](https://en.wikipedia.org/wiki/Template:Article_templates/City#Demographics_/_Population)Toggle
+      Demographics / Population subsection\\n    *   [5.1 Population info](https://en.wikipedia.org/wiki/Template:Article_templates/City#Population_info)\\n
+      \       \\n    *   [5.2 Census data](https://en.wikipedia.org/wiki/Template:Article_templates/City#Census_data)\\n
+      \       \\n    *   [5.3 Ethnicity](https://en.wikipedia.org/wiki/Template:Article_templates/City#Ethnicity)\\n
+      \       \\n    *   [5.4 Language](https://en.wikipedia.org/wiki/Template:Article_templates/City#Language)\\n
+      \       \\n    *   [5.5 Religious affiliation](https://en.wikipedia.org/wiki/Template:Article_templates/City#Religious_affiliation)\\n
+      \       \\n*   [6 Economy](https://en.wikipedia.org/wiki/Template:Article_templates/City#Economy)Toggle
+      Economy subsection\\n    *   [6.1 Dominant industries](https://en.wikipedia.org/wiki/Template:Article_templates/City#Dominant_industries)\\n
+      \       \\n    *   [6.2 Agriculture](https://en.wikipedia.org/wiki/Template:Article_templates/City#Agriculture)\\n
+      \       \\n    *   [6.3 Major employers](https://en.wikipedia.org/wiki/Template:Article_templates/City#Major_employers)\\n
+      \       \\n    *   [6.4 Breweries](https://en.wikipedia.org/wiki/Template:Article_templates/City#Breweries)\\n
+      \       \\n    *   [6.5 Exports](https://en.wikipedia.org/wiki/Template:Article_templates/City#Exports)\\n
+      \       \\n    *   [6.6 Tourism](https://en.wikipedia.org/wiki/Template:Article_templates/City#Tourism)\\n
+      \       \\n*   [7 Culture](https://en.wikipedia.org/wiki/Template:Article_templates/City#Culture)Toggle
+      Culture subsection\\n    *   [7.1 Cultural venues](https://en.wikipedia.org/wiki/Template:Article_templates/City#Cultural_venues)\\n
+      \       \\n    *   [7.2 Arts](https://en.wikipedia.org/wiki/Template:Article_templates/City#Arts)\\n
+      \       \\n    *   [7.3 Artifacts](https://en.wikipedia.org/wiki/Template:Article_templates/City#Artifacts)\\n
+      \       \\n    *   [7.4 Festivals](https://en.wikipedia.org/wiki/Template:Article_templates/City#Festivals)\\n
+      \       \\n    *   [7.5 Cuisine](https://en.wikipedia.org/wiki/Template:Article_templates/City#Cuisine)\\n
+      \       \\n    *   [7.6 Significant cultural events](https://en.wikipedia.org/wiki/Template:Article_templates/City#Significant_cultural_events)\\n
+      \       \\n*   [8 Attractions / Amenities](https://en.wikipedia.org/wiki/Template:Article_templates/City#Attractions_/_Amenities)\\n
+      \   \\n*   [9 Sports](https://en.wikipedia.org/wiki/Template:Article_templates/City#Sports)\\n
+      \   \\n*   [10 Infrastructure](https://en.wikipedia.org/wiki/Template:Article_templates/City#Infrastructure)\\n
+      \   \\n*   [11 Education](https://en.wikipedia.org/wiki/Template:Article_templates/City#Education)\\n
+      \   \\n*   [12 Media](https://en.wikipedia.org/wiki/Template:Article_templates/City#Media)\\n
+      \   \\n*   [13 Notable people](https://en.wikipedia.org/wiki/Template:Article_templates/City#Notable_people)\\n
+      \   \\n*   [14 See also](https://en.wikipedia.org/wiki/Template:Article_templates/City#See_also)\\n
+      \   \\n*   [15 References](https://en.wikipedia.org/wiki/Template:Article_templates/City#References)\\n
+      \   \\n*   [16 Further reading](https://en.wikipedia.org/wiki/Template:Article_templates/City#Further_reading)\\n
+      \   \\n*   [17 External links](https://en.wikipedia.org/wiki/Template:Article_templates/City#External_links)\\n
+      \   \\n\\nTemplate:Article templates/City\\n===============================\\n\\n
+      Add languages\\n\\n[Add links](https://www.wikidata.org/wiki/Special:NewItem?site=enwiki&page=Template%3AArticle+templates%2FCity
+      \\\"Add interlanguage links\\\")\\n\\n*   [Template](https://en.wikipedia.org/wiki/Template:Article_templates/City
+      \\\"View the template [alt-shift-c]\\\")\\n*   [Talk](https://en.wikipedia.org/w/index.php?title=Template_talk:Article_templates/City&action=edit&redlink=1
+      \\\"Discuss improvements to the content page (page does not exist) [alt-shift-t]\\\")\\n\\n
+      English\\n\\n*   [Read](https://en.wikipedia.org/wiki/Template:Article_templates/City)\\n*
+      \  [Edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit
+      \\\"Edit this page [alt-shift-e]\\\")\\n*   [View history](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=history
+      \\\"Past revisions of this page [alt-shift-h]\\\")\\n\\n Tools\\n\\nTools\\n\\nmove
+      to sidebar hide\\n\\nActions\\n\\n*   [Read](https://en.wikipedia.org/wiki/Template:Article_templates/City)\\n*
+      \  [Edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit
+      \\\"Edit this page [alt-shift-e]\\\")\\n*   [View history](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=history)\\n\\nGeneral\\n\\n*
+      \  [What links here](https://en.wikipedia.org/wiki/Special:WhatLinksHere/Template:Article_templates/City
+      \\\"List of all English Wikipedia pages containing links to this page [alt-shift-j]\\\")\\n*
+      \  [Related changes](https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Template:Article_templates/City
+      \\\"Recent changes in pages linked from this page [alt-shift-k]\\\")\\n*   [Upload
+      file](https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard \\\"Upload
+      files [alt-shift-u]\\\")\\n*   [Special pages](https://en.wikipedia.org/wiki/Special:SpecialPages
+      \\\"A list of all special pages [alt-shift-q]\\\")\\n*   [Permanent link](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&oldid=1156726642
+      \\\"Permanent link to this revision of this page\\\")\\n*   [Page information](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=info
+      \\\"More information about this page\\\")\\n*   [Get shortened URL](https://en.wikipedia.org/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTemplate%3AArticle_templates%2FCity)\\n*
+      \  [Download QR code](https://en.wikipedia.org/w/index.php?title=Special:QrCode&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTemplate%3AArticle_templates%2FCity)\\n*
+      \  [Add interlanguage links](https://www.wikidata.org/wiki/Special:NewItem?site=enwiki&page=Template%3AArticle+templates%2FCity
+      \\\"Add interlanguage links\\\")\\n\\nPrint/export\\n\\n*   [Download as PDF](https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&page=Template%3AArticle_templates%2FCity&action=show-download-screen)\\n*
+      \  [Printable version](javascript:print(); \\\"Printable version of this page
+      [alt-shift-p]\\\")\\n\\nIn other projects\\n\\nFrom Wikipedia, the free encyclopedia\\n\\n<
+      [Template:Article templates](https://en.wikipedia.org/wiki/Template:Article_templates
+      \\\"Template:Article templates\\\")\\n\\n| \\nCity\\n\\n |\\n| --- |\\n| \\n\\nError:
+      Must specify an image in the first line.\\n\\n**Clockwise from top:**\\n\\n
+      |\\n\\nThis template is about \u2026. For other uses, see [City (disambiguation)](https://en.wikipedia.org/wiki/City_(disambiguation)
+      \\\"City (disambiguation)\\\").\\n\\n**City** is \u2026\\n\\nEtymology\\n---------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=1
+      \\\"Edit section: Etymology\\\")\\\\]\\n\\nHistory\\n-------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=2
+      \\\"Edit section: History\\\")\\\\]\\n\\n### Original inhabitants\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=3
+      \\\"Edit section: Original inhabitants\\\")\\\\]\\n\\n### Original settlements\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=4
+      \\\"Edit section: Original settlements\\\")\\\\]\\n\\n### Occupying powers/transitions
+      of power\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=5
+      \\\"Edit section: Occupying powers/transitions of power\\\")\\\\]\\n\\n### Population
+      spikes\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=6
+      \\\"Edit section: Population spikes\\\")\\\\]\\n\\n### Recessions\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=7
+      \\\"Edit section: Recessions\\\")\\\\]\\n\\n### Reasons for settlement/growth\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=8
+      \\\"Edit section: Reasons for settlement/growth\\\")\\\\]\\n\\n### Dominant
+      activities\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=9
+      \\\"Edit section: Dominant activities\\\")\\\\]\\n\\n### Events that shaped
+      the community\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=10
+      \\\"Edit section: Events that shaped the community\\\")\\\\]\\n\\n### Earliest
+      known history\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=11
+      \\\"Edit section: Earliest known history\\\")\\\\]\\n\\n### Industrial history\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=12
+      \\\"Edit section: Industrial history\\\")\\\\]\\n\\n### Social history\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=13
+      \\\"Edit section: Social history\\\")\\\\]\\n\\n### Political history\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=14
+      \\\"Edit section: Political history\\\")\\\\]\\n\\nGeography\\n---------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=15
+      \\\"Edit section: Geography\\\")\\\\]\\n\\n(the geography and history sections
+      can be reversed if desired)\\n\\n### Geographic setting\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=16
+      \\\"Edit section: Geographic setting\\\")\\\\]\\n\\n### Geographical features\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=17
+      \\\"Edit section: Geographical features\\\")\\\\]\\n\\n### Subdivisions\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=18
+      \\\"Edit section: Subdivisions\\\")\\\\]\\n\\n### Climate\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=19
+      \\\"Edit section: Climate\\\")\\\\]\\n\\nGovernance\\n----------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=20
+      \\\"Edit section: Governance\\\")\\\\]\\n\\nDemographics / Population\\n-------------------------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=21
+      \\\"Edit section: Demographics / Population\\\")\\\\]\\n\\n### Population info\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=22
+      \\\"Edit section: Population info\\\")\\\\]\\n\\n### Census data\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=23
+      \\\"Edit section: Census data\\\")\\\\]\\n\\n### Ethnicity\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=24
+      \\\"Edit section: Ethnicity\\\")\\\\]\\n\\n### Language\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=25
+      \\\"Edit section: Language\\\")\\\\]\\n\\n### Religious affiliation\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=26
+      \\\"Edit section: Religious affiliation\\\")\\\\]\\n\\nEconomy\\n-------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=27
+      \\\"Edit section: Economy\\\")\\\\]\\n\\n### Dominant industries\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=28
+      \\\"Edit section: Dominant industries\\\")\\\\]\\n\\n### Agriculture\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=29
+      \\\"Edit section: Agriculture\\\")\\\\]\\n\\n### Major employers\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=30
+      \\\"Edit section: Major employers\\\")\\\\]\\n\\n### Breweries\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=31
+      \\\"Edit section: Breweries\\\")\\\\]\\n\\n### Exports\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=32
+      \\\"Edit section: Exports\\\")\\\\]\\n\\n### Tourism\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=33
+      \\\"Edit section: Tourism\\\")\\\\]\\n\\nCulture\\n-------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=34
+      \\\"Edit section: Culture\\\")\\\\]\\n\\n### Cultural venues\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=35
+      \\\"Edit section: Cultural venues\\\")\\\\]\\n\\n### Arts\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=36
+      \\\"Edit section: Arts\\\")\\\\]\\n\\n### Artifacts\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=37
+      \\\"Edit section: Artifacts\\\")\\\\]\\n\\n### Festivals\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=38
+      \\\"Edit section: Festivals\\\")\\\\]\\n\\n### Cuisine\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=39
+      \\\"Edit section: Cuisine\\\")\\\\]\\n\\n### Significant cultural events\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=40
+      \\\"Edit section: Significant cultural events\\\")\\\\]\\n\\nAttractions / Amenities\\n-----------------------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=41
+      \\\"Edit section: Attractions / Amenities\\\")\\\\]\\n\\n(museums and other
+      points of interest, parks (local, regional, provincial parks), recreation venues,
+      pubs, restaurants, etc)\\n\\nSports\\n------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=42
+      \\\"Edit section: Sports\\\")\\\\]\\n\\n(sport teams and significant athletic
+      events)\\n\\nInfrastructure\\n--------------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=43
+      \\\"Edit section: Infrastructure\\\")\\\\]\\n\\n(transport, utilities, health
+      care, security/safety, amenities)\\n\\nEducation\\n---------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=44
+      \\\"Edit section: Education\\\")\\\\]\\n\\n(schools, colleges, responsible organizations)\\n\\nMedia\\n-----\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=45
+      \\\"Edit section: Media\\\")\\\\]\\n\\n(local newspapers, TV, and radio stations)\\n\\nNotable
+      people\\n--------------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=46
+      \\\"Edit section: Notable people\\\")\\\\]\\n\\nSee also\\n--------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=47
+      \\\"Edit section: See also\\\")\\\\]\\n\\nReferences\\n----------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=48
+      \\\"Edit section: References\\\")\\\\]\\n\\nFurther reading\\n---------------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=49
+      \\\"Edit section: Further reading\\\")\\\\]\\n\\n*   _title_.\\n*   _title_.\\n\\nExternal
+      links\\n--------------\\n\\n\\\\[[edit](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&action=edit&section=50
+      \\\"Edit section: External links\\\")\\\\]\\n\\nRetrieved from \\\"[https://en.wikipedia.org/w/index.php?title=Template:Article\\\\_templates/City&oldid=1156726642](https://en.wikipedia.org/w/index.php?title=Template:Article_templates/City&oldid=1156726642)\\\"\\n\\n*
+      \  This page was last edited on 24 May 2023, at 08:58\_(UTC).\\n*   Text is
+      available under the [Creative Commons Attribution-ShareAlike 4.0 License](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License
+      \\\"Wikipedia:Text of the Creative Commons Attribution-ShareAlike 4.0 International
+      License\\\"); additional terms may apply. By using this site, you agree to the
+      [Terms of Use](https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Terms_of_Use
+      \\\"foundation:Special:MyLanguage/Policy:Terms of Use\\\") and [Privacy Policy](https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy
+      \\\"foundation:Special:MyLanguage/Policy:Privacy policy\\\"). Wikipedia\xAE
+      is a registered trademark of the [Wikimedia Foundation, Inc.](https://wikimediafoundation.org/),
+      a non-profit organization.\\n\\n*   [Privacy policy](https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy)\\n*
+      \  [About Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:About)\\n*   [Disclaimers](https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer)\\n*
+      \  [Contact Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Contact_us)\\n*
+      \  [Code of Conduct](https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Universal_Code_of_Conduct)\\n*
+      \  [Developers](https://developer.wikimedia.org/)\\n*   [Statistics](https://stats.wikimedia.org/#/en.wikipedia.org)\\n*
+      \  [Cookie statement](https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement)\\n*
+      \  [Mobile view](https://en.m.wikipedia.org/w/index.php?title=Template:Article_templates/City&mobileaction=toggle_view_mobile)\\n*
+      \  [Edit preview settings](https://en.wikipedia.org/wiki/Template:Article_templates/City#)\\n\\n*
+      \  [![Image 11: Wikimedia Foundation](https://en.wikipedia.org/static/images/footer/wikimedia-button.svg)](https://wikimediafoundation.org/)\\n*
+      \  [![Image 12: Powered by MediaWiki](https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg)](https://www.mediawiki.org/)\\n\"}],\"model\":\"gpt-4o\",\"n\":1,\"parallel_tool_calls\":true,\"stream\":false,\"tool_choice\":\"required\",\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"get_template_definition\",\"description\":\"Get
+      the template definition for a wikipedia article about a city.\",\"parameters\":{\"properties\":{},\"type\":\"object\",\"additionalProperties\":false}}},{\"type\":\"function\",\"function\":{\"name\":\"final_result\",\"description\":\"The
+      final response which ends this conversation\",\"parameters\":{\"properties\":{\"article\":{\"description\":\"The
+      fully formatted wikipedia article about the city, including citations, that
+      fully conforms (as applicable) to the wikipedia template.\",\"title\":\"Article\",\"type\":\"string\"},\"highlight\":{\"description\":\"A
+      short highlight of the article.\",\"title\":\"Highlight\",\"type\":\"string\"}},\"required\":[\"article\",\"highlight\"],\"title\":\"WikipediaFormatterResult\",\"type\":\"object\"}}}]}"
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '26393'
+      content-type:
+      - application/json
+      cookie:
+      - __cf_bm=OZE0sSPm7Aq.UANSne4S18Iqb81SqS0oFOkPJALDzXE-1736143983-1.0.1.1-cUxKyR1EYTnj19RWFfybIPFKvB3bn93YT.0jyoUo6WZHKUv4BnohWb7eVp3LyQBD_oDUtl6gJHdhsbf3keUq3w;
+        _cfuvid=v4h2HXQwv7ItXSRke.bTJFDLJ74Hsh1XOo3DErVmTw0-1736143983081-0.0.1.1-604800000
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmaefqX9sLHOAW7rhv0EhxE5I7CBC\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736144009,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_J8Pkqhqadf2yejLxsSpHSTI5\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"final_result\",\n
+        \             \"arguments\": \"{\\\"article\\\":\\\"# Blortzville: The Eminent
+        Sprawl of Enigma and Hub of Cosmic Curiosities\\\\n\\\\n## Etymology\\\\nBlortzville
+        derives its name from the mystical Blortz flower, known for its unique ability
+        to bloom under the light of a cosmic dusk.\\\\n\\\\n## History\\\\n\\\\n###
+        Original Inhabitants\\\\nThe region now known as Blortzville was originally
+        inhabited by the extraterrestrial tribe known as the Zorblings, famed for
+        their intricate glow-in-the-dark tapestry work.\\\\n\\\\n### Original Settlements\\\\nEvidence
+        indicates that the Zorblings' settlements were marked by circular stone formations
+        known as Whirl Circles, used for celestial navigation.\\\\n\\\\n### Population
+        Spikes\\\\nThe population of Blortzville experienced significant growth during
+        the Great Intergalactic Peace Festival of 2052, attracting beings from various
+        dimensions.\\\\n\\\\n### Events that Shaped the Community\\\\nA major event
+        was the Annual Quantum Flux Festival which began in 2073 and was said to have
+        stabilized temporal shifts in the area, making Blortzville a hub for cosmic
+        traffic.\\\\n\\\\n## Geography\\\\n\\\\n### Geographical Features\\\\nBlortzville
+        is surrounded by the enigmatic Nebula Mountains, which change hue depending
+        on the observer's mood.\\\\n\\\\n### Climate\\\\nThe city's climate is famed
+        for its unpredictability, with seasons dictated by the position of the nearby
+        sunglow moons.\\\\n\\\\n## Governance\\\\nBlortzville is governed by a council
+        of seven Grand Sages, each representing a fundamental cosmic element.\\\\n\\\\n##
+        Demographics / Population\\\\n\\\\n### Population Info\\\\nThe current population
+        of Blortzville stands at approximately 3.5 million sentient entities.\\\\n\\\\n###
+        Ethnicity and Language\\\\nA diverse cosmopolis, Blortzville is home to over
+        74 identifiable species, with Blortzian and Galactic Esperanto being the primary
+        languages.\\\\n\\\\n## Economy\\\\n\\\\n### Dominant Industries\\\\nThe economy
+        is driven by the trade of cosmic curiosities and alternative energy sourced
+        from the Nebula Mountains.\\\\n\\\\n### Tourism\\\\nTourism is bolstered by
+        attractions like the Infinite Circus and the Cosmic Bazaar of Astonishments.\\\\n\\\\n##
+        Culture\\\\n\\\\n### Festivals\\\\nThe city is renowned for hosting the Nebula
+        Ball, an event where attendees dance across dimensions.\\\\n\\\\n### Cuisine\\\\nBlortzville's
+        culinary scene features inter-dimensional delicacies, including Quantum Sushi
+        and Nebula Nectar.\\\\n\\\\n## Attractions/Amenities\\\\nKey attractions include
+        the Galactic Zoo, housing specimens from across known and unknown dimensions.\\\\n\\\\n##
+        Sports\\\\nThe Zorbling Throwing League is popular, with matches broadcasted
+        across the universe.\\\\n\\\\n## Infrastructure\\\\nBlortzville is known for
+        its advanced teleportation network and the Stellar Tramway, connecting the
+        city to orbiting habitats.\\\\n\\\\n## Education\\\\nEducation in Blortzville
+        emphasizes temporal physics and inter-species diplomacy, with institutions
+        like the University of Cosmic Studies leading the charge.\\\\n\\\\n## Media\\\\nLocal
+        media is dominated by BlortzNet, broadcasting across all major dimensions
+        and frequencies.\\\\n\\\\n## Notable People\\\\nNotable residents include
+        Zibbles the Alchemist, famed for his revolutionary work in trans-dimensional
+        chemistry.\\\\n\\\\n## References\\\\n1. Zorbling Artifact Venues. Intergalactic
+        Journal of History. \\\\n2. The Nebula Mountain Weather Patterns Study. Galactic
+        Climate Analysis Vol XI. \\\\n3. Blortzville Council Records, 2052.\\\\n4.
+        University of Cosmic Studies. Publication on Temporal Dynamics, 2073.\\\\n\\\\n##
+        See also\\\\n- Galactic Esperanto and Other Universal Languages\\\\n- Intergalactic
+        Peace Treaties\\\\n\\\\n## External links\\\\n- Blortzville Tourism Board\\\\n-
+        University of Cosmic Studies Official Page\\\",\\\"highlight\\\":\\\"Blortzville,
+        an enigmatic city renowned for its cosmic curiosities and vibrant inter-dimensional
+        community, boasts a rich diversity in both culture and population. It is governed
+        by a unique council of Grand Sages and offers unparalleled attractions such
+        as the Nebula Ball and the Galactic Zoo.\\\"}\"\n            }\n          }\n
+        \       ],\n        \"refusal\": null\n      },\n      \"logprobs\": null,\n
+        \     \"finish_reason\": \"tool_calls\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\":
+        6247,\n    \"completion_tokens\": 840,\n    \"total_tokens\": 7087,\n    \"prompt_tokens_details\":
+        {\n      \"cached_tokens\": 0,\n      \"audio_tokens\": 0\n    },\n    \"completion_tokens_details\":
+        {\n      \"reasoning_tokens\": 0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\":
+        0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd98ffcae525309-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:13:43 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '4994'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '13827'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '23605'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 12.789s
+      x-request-id:
+      - req_849901527a89ac327e7c7c3e2fc7b028
+    status:
+      code: 200
+      message: OK
+version: 1

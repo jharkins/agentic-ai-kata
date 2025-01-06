@@ -52,7 +52,6 @@ class ChainingKata(KataBase):
     def __init__(self):
         self.openai = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
         self.deps = Deps(openai=self.openai)
-        self.agent = self._create_agent()
 
     async def _run_async(self) -> Any:
         """Async implementation of the kata run"""
@@ -129,7 +128,7 @@ class ChainingKata(KataBase):
             )
 
         outline_agent = Agent(
-            self.settings.DEFAULT_MODEL,
+            settings.DEFAULT_MODEL,
             result_type=SearchAndOutlineResult,
             deps_type=str,
             system_prompt=(
@@ -174,7 +173,7 @@ class ChainingKata(KataBase):
             outline: list[str]
 
         fake_facts_agent = Agent(
-            self.settings.DEFAULT_MODEL,
+            settings.DEFAULT_MODEL,
             result_type=MadeUpFacts,
             deps_type=FakeFactsDeps,
             retries=3,  # Increase retries to handle potential tool call issues
@@ -234,15 +233,18 @@ class ChainingKata(KataBase):
             )
 
         article_writer_agent = Agent(
-            self.settings.DEFAULT_MODEL,
+            settings.DEFAULT_MODEL,
             result_type=ArticleWriterResult,
             system_prompt=(
-                "You are an expert fiction writer, in the style of Rick & Morty."
-                "You also write the best wikipedia style articles."
-                "You are given an outline and facts about a city."
-                "You write a wikipedia style article about the city."
-                "You care that the entire article is completely up to snuff for a wikipedia page."
-                "You turn the facts into bibiliography entires."
+                "You are an expert fiction writer, in the style of Rick & Morty. "
+                "You also write the best wikipedia style articles. "
+                "You are given an outline and facts about a city. "
+                "Write a wikipedia style article about the city using markdown formatting: "
+                "- Use '# ' for the main title "
+                "- Use '## ' for section headings "
+                "- Use '### ' for subsection headings "
+                "You care that the entire article is completely up to snuff for a wikipedia page. "
+                "You turn the facts into bibliography entries."
             ),
         )
 
@@ -283,13 +285,16 @@ class ChainingKata(KataBase):
             highlight: str = Field(description="A short highlight of the article.")
 
         wikipedia_formatter = Agent(
-            self.settings.DEFAULT_MODEL,
+            settings.DEFAULT_MODEL,
             result_type=WikipediaFormatterResult,
+            deps_type=WikipediaFormatterDeps,
             system_prompt=(
-                "You are an expert wikipedia formatter."
-                "Your output is a markdown formatted wikipedia article."
-                "You are given: a draft article about a city, an outline for the article, and a list of facts about the city."
-                "You have a tool, get_template_defintion, that returns the wikipedia template for a city."
+                "You are an expert fiction writer, in the style of Rick & Morty."
+                "You also write the best wikipedia style articles."
+                "You are given an article draft, outline, and facts about a city."
+                "You format the article to match the wikipedia template."
+                "You add citations for all the facts."
+                "You make sure the article is completely up to snuff for a wikipedia page."
             ),
         )
 

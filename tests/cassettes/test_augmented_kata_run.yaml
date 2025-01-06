@@ -1,0 +1,800 @@
+interactions:
+- request:
+    body: !!binary |
+      H4sIALR0e2cC/81Vz28bRRSOQ5tYL23TTAiYUGDZtrQEZ7v+bQdFbSREYBHqBYSAwmq8+2xvsju7
+      3RkHjLUCCfUAJw49wQWJA2dASD0AEhISICFR+g+0J5CQuBUJiQuza69bp7HKIRL4YM2+/d4337zv
+      vVn4dgE+noYGLHIMdxwLNYdxQVm8sIkKilUqW3q11arWm+Vyo1Gj9SaWai2s2LZerFeLoMJ9Al30
+      UIQ9jdvbmktZu0vbSLIwE/REx2dwEsg4hlEPyTwc9gNkozfwKCyNw3Yw5I7PYqaCVmxouoQcSoUm
+      HAsw32XbzH+DmcM4LMJcEPoWcq4F8gwHcje/zsA6zKd5KekKnK7rVdRbWLSsWhkprddbRavZLOm1
+      csOmWKthtdrUsVAmH83DkqTt2ZQJx1qlDpkpaoWCViDXZ+Ho7A+LF1576ddjSvmbazeufn6FZHfe
+      +/2PyuXgspp1b3x6SVn77d2VE31ZEybMWHakhF2m9KVMLxDrkXJalsF2WPtxPdO4fvwr8svBXG4j
+      XRg1OGz5Nmotx8WAig55DE4kXI5lUsfcpoKeif9MvWDSbtuLS2prQc94Ik3sMkvER16G3EYKeE5m
+      aKbUYVLeY5axAHMJ2HUYMp9M5143XpAGJhKJAc885SNXRAcViwaOoK7it5Snw7hTlA7dQcXzQ1QC
+      9AMXJYyy3dhNDD3KemcNhIOJenIBXumrntzTVdeGi6Q66praDsRq2VejvDoIsK7r5lVZJJOLkAps
+      9yQIaej21Pwwk6MQsoR8AI6MhwBuUaa9Rp21AbWxBHDLDzI71GSU4V7Xb7ecEDWPt02BXuDK/cgx
+      WJ7sn7EFc7dlkVfh5QSboIagfSvfB9OwmG62xX3Z91YHPUr+ysCfmb4qekFcQL+5hZaQxZHbBxgK
+      B3lc5IEYuZKVTSTGwd0pwhFuHNhIAHn1zdXBGK/asmWG4HhpuZTzO7YYGTqJ9rz0YePZ5xPY3cij
+      KMqPdcZI+Og5iozjsJBWhAeUmTENOQKHhlNlxkHjDDyQgtJ4QMOYSV4SBI7qu35vTV3KTGWmpsjV
+      e/aa8A9ffOTLi3//6N824SeDUM5nKJmVRLJCma0I33e50o/njAsM1iM54pXPvh+M+M33f/6PR/wI
+      ZFNp8jljnJ3Q/6fg353OqIyPgjzH5LxRWsHY3LupddDu1tIpybAXHtyrF2bgQPwwsvSnPS3dPLfc
+      /OKTd86pWVqovb3SOv/dyv0DySFe7CIXY/f0k9a1gYnp4v9j4qkJJspLcOw8xsPjZt3xft9c2ZcJ
+      rVqo01q9UtRL8uNcL6V2/gNzmXqxxAgAAA==
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '994'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd99109cee178d8-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:14:12 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=zX%2BQSWrz4EWmRNpnznyQLL9IfyjuhyrsOPD%2BjGASpZhWbQJlXYss1ttPluCOGT7lBMLFg4jGRh0NeDc5iNgSa0IvLfgYWDlp8q5tEKE149AU2MMENjcbjE7o7ASDWP34Sqz8AB47110mzQ%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=15100&min_rtt=15084&rtt_var=4271&sent=5&recv=8&lost=0&retrans=0&sent_bytes=2838&recv_bytes=1936&delivery_rate=270730&cwnd=227&unsent_bytes=0&cid=d17ef56f188b268f&ts=240&x=0"
+      traceparent:
+      - 00-a6dacbd526ad5752dd3dea9cd50b51e8-f2bd46cf1989fad7-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a helpful assistant that
+      uses tools to augment your knowledge. Always use the search_wikipedia tool to
+      verify facts before answering. Be concise and reply with one or two sentences
+      at most."},{"role":"user","content":"Does the capital of France have more people
+      than the capital of Germany?"}],"model":"gpt-4o","n":1,"parallel_tool_calls":true,"stream":false,"tool_choice":"required","tools":[{"type":"function","function":{"name":"search_wikipedia","description":"Retrieve
+      wikipedia sections based on a search query.","parameters":{"properties":{"query":{"description":"The
+      search query.","title":"Query","type":"string"}},"required":["query"],"type":"object","additionalProperties":false}}},{"type":"function","function":{"name":"final_result","description":"A
+      question, with context, and an answer","parameters":{"properties":{"question":{"description":"The
+      question.","title":"Question","type":"string"},"answer":{"description":"A concise,
+      one sentence answer to the question.","title":"Answer","type":"string"},"context":{"description":"A
+      list of context used for the answer.","items":{"type":"string"},"title":"Context","type":"array"}},"required":["question","answer","context"],"title":"QuestionAnswerWithContext","type":"object"}}}]}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '1291'
+      content-type:
+      - application/json
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmafMnba70dW7tBiN2js3segKBtin\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736144052,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_bp66K0CjPytybkaXdlkSBrbD\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"search_wikipedia\",\n
+        \             \"arguments\": \"{\\\"query\\\": \\\"Paris\\\"}\"\n            }\n
+        \         },\n          {\n            \"id\": \"call_lai3p2JVwtqCBomUC3eFNaIR\",\n
+        \           \"type\": \"function\",\n            \"function\": {\n              \"name\":
+        \"search_wikipedia\",\n              \"arguments\": \"{\\\"query\\\": \\\"Berlin\\\"}\"\n
+        \           }\n          }\n        ],\n        \"refusal\": null\n      },\n
+        \     \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n    }\n
+        \ ],\n  \"usage\": {\n    \"prompt_tokens\": 177,\n    \"completion_tokens\":
+        47,\n    \"total_tokens\": 224,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\":
+        0,\n      \"audio_tokens\": 0\n    },\n    \"completion_tokens_details\":
+        {\n      \"reasoning_tokens\": 0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\":
+        0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd991076e9f530c-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:14:13 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=1b7exLf5Zi9sP7sXPMTOnVB5uCczvTMRLXvUNvrexQY-1736144053-1.0.1.1-kgOZj5hf656qQb5wr0HvdUipgG_AAoO4wj2hDNtYaruH9fBMJ8ubWKM07ZqMmzCSE4kqz.39o796KdjXEzQ34Q;
+        path=/; expires=Mon, 06-Jan-25 06:44:13 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=aOPQ8Et4.C3ucpgd8BzCmkrc7jKUsw6X1LuNcGmFz54-1736144053545-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '1275'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '892'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '29914'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 172ms
+      x-request-id:
+      - req_790a117dd17340741b76bf88c7a6ec57
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: http://20.102.90.50:2017/wiki17_abstracts?query=Paris&k=3
+  response:
+    body:
+      string: "{\"topk\":[{\"text\":\"Paris | Paris (] ) is the capital and most populous
+        city of France, with an administrative-limits area of 105 km2 and a 2015 population
+        of 2,229,621. The city is a commune and department, and the capital-heart
+        of the 12,012 km2 \xCEle-de-France \\\"region\\\" (colloquially known as the
+        'Paris Region'), whose 12,142,802 2016 population represents roughly 18 percent
+        of the population of France. By the 17th century, Paris had become one of
+        Europe's major centres of finance, commerce, fashion, science, and the arts,
+        a position that it retains still today. The Paris Region had a GDP of \u20AC649.6
+        billion (US $763.4 billion) in 2014, accounting for 30.4 percent of the GDP
+        of France. According to official estimates, in 2013-14 the Paris Region had
+        the third-highest GDP in the world and the largest regional GDP in the EU.\",\"pid\":3193249,\"rank\":1,\"score\":26.159862518310547,\"prob\":0.5671526418752822,\"long_text\":\"Paris
+        | Paris (] ) is the capital and most populous city of France, with an administrative-limits
+        area of 105 km2 and a 2015 population of 2,229,621. The city is a commune
+        and department, and the capital-heart of the 12,012 km2 \xCEle-de-France \\\"region\\\"
+        (colloquially known as the 'Paris Region'), whose 12,142,802 2016 population
+        represents roughly 18 percent of the population of France. By the 17th century,
+        Paris had become one of Europe's major centres of finance, commerce, fashion,
+        science, and the arts, a position that it retains still today. The Paris Region
+        had a GDP of \u20AC649.6 billion (US $763.4 billion) in 2014, accounting for
+        30.4 percent of the GDP of France. According to official estimates, in 2013-14
+        the Paris Region had the third-highest GDP in the world and the largest regional
+        GDP in the EU.\"},{\"text\":\"Paris (disambiguation) | Paris is the largest
+        city and capital of France.\",\"pid\":1578992,\"rank\":2,\"score\":25.571046829223633,\"prob\":0.3147607379242784,\"long_text\":\"Paris
+        (disambiguation) | Paris is the largest city and capital of France.\"},{\"text\":\"Paris
+        (plant) | Paris is a genus of flowering plants described by Linnaeus in 1753.
+        It is widespread across Europe and Asia, with a center of diversity in China.\",\"pid\":2096305,\"rank\":3,\"score\":24.590652465820312,\"prob\":0.1180866202004394,\"long_text\":\"Paris
+        (plant) | Paris is a genus of flowering plants described by Linnaeus in 1753.
+        It is widespread across Europe and Asia, with a center of diversity in China.\"}],\"latency\":193.29500198364258}"
+    headers:
+      content-length:
+      - '2450'
+      content-type:
+      - application/json
+      date:
+      - Mon, 06 Jan 2025 06:14:12 GMT
+      server:
+      - uvicorn
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: http://20.102.90.50:2017/wiki17_abstracts?query=Berlin&k=3
+  response:
+    body:
+      string: '{"topk":[{"text":"Berlin | Berlin ( , ] ) is the capital and the largest
+        city of Germany as well as one of its 16 constituent states. With a population
+        of approximately 3.7 million, Berlin is the second most populous city proper
+        in the European Union and the seventh most populous urban area in the European
+        Union. Located in northeastern Germany on the banks of the rivers Spree and
+        Havel, it is the centre of the Berlin-Brandenburg Metropolitan Region, which
+        has roughly 6 million residents from more than 180 nations.","pid":2198504,"rank":1,"score":28.024532318115234,"prob":0.6466776218201236,"long_text":"Berlin
+        | Berlin ( , ] ) is the capital and the largest city of Germany as well as
+        one of its 16 constituent states. With a population of approximately 3.7 million,
+        Berlin is the second most populous city proper in the European Union and the
+        seventh most populous urban area in the European Union. Located in northeastern
+        Germany on the banks of the rivers Spree and Havel, it is the centre of the
+        Berlin-Brandenburg Metropolitan Region, which has roughly 6 million residents
+        from more than 180 nations."},{"text":"Geography of Berlin | Berlin is the
+        capital city of Germany and one of the 16 states of Germany. With a population
+        of 3.4 million people, Berlin is the second most populous city proper, the
+        seventh most populous urban area in the European Union, and the largest German
+        city.","pid":1744123,"rank":2,"score":26.738479614257812,"prob":0.17871550793397406,"long_text":"Geography
+        of Berlin | Berlin is the capital city of Germany and one of the 16 states
+        of Germany. With a population of 3.4 million people, Berlin is the second
+        most populous city proper, the seventh most populous urban area in the European
+        Union, and the largest German city."},{"text":"Berlin (Seedorf) | Berlin is
+        a German civil parish (\"Ortsteil\") of the municipality of Seedorf, in the
+        district of Segeberg, Schleswig-Holstein. With 500 inhabitants in 2008 it
+        is the most populated settlement of the municipality.","pid":2979511,"rank":3,"score":26.715221405029297,"prob":0.17460687024590243,"long_text":"Berlin
+        (Seedorf) | Berlin is a German civil parish (\"Ortsteil\") of the municipality
+        of Seedorf, in the district of Segeberg, Schleswig-Holstein. With 500 inhabitants
+        in 2008 it is the most populated settlement of the municipality."}],"latency":98.51837158203125}'
+    headers:
+      content-length:
+      - '2365'
+      content-type:
+      - application/json
+      date:
+      - Mon, 06 Jan 2025 06:14:12 GMT
+      server:
+      - uvicorn
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      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
+      nP8GcBBOb8USAAA=
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2120'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd991132b8514fa-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:14:14 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=S4t%2F2U7WDQIzSLQ9ayc2HSs%2F9SHYjAPcuAkhGjJB83hrEvvc%2F%2B%2BooNzN1y0UcBJdZqbsV4ReqWFRTfZKu3NNjqJoD0qFrZFbIDAR0b29uvkb3%2FNzbMGcf4Zd0QW3RfOIqtJaRKSyXVkPFQ%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=14961&min_rtt=14606&rtt_var=4422&sent=5&recv=9&lost=0&retrans=0&sent_bytes=2839&recv_bytes=3063&delivery_rate=280730&cwnd=223&unsent_bytes=0&cid=e5c5463de70390bb&ts=266&x=0"
+      traceparent:
+      - 00-1a60cb59f7fcee7517f0377de4013258-0d9beaef8a7840de-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "{\"messages\":[{\"role\":\"system\",\"content\":\"You are a helpful assistant
+      that uses tools to augment your knowledge. Always use the search_wikipedia tool
+      to verify facts before answering. Be concise and reply with one or two sentences
+      at most.\"},{\"role\":\"user\",\"content\":\"Does the capital of France have
+      more people than the capital of Germany?\"},{\"role\":\"assistant\",\"tool_calls\":[{\"id\":\"call_bp66K0CjPytybkaXdlkSBrbD\",\"type\":\"function\",\"function\":{\"name\":\"search_wikipedia\",\"arguments\":\"{\\\"query\\\":
+      \\\"Paris\\\"}\"}},{\"id\":\"call_lai3p2JVwtqCBomUC3eFNaIR\",\"type\":\"function\",\"function\":{\"name\":\"search_wikipedia\",\"arguments\":\"{\\\"query\\\":
+      \\\"Berlin\\\"}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"call_bp66K0CjPytybkaXdlkSBrbD\",\"content\":\"Paris
+      | Paris (] ) is the capital and most populous city of France, with an administrative-limits
+      area of 105 km2 and a 2015 population of 2,229,621. The city is a commune and
+      department, and the capital-heart of the 12,012 km2 \xCEle-de-France \\\"region\\\"
+      (colloquially known as the 'Paris Region'), whose 12,142,802 2016 population
+      represents roughly 18 percent of the population of France. By the 17th century,
+      Paris had become one of Europe's major centres of finance, commerce, fashion,
+      science, and the arts, a position that it retains still today. The Paris Region
+      had a GDP of \u20AC649.6 billion (US $763.4 billion) in 2014, accounting for
+      30.4 percent of the GDP of France. According to official estimates, in 2013-14
+      the Paris Region had the third-highest GDP in the world and the largest regional
+      GDP in the EU.\\nParis (disambiguation) | Paris is the largest city and capital
+      of France.\\nParis (plant) | Paris is a genus of flowering plants described
+      by Linnaeus in 1753. It is widespread across Europe and Asia, with a center
+      of diversity in China.\"},{\"role\":\"tool\",\"tool_call_id\":\"call_lai3p2JVwtqCBomUC3eFNaIR\",\"content\":\"Berlin
+      | Berlin ( , ] ) is the capital and the largest city of Germany as well as one
+      of its 16 constituent states. With a population of approximately 3.7 million,
+      Berlin is the second most populous city proper in the European Union and the
+      seventh most populous urban area in the European Union. Located in northeastern
+      Germany on the banks of the rivers Spree and Havel, it is the centre of the
+      Berlin-Brandenburg Metropolitan Region, which has roughly 6 million residents
+      from more than 180 nations.\\nGeography of Berlin | Berlin is the capital city
+      of Germany and one of the 16 states of Germany. With a population of 3.4 million
+      people, Berlin is the second most populous city proper, the seventh most populous
+      urban area in the European Union, and the largest German city.\\nBerlin (Seedorf)
+      | Berlin is a German civil parish (\\\"Ortsteil\\\") of the municipality of
+      Seedorf, in the district of Segeberg, Schleswig-Holstein. With 500 inhabitants
+      in 2008 it is the most populated settlement of the municipality.\"}],\"model\":\"gpt-4o\",\"n\":1,\"parallel_tool_calls\":true,\"stream\":false,\"tool_choice\":\"required\",\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"search_wikipedia\",\"description\":\"Retrieve
+      wikipedia sections based on a search query.\",\"parameters\":{\"properties\":{\"query\":{\"description\":\"The
+      search query.\",\"title\":\"Query\",\"type\":\"string\"}},\"required\":[\"query\"],\"type\":\"object\",\"additionalProperties\":false}}},{\"type\":\"function\",\"function\":{\"name\":\"final_result\",\"description\":\"A
+      question, with context, and an answer\",\"parameters\":{\"properties\":{\"question\":{\"description\":\"The
+      question.\",\"title\":\"Question\",\"type\":\"string\"},\"answer\":{\"description\":\"A
+      concise, one sentence answer to the question.\",\"title\":\"Answer\",\"type\":\"string\"},\"context\":{\"description\":\"A
+      list of context used for the answer.\",\"items\":{\"type\":\"string\"},\"title\":\"Context\",\"type\":\"array\"}},\"required\":[\"question\",\"answer\",\"context\"],\"title\":\"QuestionAnswerWithContext\",\"type\":\"object\"}}}]}"
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '3813'
+      content-type:
+      - application/json
+      cookie:
+      - __cf_bm=1b7exLf5Zi9sP7sXPMTOnVB5uCczvTMRLXvUNvrexQY-1736144053-1.0.1.1-kgOZj5hf656qQb5wr0HvdUipgG_AAoO4wj2hDNtYaruH9fBMJ8ubWKM07ZqMmzCSE4kqz.39o796KdjXEzQ34Q;
+        _cfuvid=aOPQ8Et4.C3ucpgd8BzCmkrc7jKUsw6X1LuNcGmFz54-1736144053545-0.0.1.1-604800000
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmafNCjjuRMblLCSftRC14AEiQZ97\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736144053,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_lmNKqGq8Gj0NBy3DBZMog0Cd\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"final_result\",\n
+        \             \"arguments\": \"{\\\"question\\\":\\\"Does the capital of France
+        have more people than the capital of Germany?\\\",\\\"answer\\\":\\\"Berlin,
+        the capital of Germany, has more people with approximately 3.7 million residents
+        compared to Paris, the capital of France, which has about 2.2 million residents.\\\",\\\"context\\\":[\\\"Paris
+        has a population of approximately 2,229,621.\\\",\\\"Berlin has a population
+        of approximately 3.7 million.\\\"]}\"\n            }\n          }\n        ],\n
+        \       \"refusal\": null\n      },\n      \"logprobs\": null,\n      \"finish_reason\":
+        \"tool_calls\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 726,\n
+        \   \"completion_tokens\": 96,\n    \"total_tokens\": 822,\n    \"prompt_tokens_details\":
+        {\n      \"cached_tokens\": 0,\n      \"audio_tokens\": 0\n    },\n    \"completion_tokens_details\":
+        {\n      \"reasoning_tokens\": 0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\":
+        0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd991109fff530c-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:14:15 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '1409'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '1921'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '29397'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 1.206s
+      x-request-id:
+      - req_a3b7f607797b2dc9f4fdee450ee9f4b8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: !!binary |
+      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
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '3222'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd9911fbe2ff7cd-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:14:16 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=snYLOSXwmAw8WKHyrf%2F9ZGZ0ONPayA6gFfYyJSN%2FJIMyEv6ijVLkOnrL6L2CiHzk83OmiB%2Fz6x9Rfzoy%2Ffcx40DOYwm0uMW21ZvJllPYtbbdYjsoHoH4FQT%2BxMsIHFS%2Fz9hBtTlDKc3n8w%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=19989&min_rtt=19900&rtt_var=5675&sent=6&recv=10&lost=0&retrans=0&sent_bytes=2839&recv_bytes=4165&delivery_rate=206168&cwnd=217&unsent_bytes=0&cid=8e101a95cb7e924c&ts=235&x=0"
+      traceparent:
+      - 00-87433e80ae86db0b461471a69f58469e-ec0bf4e9cb2d82c4-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "{\"messages\":[{\"role\":\"system\",\"content\":\"You are a helpful assistant
+      that uses tools to augment your knowledge. Always use the search_wikipedia tool
+      to verify facts before answering. Be concise and reply with one or two sentences
+      at most.\"},{\"role\":\"user\",\"content\":\"Does the capital of France have
+      more people than the capital of Germany?\"},{\"role\":\"assistant\",\"tool_calls\":[{\"id\":\"call_bp66K0CjPytybkaXdlkSBrbD\",\"type\":\"function\",\"function\":{\"name\":\"search_wikipedia\",\"arguments\":\"{\\\"query\\\":
+      \\\"Paris\\\"}\"}},{\"id\":\"call_lai3p2JVwtqCBomUC3eFNaIR\",\"type\":\"function\",\"function\":{\"name\":\"search_wikipedia\",\"arguments\":\"{\\\"query\\\":
+      \\\"Berlin\\\"}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"call_bp66K0CjPytybkaXdlkSBrbD\",\"content\":\"Paris
+      | Paris (] ) is the capital and most populous city of France, with an administrative-limits
+      area of 105 km2 and a 2015 population of 2,229,621. The city is a commune and
+      department, and the capital-heart of the 12,012 km2 \xCEle-de-France \\\"region\\\"
+      (colloquially known as the 'Paris Region'), whose 12,142,802 2016 population
+      represents roughly 18 percent of the population of France. By the 17th century,
+      Paris had become one of Europe's major centres of finance, commerce, fashion,
+      science, and the arts, a position that it retains still today. The Paris Region
+      had a GDP of \u20AC649.6 billion (US $763.4 billion) in 2014, accounting for
+      30.4 percent of the GDP of France. According to official estimates, in 2013-14
+      the Paris Region had the third-highest GDP in the world and the largest regional
+      GDP in the EU.\\nParis (disambiguation) | Paris is the largest city and capital
+      of France.\\nParis (plant) | Paris is a genus of flowering plants described
+      by Linnaeus in 1753. It is widespread across Europe and Asia, with a center
+      of diversity in China.\"},{\"role\":\"tool\",\"tool_call_id\":\"call_lai3p2JVwtqCBomUC3eFNaIR\",\"content\":\"Berlin
+      | Berlin ( , ] ) is the capital and the largest city of Germany as well as one
+      of its 16 constituent states. With a population of approximately 3.7 million,
+      Berlin is the second most populous city proper in the European Union and the
+      seventh most populous urban area in the European Union. Located in northeastern
+      Germany on the banks of the rivers Spree and Havel, it is the centre of the
+      Berlin-Brandenburg Metropolitan Region, which has roughly 6 million residents
+      from more than 180 nations.\\nGeography of Berlin | Berlin is the capital city
+      of Germany and one of the 16 states of Germany. With a population of 3.4 million
+      people, Berlin is the second most populous city proper, the seventh most populous
+      urban area in the European Union, and the largest German city.\\nBerlin (Seedorf)
+      | Berlin is a German civil parish (\\\"Ortsteil\\\") of the municipality of
+      Seedorf, in the district of Segeberg, Schleswig-Holstein. With 500 inhabitants
+      in 2008 it is the most populated settlement of the municipality.\"},{\"role\":\"assistant\",\"tool_calls\":[{\"id\":\"call_lmNKqGq8Gj0NBy3DBZMog0Cd\",\"type\":\"function\",\"function\":{\"name\":\"final_result\",\"arguments\":\"{\\\"question\\\":\\\"Does
+      the capital of France have more people than the capital of Germany?\\\",\\\"answer\\\":\\\"Berlin,
+      the capital of Germany, has more people with approximately 3.7 million residents
+      compared to Paris, the capital of France, which has about 2.2 million residents.\\\",\\\"context\\\":[\\\"Paris
+      has a population of approximately 2,229,621.\\\",\\\"Berlin has a population
+      of approximately 3.7 million.\\\"]}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"call_lmNKqGq8Gj0NBy3DBZMog0Cd\",\"content\":\"Final
+      result processed.\"},{\"role\":\"user\",\"content\":\"Which is more densely
+      populated?\"}],\"model\":\"gpt-4o\",\"n\":1,\"parallel_tool_calls\":true,\"stream\":false,\"tool_choice\":\"required\",\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"search_wikipedia\",\"description\":\"Retrieve
+      wikipedia sections based on a search query.\",\"parameters\":{\"properties\":{\"query\":{\"description\":\"The
+      search query.\",\"title\":\"Query\",\"type\":\"string\"}},\"required\":[\"query\"],\"type\":\"object\",\"additionalProperties\":false}}},{\"type\":\"function\",\"function\":{\"name\":\"final_result\",\"description\":\"A
+      question, with context, and an answer\",\"parameters\":{\"properties\":{\"question\":{\"description\":\"The
+      question.\",\"title\":\"Question\",\"type\":\"string\"},\"answer\":{\"description\":\"A
+      concise, one sentence answer to the question.\",\"title\":\"Answer\",\"type\":\"string\"},\"context\":{\"description\":\"A
+      list of context used for the answer.\",\"items\":{\"type\":\"string\"},\"title\":\"Context\",\"type\":\"array\"}},\"required\":[\"question\",\"answer\",\"context\"],\"title\":\"QuestionAnswerWithContext\",\"type\":\"object\"}}}]}"
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '4519'
+      content-type:
+      - application/json
+      cookie:
+      - __cf_bm=1b7exLf5Zi9sP7sXPMTOnVB5uCczvTMRLXvUNvrexQY-1736144053-1.0.1.1-kgOZj5hf656qQb5wr0HvdUipgG_AAoO4wj2hDNtYaruH9fBMJ8ubWKM07ZqMmzCSE4kqz.39o796KdjXEzQ34Q;
+        _cfuvid=aOPQ8Et4.C3ucpgd8BzCmkrc7jKUsw6X1LuNcGmFz54-1736144053545-0.0.1.1-604800000
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-AmafQgp5B08OzEdfnBIkcQNlUZ1T4\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736144056,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_D5iwlS5Bimwl8KEMeZwBw3lz\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"final_result\",\n
+        \             \"arguments\": \"{\\\"question\\\":\\\"Which is more densely
+        populated, Paris or Berlin?\\\",\\\"answer\\\":\\\"Paris is more densely populated
+        than Berlin, with an administrative area of 105 km\xB2 and a population of
+        about 2.2 million, resulting in a high population density.\\\",\\\"context\\\":[\\\"Paris
+        has a population of approximately 2,229,621 and an administrative area of
+        105 km\xB2.\\\",\\\"Berlin has a population of approximately 3.7 million.\\\"]}\"\n
+        \           }\n          }\n        ],\n        \"refusal\": null\n      },\n
+        \     \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n    }\n
+        \ ],\n  \"usage\": {\n    \"prompt_tokens\": 843,\n    \"completion_tokens\":
+        99,\n    \"total_tokens\": 942,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\":
+        0,\n      \"audio_tokens\": 0\n    },\n    \"completion_tokens_details\":
+        {\n      \"reasoning_tokens\": 0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\":
+        0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd9911d5cbf530c-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:14:17 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '1419'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '1732'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '29208'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 1.582s
+      x-request-id:
+      - req_1e0d9cc73afcfd03cd53bae76f41bfe8
+    status:
+      code: 200
+      message: OK
+version: 1

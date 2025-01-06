@@ -1,0 +1,183 @@
+interactions:
+- request:
+    body: !!binary |
+      H4sIAKJ0e2cC/8VUz2/cVBDeDW26naT54VBYWoiMaWmJEte762R/iBDlVGGCkOCAOFnP9njXjf1s
+      7Lct28USFwSHIlWVegOJAweOFVSCAwUhQL3QUyX+CcQJIRAHxHve9aZLsgqHCvawem/ezDcz3zdj
+      +GkBPp6CJiwlGF/2bFQ9mjBCxcGRFJDddWxqTaw01nVbX9fcZqVWI1XX0equ7qJrgQKPMfQxQBb3
+      1MTZVX1C213SRqkE01GPdUIKZ0Ea96EkQGkeToQR0tELPA0nx90uY5x4IRVIFbXaVDXuMpsXmmEs
+      wnyX7tLwCjWHdliCmSgObUwSNeI9HCm/f6cImzCfx+WgK3C+oW2g5mLVtus6EtJouFXbsmpaXW86
+      BOt13NiwNKzo0q05OMlhew6hzLPXiCdNV9VKRa1IN47Bwpfatftbd8uF7Q+/WvwiuXpTKn3w6/MX
+      d+7tKErplxe+/mTn5+PvrZzpc04oM0XZqRx3qdznZQYR20zl85wGx6Pt57Ri89VPPz9+72i5vJ0f
+      jBqcsEMHVdfzMSKsI2TJsDzbJJ65Sxi5IP5MTeMksG6kRj1DzoO61GaiXc72a+LxJe6p8vTGIsxk
+      Hr5HkYbSVHnZWOWKZTWJFK93erITyldQjmLCMWyUWScOu+2OLOK2jACOZmVIDlh9JeA2X2kND1mb
+      SktpR2xND5V0VRkaEh5iZmHKqsK7NhMWE4btHn9DEvs9bh4g8FYY5yRRWrTr+6nxFMAedD48xGsN
+      UhinAPYIlmYB9jIZOjzqh23Xi1ENkrbJMIh8nlR6Ek5NVsW4CDMPREkN2NiDzFyHnocSdX0KlnKk
+      S0nIR9XuYECkP4rwW7GvsF4kmAmtS2gLVjhshDHzMBF0DpLwE+dwwFtrfwjzmC8M20Ni31obbN6a
+      w9UeOouj7ZMk2ZdiJN0k2Fc409svvpy5HQaepunq2AyMCh/d09R4BhZzRpKIUFPASHMwO1wEUxiN
+      C/BE7pTbIxILJL7XEixo//hdLbxbLBQLBenbRw5aSuv+d298Fnz/+wNLeTaK+UrFHFnOSpYJdWQW
+      hn4i97nCfDgx2kz5Vjaa3wy28u2FH/7rrZyDUl4LvxeNrQnTfA7+XTvG+vhgPwtnJseNwip8Hw6c
+      Yg3Uw2Y4BxmKf/og8afhiLiMNLxzoIa3O8f+On29qiml5Zu33rn20e0fVx4flBzjm11M2Ni39Maf
+      dweq5Yf/UbVzE1TjWGMNGMvj6ux7f2gyPJQdRKeGFhJdt9HSmo16rt/frFtzGFkIAAA=
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '962'
+      Content-Type:
+      - application/x-protobuf
+      User-Agent:
+      - logfire/2.11.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://logfire-api.pydantic.dev/v1/traces
+  response:
+    body:
+      string: ''
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd9909cb9c30fb8-LAX
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 06 Jan 2025 06:13:55 GMT
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=AnJI8wRnVPi03slsaExc0g6LjXBDX1%2FUm6H7%2FQn%2FfhVVs2xknbuddERublOfeAbWFJRsTbxBCS7jKZYeQ%2FXd%2F9cDVNwUMnFTWZrR9OyUolwrki%2F3OgaLsEUdTkzXl8Mo04wfgxRkY9blvw%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      server-timing:
+      - cfL4;desc="?proto=TCP&rtt=20049&min_rtt=20044&rtt_var=5648&sent=5&recv=8&lost=0&retrans=0&sent_bytes=2840&recv_bytes=1904&delivery_rate=204453&cwnd=211&unsent_bytes=0&cid=7625789477f45bcf&ts=248&x=0"
+      traceparent:
+      - 00-8ac226cf5ad0bcb14d1bc48d7b791179-b94e3411599fbbb1-00
+      tracestate:
+      - ''
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"user","content":"Why do we practice through code?"}],"model":"gpt-4o","n":1,"parallel_tool_calls":true,"stream":false,"tool_choice":"required","tools":[{"type":"function","function":{"name":"final_result","description":"A
+      koan is a short, pithy statement or question that is used to test a student''s
+      understanding of a concept.","parameters":{"properties":{"koan":{"description":"A
+      Koan about agentic AI","title":"Koan","type":"string"},"master":{"description":"The
+      (obviously fictional) Agentic AI Monk''s name","title":"Master","type":"string"}},"required":["koan","master"],"title":"Koan","type":"object"}}}]}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - DUMMY
+      connection:
+      - keep-alive
+      content-length:
+      - '633'
+      content-type:
+      - application/json
+      host:
+      - api.openai.com
+      user-agent:
+      - AsyncOpenAI/Python 1.59.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.59.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.0rc1
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "{\n  \"id\": \"chatcmpl-Amaf5sQUqs5M0G5rlfrqeYXPpVJnw\",\n  \"object\":
+        \"chat.completion\",\n  \"created\": 1736144035,\n  \"model\": \"gpt-4o-2024-08-06\",\n
+        \ \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\":
+        \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n
+        \           \"id\": \"call_CAz0C3Up8qtumVpXbA0tKawj\",\n            \"type\":
+        \"function\",\n            \"function\": {\n              \"name\": \"final_result\",\n
+        \             \"arguments\": \"{\\\"koan\\\":\\\"The code is but a reflection
+        of the mind's logic. To practice coding is to walk the path of understanding,
+        to bind the abstract with the concrete.\\\",\\\"master\\\":\\\"Master Algorithm\\\"}\"\n
+        \           }\n          }\n        ],\n        \"refusal\": null\n      },\n
+        \     \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n    }\n
+        \ ],\n  \"usage\": {\n    \"prompt_tokens\": 107,\n    \"completion_tokens\":
+        50,\n    \"total_tokens\": 157,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\":
+        0,\n      \"audio_tokens\": 0\n    },\n    \"completion_tokens_details\":
+        {\n      \"reasoning_tokens\": 0,\n      \"audio_tokens\": 0,\n      \"accepted_prediction_tokens\":
+        0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\":
+        \"fp_d28bcae782\"\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8fd9909b182a2b06-SLC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 06 Jan 2025 06:13:59 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=YS8mvwElInaIJt4ylXf6QDyxS1D_B9F2kBN5ByB5DAc-1736144039-1.0.1.1-mLINe0JY03arOLqJdqoW5n8bAR4BP.RfnpKPMHr37gSjBm7Hwx3fDT1rRT3RSRM_rpMXDmJMGP3vJiVwgVwo2w;
+        path=/; expires=Mon, 06-Jan-25 06:43:59 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=WoRDs_aZ2zczg8FwtMP8Gv_lpHHHruwP.Clg4Blfox8-1736144039606-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-length:
+      - '1199'
+      openai-organization:
+      - bitstorm-technologies
+      openai-processing-ms:
+      - '4417'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '500'
+      x-ratelimit-limit-tokens:
+      - '30000'
+      x-ratelimit-remaining-requests:
+      - '499'
+      x-ratelimit-remaining-tokens:
+      - '29975'
+      x-ratelimit-reset-requests:
+      - 120ms
+      x-ratelimit-reset-tokens:
+      - 50ms
+      x-request-id:
+      - req_9162ce468e11b4482785259c32d074be
+    status:
+      code: 200
+      message: OK
+version: 1
